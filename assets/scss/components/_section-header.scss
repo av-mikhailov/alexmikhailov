@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as vars;
+
+.section-header {
+  margin-bottom: 40px;
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 500;
+    color: vars.$color-text;
+    display: flex;
+    align-items: center; 
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      display: block; 
+      width: 120px;
+      height: 1px;
+      background-color: vars.$color-primary;
+      margin-left: 16px;
+      margin-top: 8px;
+      flex-shrink: 0; 
+    }
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    color: vars.$color-text-muted;
+    margin-top: 4px;
+  }
+}

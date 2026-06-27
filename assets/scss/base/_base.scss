@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as vars;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: vars.$color-bg;
+  color: vars.$color-text;
+  font-family: vars.$font-main; // Исправлено: vars.$font-main вместо vars.$font-primary
+  line-height: 1.6;             // Перенесено из typography.scss
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: vars.$transition; // Использование вашей переменной транзишна
+}

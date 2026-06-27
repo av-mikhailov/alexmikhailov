@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as vars; 
+
+@font-face {
+    font-family: 'Nunito'; 
+    src: url('../fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype-variations'); 
+    font-weight: 300 700; 
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../assets/Nunito/Nunito-Italic-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 300 700; 
+    font-style: italic;
+    font-display: swap;
+}
+
+h1, h2, h3 {
+    font-family: vars.$font-main;
+}

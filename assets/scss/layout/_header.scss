@@ -1,0 +1,123 @@
+@use '../abstracts/variables' as vars;
+
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 12px 0;
+  background: vars.$color-bg;
+
+  &.header-scrolled {
+    background: vars.$color-bg;
+    padding: 12px 0;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .logo-wrapper {
+    color: vars.$color-text;
+    
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    
+    .profession {
+      font-size: 14px;
+      font-weight: 300;
+      color: vars.$color-text-muted;
+    }
+  }
+}
+
+/* Навигация */
+.navbar {
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  li { position: relative; }
+
+  a, a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0 8px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: vars.$color-text;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover, &.active {
+      color: vars.$color-accent;
+    }
+  }
+}
+
+.mobile-nav-toggle {
+  display: none; // По умолчанию скрыта
+  color: vars.$color-text;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar {
+    ul {
+      display: none; // Скрываем десктопное меню
+    }
+  }
+
+  /* Стиль выезжающего меню */
+  .navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(vars.$color-bg, 0.95);
+    transition: 0.3s;
+    z-index: 999;
+
+    ul {
+      display: block;
+      position: absolute;
+      top: 55px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      padding: 10px 0;
+      border-radius: 10px;
+      background-color: vars.$color-bg-alt;
+      overflow-y: auto;
+      transition: 0.3s;
+    }
+
+    a {
+      padding: 15px 20px;
+      font-size: 18px;
+      color: vars.$color-text;
+      &:hover { color: vars.$color-accent; }
+    }
+
+    .mobile-nav-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 9999;
+    }
+  }
+}

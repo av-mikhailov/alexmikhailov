@@ -1,0 +1,92 @@
+@use '../abstracts/variables' as vars;
+
+.portfolio-card {
+  background-color: vars.$color-bg-alt;
+  border-radius: vars.$radius-xl;
+  padding: 24px;
+  overflow: hidden;
+  transition: vars.$transition;
+  border: 1px solid transparent;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(vars.$color-primary, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+
+    // Подсветка кнопки при наведении на всю карточку портфолио
+    .btn-more {
+      background-color: vars.$color-accent;
+      color: vars.$color-bg;
+      border-color: vars.$color-accent;
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .photo-window {
+    background-color: vars.$color-bg;
+    border-radius: vars.$radius-md;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .card-body-content {
+    height: 100%;
+    padding-left: 32px;
+
+    .project-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid vars.$color-bg;
+      border-radius: vars.$radius-lg;
+      font-size: 14px;
+      color: vars.$color-text-muted;
+      margin-bottom: 24px;
+    }
+
+    .project-title {
+      font-size: 32px;
+      font-weight: 500;
+      color: vars.$color-text;
+      margin-bottom: 16px;
+
+      a {
+        transition: vars.$transition;
+        &:hover {
+          color: vars.$color-accent !important;
+        }
+      }
+    }
+
+    .project-description {
+      font-size: 16px;
+      color: vars.$color-text-muted;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .portfolio-card {
+    .card-body-content {
+      padding-left: 0;
+      padding-top: 24px;
+    }
+    
+    .photo-window {
+        min-height: 250px;
+    }
+  }
+}

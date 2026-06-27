@@ -1,0 +1,65 @@
+@use '../abstracts/variables' as vars;
+
+.btn {
+  padding: 12px 32px;
+  border-radius: vars.$radius-xxl;
+  font-weight: 600;
+  transition: vars.$transition;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: vars.$color-primary;
+  border-color: vars.$color-primary;
+  color: #fff;
+  
+  &:hover {
+    background-color: lighten(vars.$color-primary, 10%);
+    border-color: lighten(vars.$color-primary, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: #fff;
+  
+  &:hover {
+    background-color: vars.$color-primary;
+    border-color: vars.$color-primary;
+    color: #fff;
+  }
+}
+
+// Новая глобальная кнопка-ссылка (перенесена из услуг)
+.btn-more {
+  display: inline-block;
+  padding: 6px 24px;
+  padding-right: 12px; // Чуть меньше справа, так как там иконка
+  border: 1px solid vars.$color-accent;
+  border-radius: vars.$radius-xxl;
+  color: vars.$color-accent;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: vars.$transition;
+  
+  i {
+    vertical-align: middle;
+    font-size: 20px;
+    margin-left: 4px;
+    transition: transform 0.3s ease; // Плавная анимация стрелки
+  }
+
+  // Стили при наведении на саму кнопку (на случай, если она используется вне карточек)
+  &:hover {
+    background-color: vars.$color-accent;
+    color: vars.$color-bg;
+    border-color: vars.$color-accent;
+
+    i {
+      transform: translateX(4px); // Стрелка сдвигается вправо
+    }
+  }
+}

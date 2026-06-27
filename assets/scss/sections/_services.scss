@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as vars;
+
+.services {
+  padding: 80px 0;
+  background-color: vars.$color-bg;
+
+  .service-card {
+    position: relative;
+    padding: 40px;
+    background: vars.$color-bg-alt;
+    border-radius: vars.$radius-lg;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid transparent;
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: rgba(vars.$color-primary, 0.3);
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+
+      // Эффект для кнопки при наведении на карточку
+      .btn-more {
+        background-color: vars.$color-accent;
+        color: vars.$color-bg;
+        border-color: vars.$color-accent;
+
+        i {
+          transform: translateX(4px); // Анимируем стрелку внутри карточки
+        }
+      }
+      
+      .icon-box {
+        transform: scale(1.1);
+      }
+    }
+
+    .icon-box {
+      width: 64px;
+      height: 64px;
+      background: vars.$color-primary;
+      border-radius: vars.$radius-md;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: vars.$transition;
+
+      i {
+        color: #fff;
+        font-size: 32px;
+      }
+    }
+
+    h4 {
+      font-size: 24px;
+      font-weight: 600;
+      color: vars.$color-text;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: vars.$color-text-muted;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+    .services .service-card {
+        padding: 30px;
+    }
+}
