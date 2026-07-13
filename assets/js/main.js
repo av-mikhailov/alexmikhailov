@@ -19,6 +19,23 @@
   }
 
   /**
+   * Активация шапки при скролле (Добавление класса header-scrolled)
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 50) {
+        selectHeader.classList.add('header-scrolled')
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+      }
+    }
+    // Запускаем проверку при загрузке страницы и при каждом событии прокрутки
+    window.addEventListener('load', headerScrolled)
+    document.addEventListener('scroll', headerScrolled)
+  }
+
+  /**
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {

@@ -1,0 +1,140 @@
+@use '../abstracts/variables' as vars;
+
+.contact {
+  padding: 80px 0;
+  background-color: vars.$color-bg;
+
+  .contact-box {
+    background-color: vars.$color-bg-alt; // #2B2D2E
+    border-radius: vars.$radius-xl; // 24px
+    padding: 48px;
+
+    @media (max-width: 768px) {
+      padding: 32px 20px;
+    }
+  }
+
+  .box-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: vars.$color-text;
+    margin-bottom: 12px;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  .box-subtitle {
+    font-size: 15px;
+    color: vars.$color-text-muted;
+    margin-bottom: 32px;
+    max-width: 650px;
+    line-height: 1.5;
+  }
+
+  // Левая колонка: Карточки контактов
+  .info-card {
+    background-color: vars.$color-bg;
+    border-radius: vars.$radius-md;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: vars.$transition;
+    
+    // Решение бага рендеринга 1: предотвращаем микро-сдвиги фона
+    background-clip: padding-box; 
+
+    i {
+      font-size: 20px;
+      color: vars.$color-text;
+    }
+
+    .info-text {
+      font-size: 15px;
+      color: vars.$color-text;
+    }
+
+    &:hover {
+      background-color: lighten(vars.$color-bg, 10%);
+    }
+  }
+
+  // Правая колонка: Инпуты формы
+  .contact-form {
+    .form-control {
+      background-color: vars.$color-bg;
+      
+      // Решение бага рендеринга 2: заменяем border на box-shadow
+      border: none; 
+      box-shadow: 0 0 0 1px transparent; // Имитируем прозрачную рамку через тень
+      background-clip: padding-box;
+
+      border-radius: vars.$radius-md;
+      color: vars.$color-text;
+      padding: 16px 20px;
+      font-size: 15px;
+      transition: vars.$transition;
+
+      &::placeholder {
+        color: vars.$color-text-muted;
+        opacity: 1;
+      }
+
+      // Фокус на полях ввода
+      &:focus {
+        background-color: vars.$color-bg;
+        border: none;
+        box-shadow: 0 0 0 1px rgba(vars.$color-primary, 0.5); // Синяя рамка без багов рендеринга
+        color: vars.$color-text;
+      }
+    }
+
+    textarea.form-control {
+      resize: none; // Запрещаем пользователю растягивать поле вручную
+      min-height: 150px;
+    }
+
+    // Кнопка отправки формы
+    .btn-submit {
+      background-color: vars.$color-primary; // #2449B4
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: vars.$radius-xxl;
+      transition: vars.$transition;
+      width: fit-content;
+
+      &:hover {
+        background-color: lighten(vars.$color-primary, 8%);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    // Сноска о конфиденциальности под кнопкой
+    .consent-text {
+      font-size: 13px;
+      color: vars.$color-text-muted;
+      text-align: center;
+      margin-bottom: 0;
+
+      .consent-link {
+        color: vars.$color-text-muted;
+        text-decoration: underline dotted; // Пунктирное подчеркивание из Figma
+        text-underline-offset: 4px;
+        transition: vars.$transition;
+
+        &:hover {
+          color: vars.$color-accent;
+        }
+      }
+    }
+  }
+}

@@ -66,15 +66,23 @@
   }
 
   /* Стили иконок соцсетей */
-  .social-links {
-    a {
-      font-size: 24px;
-      display: inline-block;
+  .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2); // Тонкая обводка круга из Figma
       color: vars.$color-text;
-      line-height: 1;
-      margin-right: 20px;
-      transition: 0.3s;
-      &:hover { color: vars.$color-primary; }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: vars.$transition;
+
+      &:hover {
+        color: vars.$color-accent;
+        border-color: vars.$color-accent;
+        background-color: rgba(vars.$color-accent, 0.05); // Легкий отсвет при наведении
+        transform: translateY(-2px);
+      }
     }
-  }
 }
