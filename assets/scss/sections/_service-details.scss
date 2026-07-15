@@ -159,4 +159,390 @@
       }
     }
   }
+
+  // --- ПОДСЕКЦИЯ: ЭТАПЫ РАБОТЫ (ТАЙМЛАЙН) ---
+  .timeline-container {
+    position: relative;
+
+    .timeline-item {
+      position: relative;
+      padding-left: 84px; // Отступ контента от круга с цифрой
+      padding-bottom: 40px; // Пространство между шагами
+
+      // Вертикальная линия, соединяющая круги
+      &::before {
+        content: "";
+        position: absolute;
+        // Круг имеет размер 56px. Центр линии должен быть ровно посередине: 56px / 2 = 28px
+        left: 28px; 
+        top: 56px; // Линия начинается от нижней точки верхнего круга
+        bottom: 0; // Тянется до самого низа карточки шага
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.1); // Тонкая неконтрастная линия
+        z-index: 1;
+      }
+
+      // Для последнего шага скрываем уходящую вниз линию и убираем нижний отступ
+      &:last-child {
+        padding-bottom: 0;
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    // Круг с номером шага
+    .step-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: vars.$color-bg-alt; // #2B2D2E
+      color: vars.$color-accent; // #FFAE3D
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2; // Чтобы круг перекрывал соединительную линию
+      border: 1px solid rgba(255, 255, 255, 0.05); // Едва заметная рамка для объема
+    }
+
+    // Текстовая часть шага
+    .timeline-content {
+      padding-top: 4px; // Выравниваем первую строку текста по центру относительно круга 56px
+
+      .step-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: vars.$color-text;
+        margin-bottom: 4px;
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+      }
+
+      .step-desc {
+        font-size: 15px;
+        color: vars.$color-text-muted;
+        line-height: 1.5;
+        margin-bottom: 0;
+        // max-width: 620px;
+      }
+    }
+  }
+
+  // --- ПОДСЕКЦИЯ: СТОИМОСТЬ И СРОКИ (ТАБЛИЦА) ---
+ // --- ПОДСЕКЦИЯ: СТОИМОСТЬ И СРОКИ (ТАБЛИЦА) ---
+  .pricing-card-box {
+    background-color: vars.$color-bg-alt; // #2B2D2E
+    border-radius: vars.$radius-xl; // 24px
+    padding: 40px;
+    background-clip: padding-box;
+
+    // Решение бага 1: Жестко ограничиваем карточку по ширине
+    max-width: 100%;
+    overflow: hidden; 
+
+    @media (max-width: 768px) {
+      padding: 24px 16px; 
+    }
+  }
+// Стилизация таблицы Bootstrap под темную тему (с жестким сбросом переменных BS5)
+  .custom-pricing-table {
+    // Сброс дефолтных переменных Bootstrap 5, которые принудительно красили таблицу в белый
+    --bs-table-bg: transparent !important;
+    --bs-table-color: #{vars.$color-text} !important;
+    --bs-table-accent-bg: transparent !important;
+    --bs-table-striped-bg: transparent !important;
+    --bs-table-active-bg: transparent !important;
+    --bs-table-hover-bg: transparent !important;
+    --bs-table-border-color: transparent !important;
+
+    background-color: transparent !important;
+    color: vars.$color-text !important;
+    border-collapse: collapse;
+    width: 100%;
+
+    // Гарантируем прозрачность для абсолютно всех внутренних тегов таблицы
+    thead, tbody, tr, th, td {
+      background-color: transparent !important;
+      background: transparent !important;
+      color: inherit;
+    }
+
+    // Заголовки и ячейки
+    th, td {
+      border: none;
+      padding: 20px 16px;
+      vertical-align: middle;
+      text-align: left;
+      white-space: nowrap; 
+
+      @media (max-width: 768px) {
+        padding: 16px 12px; 
+      }
+    }
+
+    // Тонкие пунктирные разделители между строками
+    thead tr th,
+    tbody tr td {
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+    }
+
+    // Убираем нижний разделитель у последней строки
+    tbody tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    // Стили заголовков (шапка таблицы)
+    thead th {
+      font-size: 18px;
+      font-weight: 500;
+      color: vars.$color-text !important;
+      padding-top: 0; 
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+
+    // Стили строк данных
+    tbody td {
+      font-size: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 15px;
+      }
+
+      &.project-type {
+        color: vars.$color-text !important;
+        font-weight: 400;
+      }
+
+      &.project-time {
+        color: vars.$color-text-muted !important; // Серый цвет сроков
+      }
+
+      &.project-price {
+        color: vars.$color-text !important;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // Настройка горизонтального скроллбара для мобильных (делаем его аккуратным и темным)
+  .table-responsive {
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  // --- ПОДСЕКЦИЯ: ВОПРОСЫ И ОТВЕТЫ (АККОРДЕОН) ---
+  .custom-faq-accordion {
+    --bs-accordion-bg: transparent; // Сброс глобального белого фона Bootstrap
+
+    .accordion-item {
+      background-color: vars.$color-bg-alt; // #2B2D2E
+      border: 1px solid transparent; // Изначально рамка не видна
+      border-radius: vars.$radius-xl !important; // 24px для всех углов карточки
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: vars.$transition;
+      background-clip: padding-box;
+
+      // Стилизация активной (открытой) карточки через селектор :has
+      &:has(.accordion-button:not(.collapsed)) {
+        border-color: vars.$color-accent; // Тонкая оранжевая рамка из Figma
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Кнопка вопроса (триггер)
+    .accordion-button {
+      background-color: transparent !important;
+      color: vars.$color-text !important;
+      padding: 24px;
+      font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 20px; // Расстояние между круглой иконкой и текстом вопроса
+      box-shadow: none !important; // Убираем дефолтную синюю тень при клике
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+        padding: 20px 16px;
+        gap: 14px;
+      }
+
+      // Скрываем стандартную стрелочку-уголок Bootstrap справа
+      &::after {
+        display: none !important;
+      }
+    }
+
+    // Круглая иконка с вопросительным знаком "?"
+    .faq-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid vars.$color-accent; // Оранжевая обводка
+      color: vars.$color-accent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      flex-shrink: 0; // Защита круга от сжатия при длинном вопросе
+
+      @media (max-width: 768px) {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+    }
+
+    .faq-question {
+      line-height: 1.4;
+    }
+
+    // Раскрывающийся блок ответа
+    .accordion-body {
+      color: vars.$color-text-muted; // Серый цвет ответа
+      font-size: 15px;
+      line-height: 1.6;
+      border-top: none;
+      // Внутренний левый отступ равен: левый padding (24) + диаметр иконки (44) + gap (20) = 88px.
+      // Благодаря этому текст ответа начинается строго под текстом вопроса, не залезая под иконку.
+      padding: 0 24px 24px 88px; 
+
+      @media (max-width: 768px) {
+        padding: 0 16px 20px 66px; // Уменьшенные отступы для мобильных
+        font-size: 14px;
+      }
+    }
+  }
+
+  // --- ПОДСЕКЦИЯ: ФОРМА ОБСУЖДЕНИЯ ПРОЕКТА ---
+  .service-contact-box {
+    background-color: vars.$color-bg-alt; // #2B2D2E
+    border-radius: vars.$radius-xl; // 24px
+    padding: 48px;
+    background-clip: padding-box;
+    // Аппаратные GPU-хаки: полностью убирают любые мерцающие полоски и артефакты!
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+
+    @media (max-width: 768px) {
+      padding: 32px 20px;
+    }
+
+    .box-title {
+      font-size: 32px;
+      font-weight: 500;
+      color: vars.$color-text;
+      margin-bottom: 12px;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    .box-subtitle {
+      font-size: 15px;
+      color: vars.$color-text-muted;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    // Стилизация полей ввода (синхронизировано с сайдбаром)
+    .form-control {
+      background-color: vars.$color-bg; // #242627
+      border: none;
+      box-shadow: 0 0 0 1px transparent;
+      background-clip: padding-box;
+      border-radius: vars.$radius-md; // 16px
+      color: vars.$color-text;
+      padding: 16px 20px;
+      font-size: 15px;
+      transition: vars.$transition;
+
+      &::placeholder {
+        color: vars.$color-text-muted;
+        opacity: 1;
+      }
+
+      &:focus {
+        background-color: vars.$color-bg;
+        border: none;
+        box-shadow: 0 0 0 1px rgba(vars.$color-primary, 0.5);
+        color: vars.$color-text;
+      }
+    }
+
+    textarea.form-control {
+      resize: none;
+      min-height: 150px;
+    }
+
+    // Кнопка отправки формы
+    .btn-submit {
+      background-color: vars.$color-primary; // #2449B4
+      color: #fff;
+      border: none;
+      padding: 8px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: vars.$radius-xxl;
+      transition: vars.$transition;
+      width: fit-content;
+
+      &:hover {
+        background-color: lighten(vars.$color-primary, 8%);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    // Текст соглашения под кнопкой
+    .consent-text {
+      font-size: 13px;
+      color: vars.$color-text-muted;
+      text-align: center;
+      margin-bottom: 0;
+
+      .consent-link {
+        color: vars.$color-text-muted;
+        text-decoration: underline dotted;
+        text-underline-offset: 4px;
+        transition: vars.$transition;
+
+        &:hover {
+          color: vars.$color-accent;
+        }
+      }
+    }
+  }
 }

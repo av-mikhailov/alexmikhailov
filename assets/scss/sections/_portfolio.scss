@@ -61,6 +61,10 @@
       color: vars.$color-text;
       margin-bottom: 16px;
 
+      @media (max-width: 575.98px) {
+        font-size: 20px;
+      }
+
       a {
         transition: vars.$transition;
         &:hover {

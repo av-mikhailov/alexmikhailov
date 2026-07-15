@@ -7,6 +7,10 @@
   transition: vars.$transition;
   font-size: 15px;
   display: inline-block;
+
+  @media (max-width: 575.98px) {
+    padding: 8px 16px;
+  }
 }
 
 .btn-primary {
@@ -22,7 +26,7 @@
 }
 
 .btn-outline-light {
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   color: #fff;
   
   &:hover {
