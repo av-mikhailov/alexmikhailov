@@ -63,34 +63,7 @@
 
   // Правая колонка: Инпуты формы
   .contact-form {
-    .form-control {
-      background-color: vars.$color-bg;
-      
-      // Решение бага рендеринга 2: заменяем border на box-shadow
-      border: none; 
-      box-shadow: 0 0 0 1px transparent; // Имитируем прозрачную рамку через тень
-      background-clip: padding-box;
-
-      border-radius: vars.$radius-md;
-      color: vars.$color-text;
-      padding: 16px 20px;
-      font-size: 15px;
-      transition: vars.$transition;
-
-      &::placeholder {
-        color: vars.$color-text-muted;
-        opacity: 1;
-      }
-
-      // Фокус на полях ввода
-      &:focus {
-        background-color: vars.$color-bg;
-        border: none;
-        box-shadow: 0 0 0 1px rgba(vars.$color-primary, 0.5); // Синяя рамка без багов рендеринга
-        color: vars.$color-text;
-      }
-    }
-
+    
     textarea.form-control {
       resize: none; // Запрещаем пользователю растягивать поле вручную
       min-height: 150px;

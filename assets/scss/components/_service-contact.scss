@@ -1,0 +1,80 @@
+@use '../abstracts/variables' as vars;
+
+  .service-contact-box {
+    background-color: vars.$color-bg-alt; // #2B2D2E
+    border-radius: vars.$radius-xl; // 24px
+    padding: 48px;
+    background-clip: padding-box;
+    // Аппаратные GPU-хаки: полностью убирают любые мерцающие полоски и артефакты!
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+
+    @media (max-width: 768px) {
+      padding: 32px 20px;
+    }
+
+    .box-title {
+      font-size: 32px;
+      font-weight: 500;
+      color: vars.$color-text;
+      margin-bottom: 12px;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    .box-subtitle {
+      font-size: 15px;
+      color: vars.$color-text-muted;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    textarea.form-control {
+      resize: none;
+      min-height: 150px;
+    }
+
+    // Кнопка отправки формы
+    .btn-submit {
+      background-color: vars.$color-primary; // #2449B4
+      color: #fff;
+      border: none;
+      padding: 8px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: vars.$radius-xxl;
+      transition: vars.$transition;
+      width: fit-content;
+
+      &:hover {
+        background-color: lighten(vars.$color-primary, 8%);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    // Текст соглашения под кнопкой
+    .consent-text {
+      font-size: 13px;
+      color: vars.$color-text-muted;
+      text-align: center;
+      margin-bottom: 0;
+
+      .consent-link {
+        color: vars.$color-text-muted;
+        text-decoration: underline dotted;
+        text-underline-offset: 4px;
+        transition: vars.$transition;
+
+        &:hover {
+          color: vars.$color-accent;
+        }
+      }
+    }
+  }

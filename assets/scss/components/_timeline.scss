@@ -1,0 +1,63 @@
+@use '../abstracts/variables' as vars;
+
+.timeline-container {
+  position: relative;
+
+  .timeline-item {
+    position: relative;
+    padding-left: 84px;
+    padding-bottom: 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 28px;
+      top: 56px;
+      bottom: 0;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+      z-index: 1;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      &::before { display: none; }
+    }
+  }
+
+  .step-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #2B2D2E;
+    color: #FFAE3D;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .timeline-content {
+    padding-top: 4px;
+
+    .step-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 15px;
+      color: #ABACAC;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+  }
+}

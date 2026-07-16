@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as vars;
+
+.form-control {
+  background-color: vars.$color-bg;
+  border: none;
+  box-shadow: 0 0 0 1px transparent;
+  background-clip: padding-box;
+  border-radius: vars.$radius-md; // 16px
+  color: vars.$color-text;
+  padding: 16px 20px;
+  font-size: 15px;
+  transition: vars.$transition;
+
+  &::placeholder {
+    color: vars.$color-text-muted;
+    opacity: 1;
+  }
+
+  &:focus {
+    background-color: vars.$color-bg;
+    border: none;
+    box-shadow: 0 0 0 1px rgba(vars.$color-primary, 0.5);
+    color: vars.$color-text;
+  }
+}

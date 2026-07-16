@@ -1,0 +1,116 @@
+@use '../abstracts/variables' as vars;
+
+  .pricing-card-box {
+    background-color: vars.$color-bg-alt; // #2B2D2E
+    border-radius: vars.$radius-xl; // 24px
+    padding: 40px;
+    background-clip: padding-box;
+
+    // Решение бага 1: Жестко ограничиваем карточку по ширине
+    max-width: 100%;
+    overflow: hidden; 
+
+    @media (max-width: 768px) {
+      padding: 24px 16px; 
+    }
+  }
+// Стилизация таблицы Bootstrap под темную тему (с жестким сбросом переменных BS5)
+  .custom-pricing-table {
+    // Сброс дефолтных переменных Bootstrap 5, которые принудительно красили таблицу в белый
+    --bs-table-bg: transparent !important;
+    --bs-table-color: #{vars.$color-text} !important;
+    --bs-table-accent-bg: transparent !important;
+    --bs-table-striped-bg: transparent !important;
+    --bs-table-active-bg: transparent !important;
+    --bs-table-hover-bg: transparent !important;
+    --bs-table-border-color: transparent !important;
+
+    background-color: transparent !important;
+    color: vars.$color-text !important;
+    border-collapse: collapse;
+    width: 100%;
+
+    // Гарантируем прозрачность для абсолютно всех внутренних тегов таблицы
+    thead, tbody, tr, th, td {
+      background-color: transparent !important;
+      background: transparent !important;
+      color: inherit;
+    }
+
+    // Заголовки и ячейки
+    th, td {
+      border: none;
+      padding: 20px 16px;
+      vertical-align: middle;
+      text-align: left;
+      white-space: nowrap; 
+
+      @media (max-width: 768px) {
+        padding: 16px 12px; 
+      }
+    }
+
+    // Тонкие пунктирные разделители между строками
+    thead tr th,
+    tbody tr td {
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+    }
+
+    // Убираем нижний разделитель у последней строки
+    tbody tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    // Стили заголовков (шапка таблицы)
+    thead th {
+      font-size: 18px;
+      font-weight: 500;
+      color: vars.$color-text !important;
+      padding-top: 0; 
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+
+    // Стили строк данных
+    tbody td {
+      font-size: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 15px;
+      }
+
+      &.project-type {
+        color: vars.$color-text !important;
+        font-weight: 400;
+      }
+
+      &.project-time {
+        color: vars.$color-text-muted !important; // Серый цвет сроков
+      }
+
+      &.project-price {
+        color: vars.$color-text !important;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // Настройка горизонтального скроллбара для мобильных (делаем его аккуратным и темным)
+  .table-responsive {
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }

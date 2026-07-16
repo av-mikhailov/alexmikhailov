@@ -1,0 +1,64 @@
+@use '../abstracts/variables' as vars;
+
+.calc-sidebar-card {
+    background-color: vars.$color-bg-alt; // #2B2D2E
+    border-radius: vars.$radius-xl; // 24px
+    padding: 40px;
+    // box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 768px) {
+      padding: 30px 20px;
+    }
+
+    .sidebar-title {
+      font-size: 26px;
+      font-weight: 500;
+      color: vars.$color-text;
+      line-height: 1.3;
+      margin-bottom: 32px;
+    }
+
+    textarea.form-control {
+      resize: none;
+    }
+
+    // Синяя кнопка
+    .btn-submit {
+      background-color: vars.$color-primary; // #2449B4
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: vars.$transition;
+
+      &:hover {
+        background-color: lighten(vars.$color-primary, 8%);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    // Текст соглашения
+    .consent-text {
+      font-size: 12px;
+      color: vars.$color-text-muted;
+      line-height: 1.4;
+      margin-bottom: 0;
+
+      .consent-link {
+        color: vars.$color-text-muted;
+        text-decoration: underline dotted;
+        text-underline-offset: 3px;
+        transition: vars.$transition;
+
+        &:hover {
+          color: vars.$color-accent;
+        }
+      }
+    }
+  }

@@ -1,19 +1,32 @@
+// Abstracts (Переменные)
 @use "abstracts/variables"; 
 
+// Base (Шрифты и сбросы)
 @use "base/typography";
 @use "base/base";
 
+// Components (Общие переиспользуемые элементы)
 @use "components/buttons";
 @use "components/section-header";
+@use "components/breadcrumbs";       // Вынесли отдельно!
+@use "components/timeline";          // Вынесли отдельно!
+@use "components/pricing-table";     // Вынесли отдельно!
+@use "components/faq-accordion";     // Вынесли отдельно!
+@use "components/calc-sidebar";     // Вынесли отдельно!
+@use "components/service-contact";   // Вынесли отдельно!
+@use "components/forms";   // Вынесли отдельно!
 
+// Sections (Секции конкретных страниц)
+// -- Главная страница
 @use "sections/hero";
 @use "sections/about";
 @use "sections/services";
 @use "sections/portfolio";
 @use "sections/contact";
-
+// -- Страница услуги
 @use "sections/service-hero";
-@use "sections/service-details";
+@use "sections/service-layout";      // Структурная разметка вместо service-details
 
+// Layout (Шапка и подвал)
 @use "layout/header";
 @use "layout/footer";

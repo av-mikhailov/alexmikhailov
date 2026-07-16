@@ -1,0 +1,89 @@
+  @use '../abstracts/variables' as vars;
+
+  .custom-faq-accordion {
+    --bs-accordion-bg: transparent; // Сброс глобального белого фона Bootstrap
+
+    .accordion-item {
+      background-color: vars.$color-bg-alt; // #2B2D2E
+      border: 1px solid transparent; // Изначально рамка не видна
+      border-radius: vars.$radius-xl !important; // 24px для всех углов карточки
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: vars.$transition;
+      background-clip: padding-box;
+
+      // Стилизация активной (открытой) карточки через селектор :has
+      &:has(.accordion-button:not(.collapsed)) {
+        border-color: vars.$color-accent; // Тонкая оранжевая рамка из Figma
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Кнопка вопроса (триггер)
+    .accordion-button {
+      background-color: transparent !important;
+      color: vars.$color-text !important;
+      padding: 24px;
+      font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 20px; // Расстояние между круглой иконкой и текстом вопроса
+      box-shadow: none !important; // Убираем дефолтную синюю тень при клике
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+        padding: 20px 16px;
+        gap: 14px;
+      }
+
+      // Скрываем стандартную стрелочку-уголок Bootstrap справа
+      &::after {
+        display: none !important;
+      }
+    }
+
+    // Круглая иконка с вопросительным знаком "?"
+    .faq-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid vars.$color-accent; // Оранжевая обводка
+      color: vars.$color-accent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      flex-shrink: 0; // Защита круга от сжатия при длинном вопросе
+
+      @media (max-width: 768px) {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+    }
+
+    .faq-question {
+      line-height: 1.4;
+    }
+
+    // Раскрывающийся блок ответа
+    .accordion-body {
+      color: vars.$color-text-muted; // Серый цвет ответа
+      font-size: 15px;
+      line-height: 1.6;
+      border-top: none;
+      // Внутренний левый отступ равен: левый padding (24) + диаметр иконки (44) + gap (20) = 88px.
+      // Благодаря этому текст ответа начинается строго под текстом вопроса, не залезая под иконку.
+      padding: 0 24px 24px 88px; 
+
+      @media (max-width: 768px) {
+        padding: 0 16px 20px 66px; // Уменьшенные отступы для мобильных
+        font-size: 14px;
+      }
+    }
+  }

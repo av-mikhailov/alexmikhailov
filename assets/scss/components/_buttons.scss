@@ -5,7 +5,7 @@
   border-radius: vars.$radius-xxl;
   font-weight: 600;
   transition: vars.$transition;
-  font-size: 15px;
+  font-size: 16px;
   display: inline-block;
 
   @media (max-width: 575.98px) {
@@ -19,20 +19,20 @@
   color: #fff;
   
   &:hover {
-    background-color: lighten(vars.$color-primary, 10%);
-    border-color: lighten(vars.$color-primary, 10%);
-    transform: translateY(-2px);
+    background-color: vars.$color-accent;
+    border-color: vars.$color-accent;
+    color: vars.$color-bg;
   }
 }
 
 .btn-outline-light {
   border: 1px solid #fff;
-  color: #fff;
+  color: vars.$color-text;
   
   &:hover {
-    background-color: vars.$color-primary;
-    border-color: vars.$color-primary;
-    color: #fff;
+    background-color: vars.$color-text;
+    border-color: vars.$color-text;
+    color: vars.$color-bg;
   }
 }
 
