@@ -1,12 +1,6 @@
 // base/_base.scss
 @use "../abstracts/variables" as vars;
 
-html, body {
-  overflow-x: hidden; // Решение бага 2: блокирует скролл вбок на iOS и Android
-  width: 100%;
-  position: relative;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -16,6 +10,9 @@ body {
   color: vars.$color-text; 
   font-family: vars.$font-main; 
   line-height: 1.6;
+  overflow-x: hidden; 
+  width: 100%;
+  position: relative;
 }
 
 a {

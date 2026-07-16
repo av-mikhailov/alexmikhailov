@@ -17,12 +17,6 @@ h1, h2, h3 {
   font-family: "Nunito", sans-serif;
 }
 
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -32,6 +26,9 @@ body {
   color: #FFFFFF;
   font-family: "Nunito", sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 a {
@@ -405,6 +402,16 @@ a {
   background-color: #2B2D2E;
   border-radius: 32px;
   padding: 40px;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@media (min-width: 992px) {
+  .calc-sidebar-card {
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+  }
 }
 @media (max-width: 768px) {
   .calc-sidebar-card {
@@ -1165,13 +1172,6 @@ a {
   color: #ABACAC;
   line-height: 1.4;
   margin-bottom: 0;
-}
-@media (min-width: 992px) {
-  .service-details-section .sticky-sidebar-col {
-    position: sticky;
-    top: 100px;
-    z-index: 10;
-  }
 }
 
 #header {

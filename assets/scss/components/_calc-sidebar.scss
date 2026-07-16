@@ -1,13 +1,24 @@
 @use '../abstracts/variables' as vars;
 
 .calc-sidebar-card {
-    background-color: vars.$color-bg-alt; // #2B2D2E
-    border-radius: vars.$radius-xl; // 24px
+    background-color: vars.$color-bg-alt;
+    border-radius: vars.$radius-xl;
     padding: 40px;
-    // box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    // Добавляем GPU-хаки для плавности
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    // ДОБАВЛЯЕМ СЮДА: Теперь карточка будет липнуть и скользить внутри высокой колонки!
+    @media (min-width: 992px) {
+        position: sticky;
+        top: 100px;
+        z-index: 10;
+    }
 
     @media (max-width: 768px) {
-      padding: 30px 20px;
+        padding: 30px 20px;
     }
 
     .sidebar-title {

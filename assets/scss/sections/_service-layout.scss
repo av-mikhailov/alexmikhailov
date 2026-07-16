@@ -54,13 +54,4 @@
       }
     }
   }
-
-  // Специфические свойства липкой правой колонки на десктопе
-  @media (min-width: 992px) {
-    .sticky-sidebar-col {
-      position: sticky;
-      top: 100px;
-      z-index: 10;
-    }
-  }
 }
