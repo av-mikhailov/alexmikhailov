@@ -15,6 +15,7 @@
 @use "components/calc-sidebar";     // Вынесли отдельно!
 @use "components/service-contact";   // Вынесли отдельно!
 @use "components/forms";   // Вынесли отдельно!
+@use "components/page-hero"; 
 
 // Sections (Секции конкретных страниц)
 // -- Главная страница
@@ -24,7 +25,6 @@
 @use "sections/portfolio";
 @use "sections/contact";
 // -- Страница услуги
-@use "sections/service-hero";
 @use "sections/service-layout";      // Структурная разметка вместо service-details
 
 // Layout (Шапка и подвал)
