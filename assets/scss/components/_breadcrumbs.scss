@@ -8,9 +8,26 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   margin-bottom: 40px;
 
+  // Находим контейнер списка (ol.breadcrumb в Bootstrap)
+  .breadcrumb {
+    display: flex;
+    flex-wrap: nowrap;     // ВАЖНО: Запрещаем перенос пунктов на новую строку
+    overflow-x: auto;      // ВАЖНО: Разрешаем горизонтальную прокрутку пальцем
+    white-space: nowrap;   // ВАЖНО: Запрещаем перенос слов внутри пунктов
+    -webkit-overflow-scrolling: touch; // Плавный инерционный скролл на iOS (Safari)
+
+    // Скрываем некрасивую системную полосу прокрутки во всех браузерах
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
   .breadcrumb-item {
     font-size: 14px;
     color: #ABACAC;
+    flex-shrink: 0; // ВАЖНО: Запрещает пунктам сжиматься, сохраняя их ширину
 
     a {
       color: #ABACAC;
@@ -23,6 +40,7 @@
       opacity: 0.7;
     }
 
+    // Наш разделитель-точка
     & + .breadcrumb-item::before {
       color: #ABACAC;
       content: "•";

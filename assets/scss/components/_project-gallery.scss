@@ -1,0 +1,98 @@
+@use '../abstracts/variables' as vars;
+
+.project-gallery-container {
+  position: relative;
+  width: 100%;
+
+  .project-gallery-slider {
+    border-radius: vars.$radius-xl; // 24px/32px
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .swiper-slide {
+    position: relative;
+    aspect-ratio: 16 / 9; // Сохраняем пропорции скриншотов на любых экранах
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .gallery-slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.02); // Легкий интерактивный зум при наведении
+    }
+  }
+
+  // --- КАСТОМИЗАЦИЯ СТРЕЛОК SWIPER ---
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(vars.$color-bg-alt, 0.8); // Полупрозрачный темный фон
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: vars.$color-text;
+    transition: vars.$transition;
+
+    // Убираем дефолтную стрелку-шрифт Swiper
+    &::after {
+      display: none;
+    }
+
+    // Стилизуем нашу иконку Boxicons внутри стрелки
+    i {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    &:hover {
+      background-color: vars.$color-accent;
+      border-color: vars.$color-accent;
+      color: vars.$color-bg;
+    }
+  }
+
+  // --- МИНИАТЮРЫ (Thumbnails) ---
+  .gallery-thumbnails {
+    .thumb-box {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: vars.$transition;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+      // Активная превьюшка подсвечивается оранжевой рамкой
+      &.thumb-active {
+        border-color: vars.$color-accent;
+        transform: translateY(-2px);
+      }
+
+      &:hover:not(.thumb-active) {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 768px) {
+        border-radius: 6px;
+      }
+    }
+
+    .thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

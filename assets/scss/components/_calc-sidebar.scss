@@ -73,3 +73,44 @@
       }
     }
   }
+
+  // Специфические элементы карточки информации о проекте в сайдбаре
+.project-info-list {
+  
+  .info-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: vars.$color-text;
+    margin-bottom: 12px;
+  }
+
+  .info-value {
+    font-size: 15px;
+    color: vars.$color-text-muted;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  // Обводные теги технологий ("таблетки" из Figma)
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; // Зазор между тегами по вертикали и горизонтали
+
+    .tech-tag {
+      font-size: 14px;
+      color: vars.$color-text-muted;
+      border: 1px solid rgba(255, 255, 255, 0.15); // Тонкая обводка из макета
+      padding: 6px 16px;
+      border-radius: vars.$radius-xxl; // Форма пилюли
+      transition: vars.$transition;
+      cursor: default;
+
+      &:hover {
+        color: vars.$color-accent;
+        border-color: vars.$color-accent;
+        background-color: rgba(vars.$color-accent, 0.03); // Легкий отсвет при наведении
+      }
+    }
+  }
+}

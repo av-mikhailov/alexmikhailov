@@ -1,18 +1,20 @@
 @use '../abstracts/variables' as vars;
 
-.service-details-section {
+// Нейтральное имя класса для разметки любой детальной страницы
+.page-details-section {
   background-color: #242627;
 
+  // Общий стиль лид-текста (используется и в услугах, и в проектах)
   .lead-text {
     font-size: 18px;
     color: #ABACAC;
     line-height: 1.7;
-    max-width: 680px;
+    // max-width: 680px;
 
     @media (max-width: 768px) { font-size: 16px; }
   }
 
-  // Оставляем тут, так как это уникальный элемент контента левой колонки услуги
+  // Карточки преимуществ (уникальны для услуг, но лежат здесь, так как это часть сетки)
   .advantage-card {
     background-color: #2B2D2E;
     border-radius: 32px;
@@ -52,6 +54,15 @@
         line-height: 1.4;
         margin-bottom: 0;
       }
+    }
+  }
+
+  // Общие свойства липкой правой колонки
+  @media (min-width: 992px) {
+    .sticky-sidebar-col {
+      position: sticky;
+      top: 100px;
+      z-index: 10;
     }
   }
 }

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Александр Михайлов | Веб-дизайнер</title>
+    <meta name="description" content="Портфолио Александра Михайлова — веб-дизайнера и разработчика. Создание современных сайтов, оформление печатных изданий и работа с контентом. Подробности о выполненных проектах и контакты для связи.">
+    
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/fonts/basic/boxicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/fonts/brands/boxicons-brands.min.css">
+    <link rel="stylesheet" href="assets/vendor/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
+            <img src="assets/img/logo.svg" alt="Логотип Александра Михайлова" class="img-fluid me-3">
+            <div class="logo-text">
+                <span class="d-block name">Александр Михайлов</span>
+                <small class="d-block profession">Веб-разработчик</small>
+            </div>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
+                <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
+                <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
+                <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
+            </ul>
+            <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+
+    <!-- Хлебные крошки -->
+<nav aria-label="breadcrumb" class="custom-breadcrumbs py-3">
+    <div class="container">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Портфолио</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- Вводная секция страницы -->
+<section class="portfolio-page-header pb-4">
+    <div class="container">
+        <div class="section-header mb-0">
+            <h1 class="section-title">Портфолио</h1>
+            <p class="section-subtitle">Избранные проекты в вебе и печати</p>
+        </div>
+    </div>
+</section>
+
+<!-- Секция фильтров (с горизонтальным скроллом на мобильных) -->
+<div class="portfolio-filters-wrapper mb-5">
+    <div class="container">
+        <div class="portfolio-filters gap-2">
+            <button class="btn-filter active" data-filter="all">Все проекты</button>
+            <button class="btn-filter" data-filter="web">Разработка сайтов</button>
+            <button class="btn-filter" data-filter="print">Многостраничная верстка</button>
+            <button class="btn-filter" data-filter="design">UX/UI Дизайн</button>
+        </div>
+    </div>
+</div>
+
+<!-- Список проектов -->
+<section class="portfolio-page-list pb-5">
+    <div class="container">
+        <div class="portfolio-list" id="portfolio-grid">
+            
+             <div class="portfolio-card mb-5" data-aos="fade-up">
+                    <div class="row g-0 align-items-stretch">
+                        
+                        <!-- Кликабельная область фото -->
+                        <div class="col-lg-5">
+                            <a href="portfolio-detail.html" class="photo-window-link" aria-label="Смотреть проект библиотеки имени И.И. Василёва">
+                                <div class="photo-window">
+                                    <img src="assets/img/project-vasilevka.png" alt="Скриншот сайта библиотеки имени И.И. Василёва" class="img-fluid" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="card-body-content d-flex flex-column justify-content-between">
+                                
+                                <div class="top-zone">
+                                    <span class="project-tag">Разработка сайта</span>
+                                </div>
+
+                                <div class="middle-zone">
+                                    <!-- Кликабельный заголовок -->
+                                    <h3 class="project-title">
+                                        <a href="portfolio-detail.html" class="text-decoration-none text-white hover-color-accent">Библиотека имени И. И. Василёва</a>
+                                    </h3>
+                                    <p class="project-description">Полный цикл разработки: от проектирования структуры и UX-прототипов до финальной верстки и посадки на CMS WordPress.</p>
+                                </div>
+
+                                <div class="bottom-zone">
+                                    <!-- Кликабельная кнопка -->
+                                    <a href="portfolio-detail.html" class="btn-more" aria-label="Смотреть детали проекта библиотеки имени И.И. Василёва">О проекте <i class="bx bx-arrow-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card mb-5" data-aos="fade-up">
+                    <div class="row g-0 align-items-stretch">
+                        
+                        <!-- Кликабельная область фото -->
+                        <div class="col-lg-5">
+                            <a href="#" class="photo-window-link" aria-label="Смотреть проект ЦБС г. Пскова">
+                                <div class="photo-window">
+                                    <img src="assets/img/project-bibliopskov.png" alt="Скриншот сайта ЦБС г. Пскова" class="img-fluid" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="card-body-content d-flex flex-column justify-content-between">
+                                
+                                <div class="top-zone">
+                                    <span class="project-tag">Разработка сайта</span>
+                                </div>
+
+                                <div class="middle-zone">
+                                    <!-- Кликабельный заголовок -->
+                                    <h3 class="project-title">
+                                        <a href="#" class="text-decoration-none text-white hover-color-accent">Централизованная библиотечная система г. Пскова</a>
+                                    </h3>
+                                    <p class="project-description">Полный цикл разработки: от проектирования структуры и UX-прототипов до финальной верстки и посадки на CMS WordPress.</p>
+                                </div>
+
+                                <div class="bottom-zone">
+                                    <!-- Кликабельная кнопка -->
+                                    <a href="#" class="btn-more" aria-label="Смотреть детали проекта ЦБС г. Пскова">О проекте <i class="bx bx-arrow-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card mb-5" data-aos="fade-up">
+                    <div class="row g-0 align-items-stretch">
+                        
+                        <!-- Кликабельная область фото -->
+                        <div class="col-lg-5">
+                            <a href="#" class="photo-window-link" aria-label="Смотреть проект Парки, сады и скверы Пскова">
+                                <div class="photo-window">
+                                    <img src="assets/img/project-parks.png" alt="Скриншот книги Парки, сады и скверы Пскова" class="img-fluid" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="card-body-content d-flex flex-column justify-content-between">
+                                
+                                <div class="top-zone">
+                                    <span class="project-tag">Дизайн и верстка</span>
+                                </div>
+
+                                <div class="middle-zone">
+                                    <!-- Кликабельный заголовок -->
+                                    <h3 class="project-title">
+                                        <a href="#" class="text-decoration-none text-white hover-color-accent">Парки, сады и скверы Пскова</a>
+                                    </h3>
+                                    <p class="project-description">Разработка дизайна и верстка многостраничного краеведческого издания. Подготовка графических материалов и структурирование информации для создания удобной навигации по зеленым зонам города.</p>
+                                </div>
+
+                                <div class="bottom-zone">
+                                    <!-- Кликабельная кнопка -->
+                                    <a href="#" class="btn-more" aria-label="Смотреть детали проекта Парки, сады и скверы Пскова">О проекте <i class="bx bx-arrow-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card mb-5" data-aos="fade-up">
+                    <div class="row g-0 align-items-stretch">
+                        
+                        <!-- Кликабельная область фото -->
+                        <div class="col-lg-5">
+                            <a href="#" class="photo-window-link" aria-label="Смотреть проект Почетные граждане города Пскова">
+                                <div class="photo-window">
+                                    <img src="assets/img/project-citizens.png" alt="Скриншот книги Почетные граждане города Пскова" class="img-fluid" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="card-body-content d-flex flex-column justify-content-between">
+                                
+                                <div class="top-zone">
+                                    <span class="project-tag">Дизайн и верстка</span>
+                                </div>
+
+                                <div class="middle-zone">
+                                    <!-- Кликабельный заголовок -->
+                                    <h3 class="project-title">
+                                        <a href="#" class="text-decoration-none text-white hover-color-accent">Почетные граждане города Пскова</a>
+                                    </h3>
+                                    <p class="project-description">Разработка дизайна и верстка многостраничного краеведческого издания. Подготовка графических материалов и структурирование информации для создания удобной навигации по разделам книги.</p>
+                                </div>
+
+                                <div class="bottom-zone">
+                                    <!-- Кликабельная кнопка -->
+                                    <a href="#" class="btn-more" aria-label="Смотреть детали проекта Почетные граждане города Пскова">О проекте <i class="bx bx-arrow-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="container d-flex flex-column align-items-center">
+        
+        <!-- Круглый логотип-монограмма -->
+        <div class="footer-logo mb-4">
+            <a href="index.html">
+                <img src="assets/img/logo.svg" alt="Александр Михайлов" class="img-fluid">
+            </a>
+        </div>
+
+        <!-- Навигация в подвале -->
+        <nav class="footer-nav mb-4">
+            <ul class="d-flex flex-wrap justify-content-center gap-4">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <!-- Разделитель с социальными сетями -->
+        <div class="footer-social-divider d-flex align-items-center justify-content-center gap-3 w-100 mb-4">
+            <span class="divider-line"></span>
+            <div class="social-links d-flex gap-2">
+                <a href="#" class="social-btn" aria-label="ВКонтакте"><i class="bxl bx-vk"></i></a>
+                <a href="#" class="social-btn" aria-label="GitHub"><i class="bxl bx-github"></i></a>
+            </div>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Копирайт и политика конфиденциальности -->
+        <div class="footer-bottom text-center">
+            <p class="copyright mb-2">&copy; 2024-2026 Александр Михайлов</p>
+            <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+        </div>
+
+    </div>
+</footer>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>
