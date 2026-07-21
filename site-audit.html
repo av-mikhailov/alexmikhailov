@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Александр Михайлов | Аудит старого сайта</title>
+    <meta name="description" content="Экспертный аудит удобства и технического состояния устаревших сайтов. Поиск ошибок, анализ логики переходов, проверка доступности и разработка пошагового плана модернизации интернет-ресурса.">
+    
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/fonts/basic/boxicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/fonts/brands/boxicons-brands.min.css">
+    <link rel="stylesheet" href="assets/vendor/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
+            <img src="assets/img/logo.svg" alt="Логотип Александра Михайлова" class="img-fluid me-3">
+            <div class="logo-text">
+                <span class="d-block name">Александр Михайлов</span>
+                <small class="d-block profession">Веб-разработчик</small>
+            </div>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
+                <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
+                <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
+                <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
+            </ul>
+            <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+
+    <!-- Хлебные крошки (Размещаются над обложкой) -->
+    <nav aria-label="breadcrumb" class="custom-breadcrumbs py-3">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Аудит старого сайта</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Обложка услуги (reuses .page-hero-card!) -->
+    <section class="service-hero pb-5">
+        <div class="container">
+           <div class="page-hero-card">
+                <div class="row align-items-stretch g-0">
+                    <div class="col-lg-7 d-flex flex-column justify-content-between p-4 p-md-5 hero-text-col">
+                        <div>
+                            <h1 class="hero-title">Аудит старого сайта</h1>
+                            <p class="hero-desc">Провожу подробный анализ удобства, нахожу технические и логические ошибки и готовлю пошаговый план по модернизации вашего сайта.</p>
+                        </div>
+                        <div class="hero-page-nav mt-5">
+                            <ul class="d-flex flex-wrap gap-4 list-unstyled mb-0">
+                                <li><a href="#about-service" class="nav-sub-link">Об услуге</a></li>
+                                <li><a href="#steps" class="nav-sub-link">Этапы</a></li>
+                                <li><a href="#pricing" class="nav-sub-link">Сроки</a></li>
+                                <li><a href="#faq" class="nav-sub-link">Вопросы</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 position-relative hero-img-col">
+                        <div class="hero-img-wrapper">
+                            <!-- Замените картинку на скриншот аудита (например, анализ в браузере) -->
+                            <img src="assets/img/services-audit.jpg" alt="Анализ и аудит удобства старого сайта" class="hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент страницы -->
+    <section class="page-details-section pb-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Левая колонка: Описание услуги, преимущества, этапы, цены и т.д. -->
+                <div class="col-lg-8">
+
+                    <!-- Подсекция: Об услуге -->
+                    <div id="about-service" class="details-block mb-5">
+
+                        <div class="section-header d-flex align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Об услуге</h2>
+                                <p class="section-subtitle">Что вы получаете</p>
+                            </div>
+                        </div>
+
+                        <p class="lead-text mb-5">
+                            Даже самый красивый сайт не принесет пользы, если пользователям сложно найти контакты, афишу или форму записи. Я помогу найти слабые места вашего текущего ресурса и составить понятный план его превращения в эффективный инструмент.
+                        </p>
+
+                        <!-- Сетка преимуществ (2х2) -->
+                        <div class="row g-4">
+                            <!-- Преимущество 1 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-bug"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">Поиск критических ошибок</h4>
+                                        <p class="card-desc">Проверка верстки на смартфонах, выявление «сломанных» скриптов, форм записи и медленно загружающихся страниц.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Преимущество 2 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-user-check"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">Анализ удобства (UX)</h4>
+                                        <p class="card-desc">Оценка логики переходов и навигации: насколько быстро читатель или клиент находит контакты, афишу или товары.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Преимущество 3 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-accessibility"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">Аудит доступности</h4>
+                                        <p class="card-desc">Проверка соответствия стандартам доступности для слабовидящих людей, контрастности текста и удобства чтения.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Преимущество 4 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-task"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">План модернизации</h4>
+                                        <p class="card-desc">Результатом станет не просто критика, а понятное, детальное техническое задание (ТЗ) на исправление ошибок.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Подсекция: Этапы работы -->
+                    <div id="steps" class="details-block mt-5 pt-4">
+                        
+                        <div class="section-header d-flex align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Этапы работы</h2>
+                                <p class="section-subtitle">Пошаговый процесс проведения экспертизы</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-container">
+                            
+                            <!-- Шаг 1 -->
+                            <div class="timeline-item">
+                                <div class="step-number">1</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Технический экспресс-анализ</h4>
+                                    <p class="step-desc">Проверяем скорость загрузки по Google PageSpeed, адаптивность верстки под смартфоны и наличие грубых технических ошибок.</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 2 -->
+                            <div class="timeline-item">
+                                <div class="step-number">2</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Анализ поведения (Юзабилити-тест)</h4>
+                                    <p class="step-desc">Моделируем основные пути пользователей на сайте. Проверяем, насколько легко совершить целевое действие (записаться, купить, найти).</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 3 -->
+                            <div class="timeline-item">
+                                <div class="step-number">3</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Проверка контента и типографики</h4>
+                                    <p class="step-desc">Оцениваем читаемость текстов, контрастность цветов, структуру заголовков и удобство восприятия информации на страницах.</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 4 -->
+                            <div class="timeline-item">
+                                <div class="step-number">4</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Формирование отчета</h4>
+                                    <p class="step-desc">Документируем все найденные проблемы, подкрепляя их скриншотами, аналитическими выводами и примерами правильных решений.</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 5 -->
+                            <div class="timeline-item">
+                                <div class="step-number">5</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Презентация и дорожная карта</h4>
+                                    <p class="step-desc">Передаем вам готовый PDF-отчет и пошаговый план (ТЗ) по модернизации или редизайну вашего интернет-ресурса.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Подсекция: Стоимость и сроки -->
+                    <div id="pricing" class="details-block mt-5 pt-4">
+                        
+                        <div class="section-header d-flex align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Стоимость и сроки</h2>
+                                <p class="section-subtitle">Тарифы на проведение экспертного аудита сайта</p>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card-box">
+                            <div class="table-responsive">
+                                <table class="table custom-pricing-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Тип проекта</th>
+                                            <th scope="col">Срок аудита</th>
+                                            <th scope="col">Стоимость</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="project-type">Экспресс-аудит (главная страница + 2 ключевые)</td>
+                                            <td class="project-time">2-3 дня</td>
+                                            <td class="project-price">от 15 000 руб.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-type">Полный аудит удобства (все типовые страницы)</td>
+                                            <td class="project-time">5-7 дней</td>
+                                            <td class="project-price">от 30 000 руб.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-type">Комплексный аудит (с разработкой ТЗ на редизайн)</td>
+                                            <td class="project-time">7-10 дней</td>
+                                            <td class="project-price">от 45 000 руб.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Подсекция: Вопросы и ответы -->
+                    <div id="faq" class="details-block mt-5 pt-4">
+                        
+                        <div class="section-header d-flex align-items-center mb-5">
+                            <div>
+                                <h2 class="section-title">Вопросы и ответы</h2>
+                                <p class="section-subtitle">Отвечаю на частые вопросы об аудите ресурсов</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion custom-faq-accordion" id="faqAccordion">
+                            
+                            <!-- Вопрос 1 (По умолчанию открыт) -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">Зачем нужен аудит, если мы и так знаем, что сайт устарел?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Знание того, что сайт устарел, не дает понимания, *какие именно* элементы мешают вашим пользователям прямо сейчас. Аудит позволяет не тратить бюджет вслепую, а точечно выявить критические ошибки логики, чтобы при редизайне не перенести старые проблемы в новый макет.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Вопрос 2 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">В каком виде я получу готовый результат?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Результат оформляется в виде подробного PDF-отчета. В нем будут находиться скриншоты страниц вашего сайта с указанием ошибок, аргументированные пояснения на основе правил юзабилити и конкретные текстовые рекомендации и схемы по их исправлению.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Вопрос 3 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">Сможете ли вы сами исправить найденные ошибки?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Да, конечно. Самый логичный итог аудита — разработка нового, быстрого и современного сайта. После презентации отчета и плана модернизации мы сможем обсудить проект полноценного редизайна и разработки вашего ресурса «с нуля» на WordPress.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Вопрос 4 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">Нужен ли вам доступ к нашей панели управления или метрикам?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Для проведения внешнего экспертного аудита доступ к админ-панели не требуется. Однако, если у вас установлена Яндекс.Метрика, предоставление гостевого доступа к ней и Вебвизору очень поможет сделать анализ поведения пользователей еще более глубоким и точным.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Подсекция: Форма обсуждения проекта -->
+                    <div id="contact" class="details-block mt-5 pt-4 mb-5">
+                        <div class="service-contact-box">
+                            
+                            <div class="contact-box-header text-center mb-4">
+                                <h3 class="box-title">Готовы обсудить ваш проект?</h3>
+                                <p class="box-subtitle">Напишите мне, и мы разберем вашу задачу, подберем оптимальное решение и рассчитаем стоимость</p>
+                            </div>
+
+                            <form action="#" class="contact-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Ваше имя" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="Ваш email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" rows="5" placeholder="Текст сообщения" required></textarea>
+                                    </div>
+                                    
+                                    <div class="col-12 d-flex flex-column align-items-center mt-4">
+                                        <button type="submit" class="btn btn-primary mb-3">Отправить сообщение</button>
+                                        <p class="consent-text">
+                                            Отправляя заявку, вы даете <a href="#" class="consent-link">согласие на обработку данных</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Правая колонка: Липкий сайдбар с калькулятором стоимости -->
+                <div class="col-lg-4 ps-xl-5 sticky-sidebar-col">
+                    <div class="calc-sidebar-card">
+                        <h3 class="sidebar-title">Заказать аудит сайта</h3>
+
+                        <form action="#" class="sidebar-form">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Ваш email" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control" rows="4" placeholder="Текст сообщения" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100 mb-3">Жду расчет</button>
+                            
+                            <p class="consent-text text-center">
+                                Отправляя заявку, вы даете <a href="#" class="consent-link">согласие на обработку данных</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container d-flex flex-column align-items-center">
+        
+        <div class="footer-logo mb-4">
+            <a href="index.html">
+                <img src="assets/img/logo.svg" alt="Александр Михайлов" class="img-fluid">
+            </a>
+        </div>
+
+        <nav class="footer-nav mb-4">
+            <ul class="d-flex flex-wrap justify-content-center gap-4">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-social-divider d-flex align-items-center justify-content-center gap-3 w-100 mb-4">
+            <span class="divider-line"></span>
+            <div class="social-links d-flex gap-2">
+                <a href="#" class="social-btn" aria-label="ВКонтакте"><i class="bxl bx-vk"></i></a>
+                <a href="#" class="social-btn" aria-label="GitHub"><i class="bxl bx-github"></i></a>
+            </div>
+            <span class="divider-line"></span>
+        </div>
+
+        <div class="footer-bottom text-center">
+            <p class="copyright mb-2">&copy; 2024-2026 Александр Михайлов</p>
+            <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+        </div>
+
+    </div>
+</footer>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>

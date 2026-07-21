@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Александр Михайлов | Дизайн и верстка печатных изданий</title>
+    <meta name="description" content="Профессиональная верстка книг, журналов, буклетов и краеведческих сборников в Adobe InDesign. Разработка дизайна обложки, модульной сетки и полная подготовка макетов к печати.">
+    
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/fonts/basic/boxicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/fonts/brands/boxicons-brands.min.css">
+    <link rel="stylesheet" href="assets/vendor/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
+            <img src="assets/img/logo.svg" alt="Логотип Александра Михайлова" class="img-fluid me-3">
+            <div class="logo-text">
+                <span class="d-block name">Александр Михайлов</span>
+                <small class="d-block profession">Веб-разработчик</small>
+            </div>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
+                <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
+                <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
+                <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
+            </ul>
+            <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+
+    <!-- Хлебные крошки (Размещаются над обложкой) -->
+    <nav aria-label="breadcrumb" class="custom-breadcrumbs py-3">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Верстка печатных изданий</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Обложка услуги (reuses .page-hero-card!) -->
+    <section class="service-hero pb-5">
+        <div class="container">
+           <div class="page-hero-card">
+                <div class="row align-items-stretch g-0">
+                    <div class="col-lg-7 d-flex flex-column justify-content-between p-4 p-md-5 hero-text-col">
+                        <div>
+                            <h1 class="hero-title">Верстка печатных изданий</h1>
+                            <p class="hero-desc">Разрабатываю уникальный дизайн обложек, создаю продуманную модульную сетку и выполняю качественную верстку книг, журналов, буклетов и сборников.</p>
+                        </div>
+                        <div class="hero-page-nav mt-5">
+                            <ul class="d-flex flex-wrap gap-4 list-unstyled mb-0">
+                                <li><a href="#about-service" class="nav-sub-link">Об услуге</a></li>
+                                <li><a href="#steps" class="nav-sub-link">Этапы</a></li>
+                                <li><a href="#pricing" class="nav-sub-link">Стоимость</a></li>
+                                <li><a href="#faq" class="nav-sub-link">Вопросы</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 position-relative hero-img-col">
+                        <div class="hero-img-wrapper">
+                            <!-- Замените картинку на скриншот верстки (например, разворот книги в InDesign) -->
+                            <img src="assets/img/services-print.jpg" alt="Дизайн и многостраничная верстка печатных изданий" class="hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент страницы -->
+    <section class="page-details-section pb-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Левая колонка: Описание услуги, преимущества, этапы, цены и т.д. -->
+                <div class="col-lg-8">
+
+                    <!-- Подсекция: Об услуге -->
+                    <div id="about-service" class="details-block mb-5">
+
+                        <div class="section-header d-flex align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Об услуге</h2>
+                                <p class="section-subtitle">Что вы получаете</p>
+                            </div>
+                        </div>
+
+                        <p class="lead-text mb-5">
+                            Качественная верстка делает чтение книги или журнала приятным и легким. Я уделяю внимание каждой детали — от межстрочных интервалов и полей до правильного переноса слов, баланса колонок и подготовки файлов по техническим требованиям типографий.
+                        </p>
+
+                        <!-- Сетка преимуществ (2х2) -->
+                        <div class="row g-4">
+                            <!-- Преимущество 1 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-grid-alt"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">Разработка сетки и стиля</h4>
+                                        <p class="card-desc">Проектирование модульной сетки, полей, подбор идеальных шрифтовых пар и настройка базовой сетки линий.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Преимущество 2 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-book-content"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">Дизайн обложки</h4>
+                                        <p class="card-desc">Создание яркой, запоминающейся обложки, которая отражает суть издания и привлекает внимание читателя.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Преимущество 3 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-columns"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">Сложное форматирование</h4>
+                                        <p class="card-desc">Аккуратное оформление списков, таблиц, формул, сносок и краеведческого иллюстративного материала.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Преимущество 4 -->
+                            <div class="col-md-6">
+                                <div class="advantage-card d-flex align-items-center gap-3">
+                                    <div class="icon-box">
+                                        <i class="bx bx-folder-open"></i>
+                                    </div>
+                                    <div class="card-text">
+                                        <h4 class="card-title">Передача исходников</h4>
+                                        <p class="card-desc">Вы получаете не только готовый PDF для печати, но и полный упакованный пакет InDesign (indd, шрифты, связи).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Подсекция: Этапы работы -->
+                    <div id="steps" class="details-block mt-5 pt-4">
+                        
+                        <div class="section-header d-flex align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Этапы работы</h2>
+                                <p class="section-subtitle">Процесс создания многостраничного издания</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-container">
+                            
+                            <!-- Шаг 1 -->
+                            <div class="timeline-item">
+                                <div class="step-number">1</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Подготовка и анализ контента</h4>
+                                    <p class="step-desc">Принимаем текстовые материалы, вычитываем требования типографии по вылетам и полям, отбираем иллюстрации.</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 2 -->
+                            <div class="timeline-item">
+                                <div class="step-number">2</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Разработка дизайн-концепции</h4>
+                                    <p class="step-desc">Создаем 2-3 варианта дизайна обложки, утверждаем мастер-шаблоны типовых страниц, стили заголовков и колонтитулов.</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 3 -->
+                            <div class="timeline-item">
+                                <div class="step-number">3</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Верстка и сборка макета</h4>
+                                    <p class="step-desc">Импортируем тексты в Adobe InDesign, расставляем иллюстрации, настраиваем переносы, сноски, таблицы и нумерацию страниц.</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 4 -->
+                            <div class="timeline-item">
+                                <div class="step-number">4</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Корректура и правки</h4>
+                                    <p class="step-desc">Совместно вносим финальные текстовые исправления, убираем висячие строки («вдов» и «сирот») и дорабатываем баланс страниц.</p>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 5 -->
+                            <div class="timeline-item">
+                                <div class="step-number">5</div>
+                                <div class="timeline-content">
+                                    <h4 class="step-title">Экспорт и упаковка макета</h4>
+                                    <p class="step-desc">Экспортируем высококачественный PDF/X-1a для печати и собираем архив со всеми шрифтами и связанными картинками (InDesign Package).</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Подсекция: Стоимость и сроки -->
+                    <div id="pricing" class="details-block mt-5 pt-4">
+                        
+                        <div class="section-header d-flex align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Стоимость и сроки</h2>
+                                <p class="section-subtitle">Ориентировочные тарифы на многостраничную верстку</p>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card-box">
+                            <div class="table-responsive">
+                                <table class="table custom-pricing-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Тип издания</th>
+                                            <th scope="col">Срок работы</th>
+                                            <th scope="col">Стоимость</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="project-type">Малые формы (буклеты, брошюры до 16-24 стр.)</td>
+                                            <td class="project-time">3-5 дней</td>
+                                            <td class="project-price">от 10 000 руб.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-type">Периодические издания (каталоги, журналы, вестники)</td>
+                                            <td class="project-time">от 7 дней</td>
+                                            <td class="project-price">от 800 руб. / полоса</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="project-type">Книги и сборники (худ. и научная литература с формулами)</td>
+                                            <td class="project-time">от 2 недель</td>
+                                            <td class="project-price">от 400 руб. / полоса</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Подсекция: Вопросы и ответы -->
+                    <div id="faq" class="details-block mt-5 pt-4">
+                        
+                        <div class="section-header d-flex align-items-center mb-5">
+                            <div>
+                                <h2 class="section-title">Вопросы и ответы</h2>
+                                <p class="section-subtitle">Отвечаю на частые вопросы о дизайне печатных книг</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion custom-faq-accordion" id="faqAccordion">
+                            
+                            <!-- Вопрос 1 (По умолчанию открыт) -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">В какой программе вы выполняете верстку?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Вся многостраничная верстка выполняется исключительно в Adobe InDesign. Это золотой мировой стандарт индустрии, гарантирующий точную работу со шрифтовыми стилями, таблицами, автоматической нумерацией и связями изображений.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Вопрос 2 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">Что такое «полоса» в расчете стоимости верстки?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Полоса — это одна страница печатного издания. Соответственно, если ваша книга содержит 100 страниц, то объем верстки составляет 100 полос. Стоимость рассчитывается путем умножения цены за одну полосу на их общее количество.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Вопрос 3 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">Вы готовите файлы по требованиям типографии?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Да, конечно. Перед началом экспорта я запрашиваю у вас технические требования выбранной вами типографии (размеры полей, вылеты под обрез, требования к качеству картинок и цветовому профилю) и экспортирую финальный PDF/X-1a строго по этим параметрам.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Вопрос 4 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeadingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                                        <span class="faq-icon">?</span>
+                                        <span class="faq-question">Передаете ли вы исходные файлы макета?</span>
+                                    </button>
+                                </h3>
+                                <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Да, это стандарт моей работы. После завершения проекта я передаю вам полностью упакованную рабочую папку InDesign (Package). Внутри будут находиться сам рабочий файл макета (.indd), все используемые в верстке шрифты и все связанные высокоразрешающие изображения. Это позволит любой типографии внести свои мелкие технические коррективы при необходимости.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Подсекция: Форма обсуждения проекта -->
+                    <div id="contact" class="details-block mt-5 pt-4 mb-5">
+                        <div class="service-contact-box">
+                            
+                            <div class="contact-box-header text-center mb-4">
+                                <h3 class="box-title">Готовы обсудить ваш проект?</h3>
+                                <p class="box-subtitle">Напишите мне, и мы разберем вашу задачу, подберем оптимальное решение и рассчитаем стоимость</p>
+                            </div>
+
+                            <form action="#" class="contact-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Ваше имя" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="Ваш email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" rows="5" placeholder="Текст сообщения" required></textarea>
+                                    </div>
+                                    
+                                    <div class="col-12 d-flex flex-column align-items-center mt-4">
+                                        <button type="submit" class="btn btn-primary mb-3">Отправить сообщение</button>
+                                        <p class="consent-text">
+                                            Отправляя заявку, вы даете <a href="#" class="consent-link">согласие на обработку данных</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Правая колонка: Липкий сайдбар с калькулятором стоимости -->
+                <div class="col-lg-4 ps-xl-5 sticky-sidebar-col">
+                    <div class="calc-sidebar-card">
+                        <h3 class="sidebar-title">Рассчитать верстку макета</h3>
+
+                        <form action="#" class="sidebar-form">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Ваш email" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control" rows="4" placeholder="Текст сообщения" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100 mb-3">Жду расчет</button>
+                            
+                            <p class="consent-text text-center">
+                                Отправляя заявку, вы даете <a href="#" class="consent-link">согласие на обработку данных</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container d-flex flex-column align-items-center">
+        
+        <div class="footer-logo mb-4">
+            <a href="index.html">
+                <img src="assets/img/logo.svg" alt="Александр Михайлов" class="img-fluid">
+            </a>
+        </div>
+
+        <nav class="footer-nav mb-4">
+            <ul class="d-flex flex-wrap justify-content-center gap-4">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-social-divider d-flex align-items-center justify-content-center gap-3 w-100 mb-4">
+            <span class="divider-line"></span>
+            <div class="social-links d-flex gap-2">
+                <a href="#" class="social-btn" aria-label="ВКонтакте"><i class="bxl bx-vk"></i></a>
+                <a href="#" class="social-btn" aria-label="GitHub"><i class="bxl bx-github"></i></a>
+            </div>
+            <span class="divider-line"></span>
+        </div>
+
+        <div class="footer-bottom text-center">
+            <p class="copyright mb-2">&copy; 2024-2026 Александр Михайлов</p>
+            <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+        </div>
+
+    </div>
+</footer>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>
