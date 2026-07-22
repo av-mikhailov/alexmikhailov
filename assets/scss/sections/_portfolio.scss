@@ -1,17 +1,22 @@
 @use '../abstracts/variables' as vars;
 
+// ==========================================================================
+// 1. КАРТОЧКА ПРОЕКТА (Компонент, используемый на Главной и в Портфолио)
+// ==========================================================================
 .portfolio-card {
   background-color: vars.$color-bg-alt;
   border-radius: vars.$radius-xl;
   padding: 24px;
   overflow: hidden;
   transition: vars.$transition;
-  border: 1px solid transparent;
+  border: 1px solid transparent; // Изначально рамка прозрачная
 
+  // Эффекты при наведении на ВСЮ карточку
   &:hover {
     transform: translateY(-5px);
-    border-color: rgba(vars.$color-primary, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    // ИСПРАВЛЕНО: Полностью убрали обводку рамки цветом при наведении (теперь она прозрачная)
+    border-color: transparent !important; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important; // Очень мягкая тень
 
     // Подсветка кнопки при наведении на всю карточку портфолио
     .btn-more {
@@ -25,6 +30,7 @@
     }
   }
 
+  // Окно превью скриншота
   .photo-window {
     background-color: vars.$color-bg;
     border-radius: vars.$radius-md;
@@ -41,6 +47,7 @@
     }
   }
 
+  // Текстовая зона карточки
   .card-body-content {
     height: 100%;
     padding-left: 32px;
@@ -49,7 +56,7 @@
       display: inline-block;
       padding: 6px 14px;
       border: 1px solid vars.$color-bg;
-      border-radius: vars.$radius-lg;
+      border-radius: vars.$radius-xxl;
       font-size: 14px;
       color: vars.$color-text-muted;
       margin-bottom: 24px;
@@ -65,10 +72,13 @@
         font-size: 20px;
       }
 
+      // Ссылка внутри заголовка
       a {
+        color: inherit !important; // ИСПРАВЛЕНО: Ссылка наследует динамический цвет темы!
         transition: vars.$transition;
+        
         &:hover {
-          color: vars.$color-accent !important;
+          color: vars.$color-accent !important; // Оранжевый ховер
         }
       }
     }
@@ -82,6 +92,7 @@
   }
 }
 
+// Адаптив карточки на планшетах/смартфонах
 @media (max-width: 991px) {
   .portfolio-card {
     .card-body-content {
@@ -92,5 +103,81 @@
     .photo-window {
         min-height: 250px;
     }
+  }
+}
+
+// ==========================================================================
+// 2. СТИЛИ СТРАНИЦЫ ПОРТФОЛИО (Навигация фильтров и анимация)
+// ==========================================================================
+
+// Навигационная панель фильтров
+.portfolio-filters {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; // Горизонтальный скролл на мобильных
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+
+  &::-webkit-scrollbar {
+    display: none; // Скрываем скроллбар
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @media (min-width: 992px) {
+    flex-wrap: wrap; // На десктопе разрешаем перенос
+    justify-content: center;
+  }
+
+  // Кнопки-фильтры
+  .btn-filter {
+    padding: 6px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: vars.$color-text-muted;
+    background-color: transparent;
+    border: 1px solid rgba(128, 128, 128, 0.2); // Тонкая серая обводка
+    border-radius: vars.$radius-xxl;
+    transition: vars.$transition;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    // ИСПРАВЛЕНО: Белый цвет текста при активации (не сольется на светлой теме)
+    &:hover, &.active {
+      color: #FFFFFF !important; 
+      background-color: vars.$color-primary;
+      border-color: vars.$color-primary;
+    }
+  }
+}
+
+// --- АНИМАЦИЯ ФИЛЬТРАЦИИ КАРТОЧЕК ---
+.portfolio-card {
+  // Класс скрытия проекта (гасим прозрачность и слегка уменьшаем масштаб)
+  &.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  // Полное удаление из потока после затухания
+  &.d-none-filter {
+    display: none !important;
+  }
+
+  // Плавное появление подходящих проектов
+  &.fade-in {
+    animation: portfolioFadeIn 0.4s ease forwards;
+  }
+}
+
+@keyframes portfolioFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

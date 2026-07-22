@@ -1,19 +1,44 @@
-// Colors
-$color-primary:        #2449B4;
-$color-accent:         #FFAE3D;
-$color-bg:             #242627;
-$color-bg-alt:         #2B2D2E;
-$color-text:           #FFFFFF;
-$color-text-muted:     #ABACAC;
+// abstracts/_variables.scss
 
-// Layout
-$radius-xxl:           48px;
-$radius-xl:            32px;
-$radius-lg:            24px;
-$radius-md:            16px;
-$radius-sm:            8px;
-$radius-xs:            4px;
-$transition:           all 0.3s ease;
+:root {
+  // Темная тема (дефолтная)
+  --color-bg: #242627;
+  --color-bg-alt: #2B2D2E;
+  --color-text: #FFFFFF;
+  --color-text-muted: #ABACAC;
+  --color-primary: #2449B4;
+  --color-primary-hover: #3d5ec4; // Добавили (осветленный синий)
+  --color-accent: #FFAE3D;
+  --color-accent-hover: #ffbe64;  // Добавили (осветленный оранжевый)
+}
 
-// Typography
-$font-main:           'Nunito', sans-serif;
+[data-theme="light"] {
+  --color-bg: #f4f4f5;
+  --color-bg-alt: #ffffff;
+  --color-text: #18181b;
+  --color-text-muted: #71717a;
+  --color-primary: #1d3fa1;
+  --color-primary-hover: #264ebf; // Добавили (под светлую тему)
+  --color-accent: #d97706;
+  --color-accent-hover: #f59e0b;  // Добавили (под светлую тему)
+}
+
+// Привязываем Sass-переменные к CSS-переменным 
+$color-bg:            var(--color-bg);
+$color-bg-alt:        var(--color-bg-alt);
+$color-text:          var(--color-text);
+$color-text-muted:    var(--color-text-muted);
+$color-primary:       var(--color-primary);
+$color-primary-hover: var(--color-primary-hover); // Добавили!
+$color-accent:        var(--color-accent);
+$color-accent-hover:  var(--color-accent-hover);   // Добавили!
+
+// Остальные переменные без изменений
+$radius-xxl:       48px;
+$radius-xl:        32px;
+$radius-lg:        24px;
+$radius-md:        16px;
+$radius-sm:        8px;
+$radius-xs:        4px;
+$transition:       all 0.3s ease;
+$font-main:        'Nunito', sans-serif;

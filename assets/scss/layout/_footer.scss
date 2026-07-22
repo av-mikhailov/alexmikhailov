@@ -22,7 +22,7 @@
     }
   }
 
-  // Меню подвала
+  // Мею подвала
   .footer-nav {
     ul {
       list-style: none;
@@ -90,8 +90,9 @@
       color: vars.$color-accent; // Оранжевый акцентный цвет ссылки
       transition: vars.$transition;
 
+      // ИСПРАВЛЕНО: Заменили lighten() на безопасную переменную vars.$color-accent-hover
       &:hover {
-        color: lighten(vars.$color-accent, 10%);
+        color: vars.$color-accent-hover;
         text-decoration: underline;
       }
     }

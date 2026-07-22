@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
     <title>Александр Михайлов | Аудит старого сайта</title>
     <meta name="description" content="Экспертный аудит удобства и технического состояния устаревших сайтов. Поиск ошибок, анализ логики переходов, проверка доступности и разработка пошагового плана модернизации интернет-ресурса.">
     
@@ -34,6 +41,11 @@
                 <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
                 <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
                 <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Переключить тему оформления">
+                        <i class="bx bx-sun" id="theme-toggle-icon"></i>
+                    </button>
+                </li>
             </ul>
             <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
         </nav>
@@ -74,7 +86,7 @@
                     <div class="col-lg-5 position-relative hero-img-col">
                         <div class="hero-img-wrapper">
                             <!-- Замените картинку на скриншот аудита (например, анализ в браузере) -->
-                            <img src="assets/img/services-audit.jpg" alt="Анализ и аудит удобства старого сайта" class="hero-img">
+                            <img src="assets/img/services-sites.jpg" alt="Анализ и аудит удобства старого сайта" class="hero-img">
                         </div>
                     </div>
                 </div>

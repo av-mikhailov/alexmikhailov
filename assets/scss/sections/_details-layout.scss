@@ -2,25 +2,24 @@
 
 // Нейтральное имя класса для разметки любой детальной страницы
 .page-details-section {
-  background-color: #242627;
+  background-color: vars.$color-bg; // Исправлено!
 
   // Общий стиль лид-текста (используется и в услугах, и в проектах)
   .lead-text {
     font-size: 18px;
-    color: #ABACAC;
+    color: vars.$color-text-muted; // Исправлено!
     line-height: 1.7;
-    // max-width: 680px;
 
     @media (max-width: 768px) { font-size: 16px; }
   }
 
   // Карточки преимуществ (уникальны для услуг, но лежат здесь, так как это часть сетки)
   .advantage-card {
-    background-color: #2B2D2E;
+    background-color: vars.$color-bg-alt; // Исправлено!
     border-radius: 32px;
     padding: 24px;
     height: 100%;
-    transition: all 0.3s ease;
+    transition: vars.$transition; // Исправлено на общую переменную
     background-clip: padding-box;
 
     &:hover {
@@ -31,26 +30,29 @@
     .icon-box {
       width: 60px;
       height: 60px;
-      background-color: #242627;
+      background-color: vars.$color-bg; // Исправлено!
       border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
 
-      i { font-size: 24px; color: #2449B4; }
+      i { 
+        font-size: 24px; 
+        color: vars.$color-primary; // Исправлено!
+      }
     }
 
     .card-text {
       .card-title {
         font-size: 18px;
         font-weight: 600;
-        color: #FFFFFF;
+        color: vars.$color-text; // Исправлено!
         margin-bottom: 6px;
       }
       .card-desc {
         font-size: 14px;
-        color: #ABACAC;
+        color: vars.$color-text-muted; // Исправлено!
         line-height: 1.4;
         margin-bottom: 0;
       }

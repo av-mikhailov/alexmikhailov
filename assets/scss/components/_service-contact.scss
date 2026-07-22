@@ -50,7 +50,7 @@
       width: fit-content;
 
       &:hover {
-        background-color: lighten(vars.$color-primary, 8%);
+        background-color: vars.$color-primary-hover;
         transform: translateY(-2px);
       }
 

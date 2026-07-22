@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
     <title>Александр Михайлов | Дизайн и верстка печатных изданий</title>
     <meta name="description" content="Профессиональная верстка книг, журналов, буклетов и краеведческих сборников в Adobe InDesign. Разработка дизайна обложки, модульной сетки и полная подготовка макетов к печати.">
     
@@ -34,6 +41,11 @@
                 <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
                 <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
                 <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Переключить тему оформления">
+                        <i class="bx bx-sun" id="theme-toggle-icon"></i>
+                    </button>
+                </li>
             </ul>
             <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
         </nav>
@@ -74,7 +86,7 @@
                     <div class="col-lg-5 position-relative hero-img-col">
                         <div class="hero-img-wrapper">
                             <!-- Замените картинку на скриншот верстки (например, разворот книги в InDesign) -->
-                            <img src="assets/img/services-print.jpg" alt="Дизайн и многостраничная верстка печатных изданий" class="hero-img">
+                            <img src="assets/img/services-sites.jpg" alt="Дизайн и многостраничная верстка печатных изданий" class="hero-img">
                         </div>
                     </div>
                 </div>

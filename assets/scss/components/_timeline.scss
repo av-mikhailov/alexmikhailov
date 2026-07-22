@@ -8,6 +8,7 @@
     padding-left: 84px;
     padding-bottom: 40px;
 
+    // Соединительная вертикальная линия
     &::before {
       content: "";
       position: absolute;
@@ -15,7 +16,9 @@
       top: 56px;
       bottom: 0;
       width: 1px;
-      background-color: rgba(255, 255, 255, 0.1);
+      // ИСПРАВЛЕНО: Линия подстраивается под цвет текста темы с легкой прозрачностью
+      background-color: vars.$color-text; 
+      opacity: 0.1; 
       z-index: 1;
     }
 
@@ -25,6 +28,7 @@
     }
   }
 
+  // Круг с цифрой
   .step-number {
     position: absolute;
     left: 0;
@@ -32,15 +36,16 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background-color: #2B2D2E;
-    color: #FFAE3D;
+    background-color: vars.$color-bg-alt; // Исправлено!
+    color: vars.$color-accent;             // Исправлено!
     font-size: 18px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    // ИСПРАВЛЕНО: Нейтральный серый бордюр, видимый в обеих темах
+    border: 1px solid rgba(128, 128, 128, 0.15); 
   }
 
   .timeline-content {
@@ -49,13 +54,13 @@
     .step-title {
       font-size: 20px;
       font-weight: 600;
-      color: #FFFFFF;
+      color: vars.$color-text; // Исправлено!
       margin-bottom: 4px;
     }
 
     .step-desc {
       font-size: 15px;
-      color: #ABACAC;
+      color: vars.$color-text-muted; // Исправлено!
       line-height: 1.5;
       margin-bottom: 0;
     }

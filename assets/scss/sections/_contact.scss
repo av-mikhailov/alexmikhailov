@@ -56,8 +56,11 @@
       color: vars.$color-text;
     }
 
+    // ИСПРАВЛЕНО: Вместо сложного расчета lighten() мы плавно переключаем 
+    // цвет фона карточки на альтернативный $color-bg-alt при наведении.
+    // Это работает безупречно и в темной, и в светлой темах!
     &:hover {
-      background-color: lighten(vars.$color-bg, 10%);
+      background-color: vars.$color-bg-alt; 
     }
   }
 
@@ -81,9 +84,9 @@
       transition: vars.$transition;
       width: fit-content;
 
+      // ИСПРАВЛЕНО: Используем готовую переменную ховера $color-primary-hover
       &:hover {
-        background-color: lighten(vars.$color-primary, 8%);
-        // transform: translateY(-2px);
+        background-color: vars.$color-primary-hover; 
       }
 
       &:active {

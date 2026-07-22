@@ -143,4 +143,38 @@
     });
   }
 
+
+  /**
+   * Переключатель тем оформления (Светлая / Темная)
+   */
+  const themeToggleBtn = select('#theme-toggle');
+  const themeToggleIcon = select('#theme-toggle-icon');
+
+  if (themeToggleBtn && themeToggleIcon) {
+    // Получаем текущую тему из атрибута html (который установил наш быстрый head-скрипт)
+    let currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+
+    // Функция обновления иконки кнопки в зависимости от активной темы
+    const updateToggleIcon = (theme) => {
+      if (theme === 'light') {
+        themeToggleIcon.className = 'bx bx-moon'; // Если тема светлая, показываем луну
+      } else {
+        themeToggleIcon.className = 'bx bx-sun';  // Если тема темная, показываем солнце
+      }
+    };
+
+    // Первичная синхронизация иконки при загрузке
+    updateToggleIcon(currentTheme);
+
+    // Обработчик клика по кнопке
+    themeToggleBtn.addEventListener('click', () => {
+      currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      // Меняем атрибут у html, иконку и сохраняем выбор в память браузера
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleIcon(newTheme);
+    });
+  }
 })();

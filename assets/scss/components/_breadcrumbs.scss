@@ -4,8 +4,11 @@
   margin-top: 75px;
   padding: 16px 0;
   background-color: transparent;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  
+  // ИСПРАВЛЕНО: Границы крошек теперь нарисованы нейтральным серым цветом,
+  // они идеально видны как на темном, так и на светлом фоне!
+  border-top: 1px solid rgba(128, 128, 128, 0.15);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
   margin-bottom: 40px;
 
   // Находим контейнер списка (ol.breadcrumb в Bootstrap)
@@ -26,23 +29,23 @@
 
   .breadcrumb-item {
     font-size: 14px;
-    color: #ABACAC;
+    color: vars.$color-text-muted; // ИСПРАВЛЕНО: Динамический цвет текста
     flex-shrink: 0; // ВАЖНО: Запрещает пунктам сжиматься, сохраняя их ширину
 
     a {
-      color: #ABACAC;
-      transition: all 0.3s ease;
-      &:hover { color: #FFAE3D; }
+      color: vars.$color-text-muted; // ИСПРАВЛЕНО: Динамический цвет ссылок
+      transition: vars.$transition;
+      &:hover { color: vars.$color-accent; } // ИСПРАВЛЕНО: Ховер через переменную
     }
 
     &.active {
-      color: #ABACAC;
+      color: vars.$color-text-muted; // ИСПРАВЛЕНО!
       opacity: 0.7;
     }
 
-    // Наш разделитель-точка
+    // Наш разделитель-точка (динамический цвет)
     & + .breadcrumb-item::before {
-      color: #ABACAC;
+      color: vars.$color-text-muted; // ИСПРАВЛЕНО!
       content: "•";
       font-size: 12px;
       padding: 0 10px;

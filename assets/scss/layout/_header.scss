@@ -119,3 +119,37 @@
     }
   }
 }
+
+// Кнопка переключения темы
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: vars.$color-text;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: vars.$transition;
+
+  &:hover {
+    color: vars.$color-accent;
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Специфический отступ для мобильной версии, чтобы кнопка не прилипала
+@media (max-width: 991px) {
+  .theme-toggle-btn {
+    padding: 15px 20px;
+    font-size: 24px;
+    justify-content: flex-start;
+    width: 100%;
+    color: #FFFFFF; // Белый цвет внутри мобильного меню
+  }
+}
