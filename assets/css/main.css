@@ -24,7 +24,7 @@
   --color-title: #314862;
   --color-primary: #1d3fa1;
   --color-primary-hover: #264ebf;
-  --color-accent: #d97706;
+  --color-accent: #ff9b20;
   --color-accent-hover: #f59e0b;
   --color-btn-outline: #314862;
   --color-btn-outline-hover-bg: rgba(36, 73, 180, 0.12);
@@ -87,7 +87,9 @@ a {
 .custom-3d-player {
   width: 100%;
   height: 500px;
-  background: transparent !important; /* Прозрачный фон */
+  background: var(--color-bg) !important; /* Прозрачный фон */
+  border-radius: 32px;
+  border: 5px solid var(--color-bg-alt);
 }
 
 /* Полностью убираем полосу загрузки вверху */

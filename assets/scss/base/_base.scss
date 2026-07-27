@@ -24,8 +24,11 @@ a {
 .custom-3d-player {
   width: 100%;
   height: 500px;
-  background: transparent !important; /* Прозрачный фон */
+  background: vars.$color-bg !important; /* Прозрачный фон */
+  border-radius: 32px;
+  border: 5px solid vars.$color-bg-alt;
 }
+
 
 /* Полностью убираем полосу загрузки вверху */
 .custom-3d-player::part(default-progress-bar) {
