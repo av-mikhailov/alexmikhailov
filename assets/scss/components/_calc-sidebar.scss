@@ -4,6 +4,13 @@
     background-color: vars.$color-bg-alt;
     border-radius: vars.$radius-xl;
     padding: 40px;
+    // box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    // Светлая тема: деликатная нежно-синяя тень
+    [data-theme="light"] & {
+      background-color: vars.$color-hero-bg;
+      // box-shadow: 0 15px 35px rgba(36, 73, 180, 0.05);
+    }
 
     // Добавляем GPU-хаки для плавности
     transform: translate3d(0, 0, 0);
@@ -24,7 +31,7 @@
     .sidebar-title {
       font-size: 26px;
       font-weight: 500;
-      color: vars.$color-text;
+      color: vars.$color-title;
       line-height: 1.3;
       margin-bottom: 32px;
     }
@@ -41,12 +48,12 @@
       padding: 14px 24px;
       font-size: 16px;
       font-weight: 600;
-      border-radius: 12px;
+      border-radius: vars.$radius-xxl;
       transition: vars.$transition;
 
       &:hover {
         background-color: vars.$color-primary-hover;
-        transform: translateY(-2px);
+        // transform: translateY(-2px);
       }
 
       &:active {
@@ -80,7 +87,7 @@
   .info-title {
     font-size: 18px;
     font-weight: 600;
-    color: vars.$color-text;
+    color: vars.$color-title; // ИСПРАВЛЕНО: Пыльно-синий цвет вместо черного!
     margin-bottom: 12px;
   }
 
@@ -100,7 +107,8 @@
     .tech-tag {
       font-size: 14px;
       color: vars.$color-text-muted;
-      border: 1px solid rgba(255, 255, 255, 0.15); // Тонкая обводка из макета
+      // ИСПРАВЛЕНО: Нейтральный серый бордюр, отлично видимый во всех темах!
+      border: 1px solid rgba(128, 128, 128, 0.2); 
       padding: 6px 16px;
       border-radius: vars.$radius-xxl; // Форма пилюли
       transition: vars.$transition;
@@ -109,7 +117,16 @@
       &:hover {
         color: vars.$color-accent;
         border-color: vars.$color-accent;
-        background-color: rgba(vars.$color-accent, 0.03); // Легкий отсвет при наведении
+        background-color: rgba(vars.$color-accent, 0.03); // Легкий оранжевый отсвет для темной темы
+      }
+
+      // Специфический ховер для светлой темы (нежно-синий ховер в гамме сайта)
+      [data-theme="light"] & {
+        &:hover {
+          color: vars.$color-primary;
+          border-color: vars.$color-primary;
+          background-color: rgba(36, 73, 180, 0.08); // Легкий голубой отсвет
+        }
       }
     }
   }

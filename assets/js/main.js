@@ -145,36 +145,33 @@
 
 
   /**
-   * Переключатель тем оформления (Светлая / Темная)
+   * Переключатель тем оформления (Синхронизированный для десктопа и мобилок)
    */
-  const themeToggleBtn = select('#theme-toggle');
-  const themeToggleIcon = select('#theme-toggle-icon');
+  const themeCheckboxes = select('.theme-checkbox', true);
 
-  if (themeToggleBtn && themeToggleIcon) {
-    // Получаем текущую тему из атрибута html (который установил наш быстрый head-скрипт)
+  if (themeCheckboxes.length > 0) {
     let currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
 
-    // Функция обновления иконки кнопки в зависимости от активной темы
-    const updateToggleIcon = (theme) => {
-      if (theme === 'light') {
-        themeToggleIcon.className = 'bx bx-moon'; // Если тема светлая, показываем луну
-      } else {
-        themeToggleIcon.className = 'bx bx-sun';  // Если тема темная, показываем солнце
-      }
-    };
+    // Синхронизируем положение всех чекбоксов при загрузке страницы
+    themeCheckboxes.forEach(checkbox => {
+      checkbox.checked = (currentTheme === 'light');
+    });
 
-    // Первичная синхронизация иконки при загрузке
-    updateToggleIcon(currentTheme);
+    // Навешиваем слушатель изменений на каждый чекбокс
+    themeCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const newTheme = this.checked ? 'light' : 'dark';
 
-    // Обработчик клика по кнопке
-    themeToggleBtn.addEventListener('click', () => {
-      currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        // Меняем тему на корневом уровне
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
 
-      // Меняем атрибут у html, иконку и сохраняем выбор в память браузера
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateToggleIcon(newTheme);
+        // Мгновенно синхронизируем положение остальных переключателей на странице
+        themeCheckboxes.forEach(cb => {
+          cb.checked = (newTheme === 'light');
+        });
+      });
     });
   }
+
 })();

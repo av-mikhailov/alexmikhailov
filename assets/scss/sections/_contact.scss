@@ -17,7 +17,7 @@
   .box-title {
     font-size: 32px;
     font-weight: 500;
-    color: vars.$color-text;
+    color: vars.$color-title;
     margin-bottom: 12px;
 
     @media (max-width: 768px) {
@@ -48,12 +48,12 @@
 
     i {
       font-size: 20px;
-      color: vars.$color-text;
+      color: vars.$color-title;
     }
 
     .info-text {
       font-size: 15px;
-      color: vars.$color-text;
+      color: vars.$color-title;
     }
 
     // ИСПРАВЛЕНО: Вместо сложного расчета lighten() мы плавно переключаем 

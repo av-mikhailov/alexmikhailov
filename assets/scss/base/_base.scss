@@ -20,3 +20,19 @@ a {
   color: inherit;
   transition: vars.$transition;
 }
+
+.custom-3d-player {
+  width: 100%;
+  height: 500px;
+  background: transparent !important; /* Прозрачный фон */
+}
+
+/* Полностью убираем полосу загрузки вверху */
+.custom-3d-player::part(default-progress-bar) {
+  display: none !important;
+}
+
+/* Убираем возможный вспыхивающий фон постера */
+.custom-3d-player::part(default-poster) {
+  background-color: transparent !important;
+}

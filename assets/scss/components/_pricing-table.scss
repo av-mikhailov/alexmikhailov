@@ -5,16 +5,23 @@
     border-radius: vars.$radius-xl; // 24px
     padding: 40px;
     background-clip: padding-box;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); // Дефолтная тень
 
     // Решение бага 1: Жестко ограничиваем карточку по ширине
     max-width: 100%;
     overflow: hidden; 
 
+    // Светлая тема: деликатная нежно-синяя тень
+    [data-theme="light"] & {
+      box-shadow: 0 15px 35px rgba(36, 73, 180, 0.05);
+    }
+
     @media (max-width: 768px) {
       padding: 24px 16px; 
     }
   }
-// Стилизация таблицы Bootstrap под темную тему (с жестким сбросом переменных BS5)
+
+  // Стилизация таблицы Bootstrap под темную тему (с жестким сбросом переменных BS5)
   .custom-pricing-table {
     // Сброс дефолтных переменных Bootstrap 5, которые принудительно красили таблицу в белый
     --bs-table-bg: transparent !important;
@@ -26,7 +33,7 @@
     --bs-table-border-color: transparent !important;
 
     background-color: transparent !important;
-    color: vars.$color-text !important;
+    color: vars.$color-title !important;
     border-collapse: collapse;
     width: 100%;
 
@@ -50,10 +57,11 @@
       }
     }
 
-    // Тонкие пунктирные разделители между строками
+    // ИСПРАВЛЕНО: Тонкие пунктирные разделители теперь серого цвета, 
+    // они идеально видны как в темной, так и в светлой темах!
     thead tr th,
     tbody tr td {
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+      border-bottom: 1px dashed rgba(128, 128, 128, 0.2) !important;
     }
 
     // Убираем нижний разделитель у последней строки
@@ -65,7 +73,7 @@
     thead th {
       font-size: 18px;
       font-weight: 500;
-      color: vars.$color-text !important;
+      color: vars.$color-title !important;
       padding-top: 0; 
 
       @media (max-width: 768px) {
@@ -82,7 +90,7 @@
       }
 
       &.project-type {
-        color: vars.$color-text !important;
+        color: vars.$color-title !important;
         font-weight: 400;
       }
 
@@ -91,7 +99,7 @@
       }
 
       &.project-price {
-        color: vars.$color-text !important;
+        color: vars.$color-title !important;
         font-weight: 500;
       }
     }
@@ -102,15 +110,17 @@
     &::-webkit-scrollbar {
       height: 6px;
     }
+    
+    // ИСПРАВЛЕНО: Скроллбары теперь нейтрально-серые, видимые во всех темах!
     &::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(128, 128, 128, 0.05);
       border-radius: 10px;
     }
     &::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(128, 128, 128, 0.2);
       border-radius: 10px;
       &:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(128, 128, 128, 0.3);
       }
     }
   }

@@ -17,7 +17,7 @@
     .box-title {
       font-size: 32px;
       font-weight: 500;
-      color: vars.$color-text;
+      color: vars.$color-title;
       margin-bottom: 12px;
 
       @media (max-width: 768px) {
@@ -51,7 +51,7 @@
 
       &:hover {
         background-color: vars.$color-primary-hover;
-        transform: translateY(-2px);
+        // transform: translateY(-2px);
       }
 
       &:active {

@@ -8,15 +8,22 @@
   border-radius: vars.$radius-xl;
   padding: 24px;
   overflow: hidden;
-  transition: vars.$transition;
+  transition: all 0.4s ease-in-out !important;
   border: 1px solid transparent; // Изначально рамка прозрачная
 
   // Эффекты при наведении на ВСЮ карточку
   &:hover {
-    transform: translateY(-5px);
-    // ИСПРАВЛЕНО: Полностью убрали обводку рамки цветом при наведении (теперь она прозрачная)
+    // Исправлено: !important перебивает инлайновые стили AOS и заставляет карточку подниматься!
+    transform: translateY(-5px) !important; 
     border-color: transparent !important; 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important; // Очень мягкая тень
+    
+    // Темная тема: мягкая темная тень
+    // box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important; 
+
+    // Светлая тема: благородный мягкий СИНИЙ неоновый отсвет вместо серого!
+    [data-theme="light"] & {
+      box-shadow: 0 15px 35px rgba(36, 73, 180, 0.08) !important; 
+    }
 
     // Подсветка кнопки при наведении на всю карточку портфолио
     .btn-more {
@@ -65,7 +72,7 @@
     .project-title {
       font-size: 32px;
       font-weight: 500;
-      color: vars.$color-text;
+      color: vars.$color-title;
       margin-bottom: 16px;
 
       @media (max-width: 575.98px) {
@@ -127,7 +134,7 @@
 
   @media (min-width: 992px) {
     flex-wrap: wrap; // На десктопе разрешаем перенос
-    justify-content: center;
+    justify-content: left;
   }
 
   // Кнопки-фильтры

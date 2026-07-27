@@ -11,12 +11,21 @@
   }
 
   .logo-wrapper {
+     img {
+      width: 48px;  // Задаем физический размер отображения на сайте
+      height: 48px; // Круг уменьшится и станет идеально четким!
+      
+      shape-rendering: geometricPrecision;
+      image-rendering: -webkit-optimize-contrast;
+      
+    }
     color: vars.$color-text;
     
     .name {
       font-size: 18px;
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1;
+      color: vars.$color-title
     }
     
     .profession {
@@ -48,7 +57,7 @@
     padding: 8px 0 8px 24px;
     font-size: 14px;
     font-weight: 500;
-    color: vars.$color-text;
+    color: vars.$color-title;
     white-space: nowrap;
     transition: 0.3s;
     text-decoration: none;
@@ -120,36 +129,129 @@
   }
 }
 
-// Кнопка переключения темы
-.theme-toggle-btn {
-  background: transparent;
-  border: none;
-  color: vars.$color-text;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 8px 12px;
+// Контейнер переключателя (Солнце - Слайдер - Луна)
+.header-theme-switcher {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: vars.$transition;
+  gap: 10px;
+  margin-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1); // Линия-разделитель на десктопе
+  padding-left: 24px;
+  transition: border-color vars.$transition;
 
-  &:hover {
-    color: vars.$color-accent;
-    transform: scale(1.1);
+  [data-theme="light"] & {
+    border-left-color: rgba(0, 0, 0, 0.1);
   }
 
-  &:focus {
-    outline: none;
+  // Оптимизация стилей под мобильное меню
+  @media (max-width: 991px) {
+    margin-left: 0;
+    padding-left: 20px; // Выравниваем отступ по левому краю мобильного меню
+    border-left: none; // Убираем разделитель на мобилках
+  }
+
+  i {
+    font-size: 16px;
+    color: vars.$color-text-muted;
+    transition: vars.$transition;
+
+    &.icon-sun {
+      [data-theme="light"] & {
+        color: vars.$color-accent;
+      }
+    }
+
+    &.icon-moon {
+      [data-theme="dark"] & {
+        color: vars.$color-accent;
+      }
+    }
+
+    @media (max-width: 991px) {
+      font-size: 20px; // Чуть крупнее иконки на смартфонах
+      color: rgba(255, 255, 255, 0.5); // Белый цвет внутри темного мобильного меню
+    }
   }
 }
 
-// Специфический отступ для мобильной версии, чтобы кнопка не прилипала
-@media (max-width: 991px) {
-  .theme-toggle-btn {
-    padding: 15px 20px;
-    font-size: 24px;
-    justify-content: flex-start;
-    width: 100%;
-    color: #FFFFFF; // Белый цвет внутри мобильного меню
+// Сам переключатель-лейбл (Основа слайдера)
+.theme-toggle {
+  --width: 38px;
+  --height: 20px;
+  --circle-size: 14px;
+  display: inline-block;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  cursor: pointer;
+  margin-bottom: 0;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  // Делаем область клика крупнее на мобильных для удобства тач-интерфейса
+  @media (max-width: 991px) {
+    --width: 44px;
+    --height: 24px;
+    --circle-size: 18px;
+  }
+}
+
+// Задний фон переключателя (Трек)
+.theme-toggle-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 1.5px solid vars.$color-text-muted;
+  border-radius: var(--height);
+  transition: vars.$transition;
+
+  @media (max-width: 991px) {
+    border-color: rgba(255, 255, 255, 0.3); // Светлая рамка в мобильном меню
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    left: 2px;
+    bottom: 1.5px;
+    background-color: vars.$color-text-muted;
+    border-radius: 50%;
+    transition: vars.$transition;
+
+    @media (max-width: 991px) {
+      bottom: 1.5px;
+      left: 2.5px;
+      background-color: rgba(255, 255, 255, 0.6); // Светлый кружок в мобильном меню
+    }
+  }
+
+  &:hover {
+    border-color: vars.$color-accent;
+    &::before {
+      background-color: vars.$color-accent;
+    }
+  }
+}
+
+// Состояние, когда чекбокс нажат (Выбрана светлая тема)
+input:checked + .theme-toggle-fill {
+  border-color: vars.$color-primary;
+  
+  &::before {
+    background-color: vars.$color-primary;
+    transform: translateX(18px);
+
+    @media (max-width: 991px) {
+      transform: translateX(20px); // Чуть больше смещение для укрупненной мобильной версии
+    }
   }
 }

@@ -26,13 +26,14 @@
 }
 
 .btn-outline-light {
-  border: 1px solid #fff;
-  color: vars.$color-text;
-  
+  border: 1px solid vars.$color-btn-outline; // Динамическая обводка
+  color: vars.$color-btn-outline; // Динамический текст
+  background-color: transparent;
+
   &:hover {
-    background-color: vars.$color-text;
-    border-color: vars.$color-text;
-    color: vars.$color-bg;
+    background-color: vars.$color-btn-outline-hover-bg; // Белый на темной, светло-голубой на светлой
+    border-color: vars.$color-btn-outline;
+    color: vars.$color-btn-outline-hover-text; // Темный на темной, пыльно-синий на светлой
   }
 }
 

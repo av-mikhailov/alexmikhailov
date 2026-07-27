@@ -14,7 +14,7 @@
   .about-content {
     .greeting {
       font-size: 24px;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 1.5rem;
     }
     .about-text {
@@ -45,7 +45,10 @@
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      [data-theme="light"] & {
+        border-color: rgba(36, 73, 180, 0.15);
+        box-shadow: 0px 15px 35px rgba(36, 73, 180, 0.08);
+      }
     }
 
     .skill-icon-box {

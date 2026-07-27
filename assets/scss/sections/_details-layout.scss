@@ -15,22 +15,32 @@
 
   // Карточки преимуществ (уникальны для услуг, но лежат здесь, так как это часть сетки)
   .advantage-card {
-    background-color: vars.$color-bg-alt; // Исправлено!
+    background-color: vars.$color-bg-alt;
     border-radius: 32px;
     padding: 24px;
     height: 100%;
-    transition: vars.$transition; // Исправлено на общую переменную
+    transition: vars.$transition;
     background-clip: padding-box;
+    border: 1px solid transparent; // Базовая рамка
 
     &:hover {
       transform: translateY(-4px);
+      
+      // Темная тема: темная тень и деликатный серый бордюр
+      border-color: rgba(128, 128, 128, 0.15);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+      // Светлая тема: синий отсвет и нежно-синий бордюр
+      [data-theme="light"] & {
+        border-color: rgba(36, 73, 180, 0.15);
+        box-shadow: 0 10px 25px rgba(36, 73, 180, 0.08);
+      }
     }
 
     .icon-box {
       width: 60px;
       height: 60px;
-      background-color: vars.$color-bg; // Исправлено!
+      background-color: vars.$color-bg; // Темно-серый по умолчанию
       border-radius: 16px;
       display: flex;
       align-items: center;
@@ -39,7 +49,12 @@
 
       i { 
         font-size: 24px; 
-        color: vars.$color-primary; // Исправлено!
+        color: vars.$color-primary; // Наш основной синий
+      }
+
+      // ИСПРАВЛЕНО: В светлой теме даем иконкам нежно-голубой фон подложки!
+      [data-theme="light"] & {
+        background-color: vars.$color-hero-bg; // #EFF4FA
       }
     }
 
@@ -47,7 +62,7 @@
       .card-title {
         font-size: 18px;
         font-weight: 600;
-        color: vars.$color-text; // Исправлено!
+        color: vars.$color-title; // Исправлено!
         margin-bottom: 6px;
       }
       .card-desc {

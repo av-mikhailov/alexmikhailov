@@ -36,16 +36,23 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background-color: vars.$color-bg-alt; // Исправлено!
-    color: vars.$color-accent;             // Исправлено!
+    background-color: vars.$color-bg-alt;
+    color: vars.$color-accent; // Оранжевый по умолчанию
     font-size: 18px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
-    // ИСПРАВЛЕНО: Нейтральный серый бордюр, видимый в обеих темах
     border: 1px solid rgba(128, 128, 128, 0.15); 
+
+    // ИСПРАВЛЕНО: В светлой теме кружок становится нежно-голубым, 
+    // цифра синей, а обводка получает нежно-синий оттенок
+    [data-theme="light"] & {
+      background-color: vars.$color-bg; 
+      color: vars.$color-primary; // Глубокий синий
+      border-color: rgba(36, 73, 180, 0.15);
+    }
   }
 
   .timeline-content {
@@ -54,7 +61,7 @@
     .step-title {
       font-size: 20px;
       font-weight: 600;
-      color: vars.$color-text; // Исправлено!
+      color: vars.$color-title; // Исправлено!
       margin-bottom: 4px;
     }
 
