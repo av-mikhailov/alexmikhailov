@@ -27,8 +27,11 @@
 
 .btn-outline-light {
   border: 1px solid vars.$color-btn-outline; // Автоматически подставит нужный цвет и прозрачность!
-  color: vars.$color-title;
-  background-color: transparent;
+  color: vars.$color-title; // Использует благородный пыльно-синий в светлой теме
+  
+  // ИСПРАВЛЕНО: Вместо прозрачности даем кнопке плотный фоновый цвет темы.
+  // Это полностью скроет пролетающие фоновые точки под кнопкой!
+  background-color: vars.$color-bg; 
 
   &:hover {
     background-color: vars.$color-btn-outline-hover-bg; // Белый в темной, голубоватый в светлой

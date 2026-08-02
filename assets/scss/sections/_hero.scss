@@ -3,13 +3,19 @@
 #hero {
   width: 100%;
   height: 100vh;
-  background: url('../img/hero-bg.png') top center no-repeat; // твой градиент с фрипика
+  background: url('../img/hero-bg.png') top center no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 
   h1 { font-size: 48px; font-weight: 600; color: vars.$color-title; }
   h2 { font-size: 24px; color: vars.$color-title; margin-bottom: 20px; }
   p { font-size: 16px; color: vars.$color-text-muted; max-width: 550px; }
+
+  .container {
+    position: relative;
+    z-index: 2; // Контент и кнопки лежат НАД холстом и отлично кликаются
+  }
 
   .hero-img-wrapper {
     position: relative;
@@ -76,6 +82,11 @@
     height: 44px;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.2); // Дефолтная рамка для темной темы
+    
+    // ИСПРАВЛЕНО: Даем кнопкам плотный фоновый цвет темы.
+    // Это полностью скроет пролетающие фоновые точки под иконками соцсетей!
+    background-color: vars.$color-bg; 
+    
     color: vars.$color-text; // Динамический цвет иконки
     display: flex;
     align-items: center;
@@ -95,11 +106,23 @@
       background-color: rgba(vars.$color-accent, 0.05);
       transform: translateY(-2px);
 
-      // Специфический ховер для светлой темы (аккуратный синий ховер)
+      // Специфический ховер для светлой темы (аккуратный синий/оранжевый ховер)
       [data-theme="light"] & {
         border-color: vars.$color-accent;
         color: vars.$color-accent;
+        background-color: rgba(vars.$color-accent, 0.05); // Легкий оранжевый отсвет на ховере
       }
     }
   }
+}
+
+// Холст интерактивной сетки
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; // Холст лежит ПОД текстом, но над фоновой картинкой
+  pointer-events: none; // Клики мыши проходят сквозь холст на кнопки
 }

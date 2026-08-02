@@ -206,4 +206,121 @@
     });
   }
 
+  /**
+   * Интерактивная физическая сетка точек на Canvas в Hero секции (Оптимизированная версия)
+   */
+  const canvas = select('#hero-canvas');
+  const heroSection = select('#hero');
+
+  if (canvas && heroSection) {
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const gap = 40;
+    const mouse = { x: null, y: null, radius: 90 };
+
+    // Функция обновления размеров холста под экран
+    const resizeCanvas = () => {
+      canvas.width = heroSection.offsetWidth;
+      canvas.height = heroSection.offsetHeight;
+      initGrid();
+    };
+
+    // Класс частицы (точки)
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.baseX = x; 
+        this.baseY = y; 
+        this.vx = 0;    
+        this.vy = 0;    
+        this.size = 1.2;  // Чуть уменьшили размер точек для плотной сетки
+      }
+
+      // Отрисовка точки
+      draw(color) {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      // Физика поведения и плавного скольжения
+      update() {
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.hypot(dx, dy);
+        let force = (mouse.radius - distance) / mouse.radius; 
+
+        let targetX = this.baseX;
+        let targetY = this.baseY;
+
+        if (distance < mouse.radius) {
+          let angle = Math.atan2(dy, dx);
+          // ИСПРАВЛЕНО: Уменьшили силу толчка до 12 (точки отклоняются очень деликатно)
+          targetX = this.x - Math.cos(angle) * force * 6; 
+          targetY = this.y - Math.sin(angle) * force * 6;
+        }
+
+        // ИСПРАВЛЕНО: Коэффициенты пружины настроены для создания "эффекта геля"
+        let spring = 0.02;   // Возврат стал мягким и неспешным
+        let friction = 0.90; // Высокое сопротивление делает движение текучим и вязким
+
+        let ax = (targetX - this.x) * spring;
+        let ay = (targetY - this.y) * spring;
+
+        this.vx = (this.vx + ax) * friction;
+        this.vy = (this.vy + ay) * friction;
+
+        this.x += this.vx;
+        this.y += this.vy;
+      }
+    }
+
+    // Инициализация сетки точек
+    const initGrid = () => {
+      particles = [];
+      for (let y = gap / 2; y < canvas.height; y += gap) {
+        for (let x = gap / 2; x < canvas.width; x += gap) {
+          particles.push(new Particle(x, y));
+        }
+      }
+    };
+
+    // Анимационный цикл
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const dotColor = theme === 'light' ? 'rgba(49, 72, 98, 0.25)' : 'rgba(174, 174, 174, 0.15)';
+
+      particles.forEach(p => {
+        p.update();
+        p.draw(dotColor);
+      });
+      requestAnimationFrame(animate);
+    };
+
+    // Отслеживаем движение мыши над секцией Hero
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    // Убираем координаты мыши при выходе из Hero
+    heroSection.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    // Адаптив при изменении размеров окна
+    window.addEventListener('resize', resizeCanvas);
+
+    // Старт
+    resizeCanvas();
+    animate();
+  }
+
 })();
