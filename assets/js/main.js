@@ -19,20 +19,37 @@
   }
 
   /**
-   * Активация шапки при скролле (Добавление класса header-scrolled)
+   * Поведение шапки и кнопки "Вверх" при прокрутке страницы
    */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 50) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
+  const selectHeader = select('#header');
+  const backToTopBtn = select('#back-to-top');
+
+  if (selectHeader || backToTopBtn) {
+    const handleWindowScroll = () => {
+      const scrollPos = window.scrollY;
+
+      // 1. Поведение шапки (класс scrolled добавляется при скролле > 50px)
+      if (selectHeader) {
+        if (scrollPos > 50) {
+          selectHeader.classList.add('header-scrolled');
+        } else {
+          selectHeader.classList.remove('header-scrolled');
+        }
       }
-    }
-    // Запускаем проверку при загрузке страницы и при каждом событии прокрутки
-    window.addEventListener('load', headerScrolled)
-    document.addEventListener('scroll', headerScrolled)
+
+      // 2. Поведение кнопки "Вверх" (появляется при скролле > 300px)
+      if (backToTopBtn) {
+        if (scrollPos > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+      }
+    };
+
+    // Запускаем проверку при загрузке страницы и при каждом событии скролла
+    window.addEventListener('load', handleWindowScroll);
+    document.addEventListener('scroll', handleWindowScroll);
   }
 
   /**

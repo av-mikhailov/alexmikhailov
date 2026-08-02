@@ -14,15 +14,15 @@
   .hero-img-wrapper {
     position: relative;
     width: fit-content;
-    margin-left: auto;
+    margin-left: 4rem;
 
     .main-photo {
       position: relative;
       z-index: 2;
       border: 5px solid vars.$color-primary;
       border-radius: vars.$radius-lg;
-      width: 400px;
-      height: 400px;
+      width: 360px;
+      height: 360px;
       object-fit: cover;
     }
 

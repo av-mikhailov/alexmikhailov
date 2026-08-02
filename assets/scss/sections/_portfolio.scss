@@ -13,27 +13,16 @@
 
   // Эффекты при наведении на ВСЮ карточку
   &:hover {
-    // Исправлено: !important перебивает инлайновые стили AOS и заставляет карточку подниматься!
-    transform: translateY(-5px) !important; 
-    border-color: transparent !important; 
+    transform: translateY(-5px) !important;
     
-    // Темная тема: мягкая темная тень
-    // box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important; 
+    // Темная тема: деликатная серая рамка и темная тень
+    border-color: rgba(128, 128, 128, 0.15); 
+    // box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25);
 
-    // Светлая тема: благородный мягкий СИНИЙ неоновый отсвет вместо серого!
+    // Светлая тема: легкая СИНЯЯ рамка и мягкий СИНЙ отсвет (тень)
     [data-theme="light"] & {
-      box-shadow: 0 15px 35px rgba(36, 73, 180, 0.08) !important; 
-    }
-
-    // Подсветка кнопки при наведении на всю карточку портфолио
-    .btn-more {
-      background-color: vars.$color-accent;
-      color: vars.$color-bg;
-      border-color: vars.$color-accent;
-
-      i {
-        transform: translateX(4px);
-      }
+      border-color: rgba(36, 73, 180, 0.15);
+      box-shadow: 0px 15px 35px rgba(36, 73, 180, 0.08);
     }
   }
 
@@ -62,7 +51,7 @@
     .project-tag {
       display: inline-block;
       padding: 6px 14px;
-      border: 1px solid vars.$color-bg;
+      border: 2px solid vars.$color-bg;
       border-radius: vars.$radius-xxl;
       font-size: 14px;
       color: vars.$color-text-muted;
@@ -72,7 +61,7 @@
     .project-title {
       font-size: 32px;
       font-weight: 500;
-      color: vars.$color-title;
+      color: vars.$color-title; // Ссылается на наш пыльно-синий в светлой теме
       margin-bottom: 16px;
 
       @media (max-width: 575.98px) {
@@ -81,7 +70,7 @@
 
       // Ссылка внутри заголовка
       a {
-        color: inherit !important; // ИСПРАВЛЕНО: Ссылка наследует динамический цвет темы!
+        color: inherit !important; // Наследует цвет заголовка
         transition: vars.$transition;
         
         &:hover {
@@ -134,7 +123,7 @@
 
   @media (min-width: 992px) {
     flex-wrap: wrap; // На десктопе разрешаем перенос
-    justify-content: left;
+    justify-content: center;
   }
 
   // Кнопки-фильтры
@@ -150,7 +139,7 @@
     cursor: pointer;
     flex-shrink: 0;
 
-    // ИСПРАВЛЕНО: Белый цвет текста при активации (не сольется на светлой теме)
+    // Белый цвет текста при активации (не сольется на светлой теме)
     &:hover, &.active {
       color: #FFFFFF !important; 
       background-color: vars.$color-primary;

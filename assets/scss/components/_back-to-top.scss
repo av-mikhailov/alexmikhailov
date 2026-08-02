@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as vars;
+
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 24px;
+  bottom: 24px;
+  z-index: 996;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: vars.$color-bg-alt; // Белая в светлой теме, темно-серая в темной
+  border: 1px solid rgba(128, 128, 128, 0.15); // Тонкая серая обводка
+  color: vars.$color-text;
+  transition: all 0.3s ease-in-out;
+
+  // Светлая тема: синяя стрелка и мягкий синий отсвет
+  [data-theme="light"] & {
+    color: vars.$color-title;
+    background-color: vars.$color-hero-bg;
+  }
+
+  i {
+    font-size: 24px;
+    line-height: 0;
+  }
+
+  // Эффекты при наведении
+  &:hover {
+    background-color: vars.$color-accent; // Оранжевая в темной теме
+    border-color: vars.$color-accent;
+    color: vars.$color-bg;
+    transform: translateY(-3px) !important; // Карточка слегка приподнимается
+
+    // Наведение в светлой теме (синяя кнопка)
+    [data-theme="light"] & {
+      background-color: vars.$color-primary;
+      border-color: vars.$color-primary;
+      color: #FFFFFF !important;
+    }
+  }
+
+  // Класс активности (добавляется через JS при скролле)
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

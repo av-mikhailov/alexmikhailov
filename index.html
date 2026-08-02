@@ -32,7 +32,7 @@
         
         <!-- Логотип (Слева) -->
         <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
-            <img src="assets/img/logo-blue.svg" alt="Логотип Александра Михайлова" class="img-fluid me-3">
+            <img src="assets/img/logo-blue-l.png" alt="Логотип Александра Михайлова" class="img-fluid me-3">
             <div class="logo-text">
                 <span class="d-block name">Александр Михайлов</span>
                 <small class="d-block profession">Веб-разработчик</small>
@@ -87,7 +87,7 @@
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7 order-2 order-lg-1 hero-content" data-aos="fade-up">
+                <div class="col-lg-7 order-2 order-lg-1 mt-4 hero-content" data-aos="fade-up">
                     <h1>Александр Михайлов</h1>
                     <h2>Веб-дизайнер и разработчик сайтов</h2>
                     <p>Создаю удобные и современные сайты для культурных и образовательных учреждений и не только. Кроме того, занимаюсь версткой печатных изданий.</p>
@@ -102,11 +102,11 @@
                     </div>
                 </div>
                 <div class="col-lg-5 order-1 order-lg-2 mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                    <!-- <div class="hero-img-wrapper">
+                    <div class="hero-img-wrapper">
                         <div class="hero-img-bg"></div>
                         <img src="assets/img/my-photo.png" alt="Александр Михайлов" class="img-fluid main-photo">
-                    </div> -->
-                    <div class="hero-img-bg"></div>
+                    </div>
+                    <!-- <div class="hero-img-bg"></div>
                     <model-viewer 
                         src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
                         alt="3D космонавт"
@@ -115,13 +115,13 @@
                         shadow-intensity="1"
                         loading="eager"
                         class="custom-3d-player">
-                    </model-viewer>
+                    </model-viewer> -->
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about section-padding" data-aos="fade-up">
+    <section id="about" class="about section-padding mb-xxl-5" data-aos="fade-up">
         <div class="container">
             <div class="section-header d-flex align-items-center mb-5">
                 <div>
@@ -179,7 +179,7 @@
     <section id="services" class="services section-bg">
         <div class="container" data-aos="fade-up">
 
-            <div class="section-header d-flex align-items-center mb-5">
+            <div class="section-header d-flex align-items-center mb-2">
                 <div>
                     <h2 class="section-title">Услуги</h2>
                     <p class="section-subtitle">Создание цифровых и печатных продуктов</p>
@@ -425,7 +425,7 @@
                     <div class="col-lg-4 d-flex flex-column gap-3">
                         <div class="info-card">
                             <i class="bx bx-envelope"></i>
-                            <span class="info-text">av.mikhailov93@gmail.com</span>
+                            <span class="info-text"><a href="mailto:av.mikhailov93@gmail.com">av.mikhailov93@gmail.com</a></span>
                         </div>
                         <div class="info-card">
                             <i class="bx bx-map"></i>
@@ -505,6 +505,11 @@
 
     </div>
 </footer>
+
+<!-- Кнопка "Вверх" (Back to Top) -->
+<a href="#" id="back-to-top" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Вернуться к началу страницы">
+    <i class="bx bx-chevron-up"></i>
+</a>
 
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>

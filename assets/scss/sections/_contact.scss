@@ -51,17 +51,15 @@
       color: vars.$color-title;
     }
 
+    a:hover {
+      color: vars.$color-accent;
+    }
+
     .info-text {
       font-size: 15px;
       color: vars.$color-title;
     }
 
-    // ИСПРАВЛЕНО: Вместо сложного расчета lighten() мы плавно переключаем 
-    // цвет фона карточки на альтернативный $color-bg-alt при наведении.
-    // Это работает безупречно и в темной, и в светлой темах!
-    &:hover {
-      background-color: vars.$color-bg-alt; 
-    }
   }
 
   // Правая колонка: Инпуты формы

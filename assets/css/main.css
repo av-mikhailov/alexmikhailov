@@ -22,9 +22,9 @@
   --color-text: #18181b;
   --color-text-muted: #71717a;
   --color-title: #314862;
-  --color-primary: #1d3fa1;
-  --color-primary-hover: #264ebf;
-  --color-accent: #ff9b20;
+  --color-primary: #2449B4;
+  --color-primary-hover: #3d5ec4;
+  --color-accent: #fd9839;
   --color-accent-hover: #f59e0b;
   --color-btn-outline: #314862;
   --color-btn-outline-hover-bg: rgba(36, 73, 180, 0.12);
@@ -128,7 +128,7 @@ a {
 }
 
 .btn-outline-light {
-  border: 1px solid var(--color-btn-outline);
+  border: 1px solid rgba(49, 72, 98, 0.5);
   color: var(--color-btn-outline);
   background-color: transparent;
 }
@@ -894,6 +894,46 @@ a {
   object-fit: cover;
 }
 
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 24px;
+  bottom: 24px;
+  z-index: 996;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-bg-alt);
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
+}
+[data-theme=light] .back-to-top {
+  color: var(--color-title);
+  background-color: var(--color-hero-bg);
+}
+.back-to-top i {
+  font-size: 24px;
+  line-height: 0;
+}
+.back-to-top:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+  transform: translateY(-3px) !important;
+}
+[data-theme=light] .back-to-top:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF !important;
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #hero {
   width: 100%;
   height: 100vh;
@@ -919,15 +959,15 @@ a {
 #hero .hero-img-wrapper {
   position: relative;
   width: fit-content;
-  margin-left: auto;
+  margin-left: 4rem;
 }
 #hero .hero-img-wrapper .main-photo {
   position: relative;
   z-index: 2;
   border: 5px solid var(--color-primary);
   border-radius: 24px;
-  width: 400px;
-  height: 400px;
+  width: 360px;
+  height: 360px;
   object-fit: cover;
 }
 #hero .hero-img-wrapper .hero-img-bg {
@@ -1119,14 +1159,6 @@ a {
   border-color: rgba(36, 73, 180, 0.15);
   box-shadow: 0px 15px 35px rgba(36, 73, 180, 0.08);
 }
-.services .service-card:hover .btn-more {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
-}
-.services .service-card:hover .btn-more i {
-  transform: translateX(4px);
-}
 .services .service-card .icon-box {
   width: 64px;
   height: 64px;
@@ -1183,18 +1215,11 @@ a {
 }
 .portfolio-card:hover {
   transform: translateY(-5px) !important;
-  border-color: transparent !important;
+  border-color: rgba(128, 128, 128, 0.15);
 }
 [data-theme=light] .portfolio-card:hover {
-  box-shadow: 0 15px 35px rgba(36, 73, 180, 0.08) !important;
-}
-.portfolio-card:hover .btn-more {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
-}
-.portfolio-card:hover .btn-more i {
-  transform: translateX(4px);
+  border-color: rgba(36, 73, 180, 0.15);
+  box-shadow: 0px 15px 35px rgba(36, 73, 180, 0.08);
 }
 .portfolio-card .photo-window {
   background-color: var(--color-bg);
@@ -1217,7 +1242,7 @@ a {
 .portfolio-card .card-body-content .project-tag {
   display: inline-block;
   padding: 6px 14px;
-  border: 1px solid var(--color-bg);
+  border: 2px solid var(--color-bg);
   border-radius: 48px;
   font-size: 14px;
   color: var(--color-text-muted);
@@ -1275,7 +1300,7 @@ a {
 @media (min-width: 992px) {
   .portfolio-filters {
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
   }
 }
 .portfolio-filters .btn-filter {
@@ -1363,12 +1388,12 @@ a {
   font-size: 20px;
   color: var(--color-title);
 }
+.contact .info-card a:hover {
+  color: var(--color-accent);
+}
 .contact .info-card .info-text {
   font-size: 15px;
   color: var(--color-title);
-}
-.contact .info-card:hover {
-  background-color: var(--color-bg-alt);
 }
 .contact .contact-form textarea.form-control {
   resize: none;
