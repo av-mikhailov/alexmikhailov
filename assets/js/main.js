@@ -53,6 +53,21 @@
   }
 
   /**
+   * Плавный скролл наверх при клике на кнопку "Вверх" (без добавления '#' в URL)
+   */
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function(e) {
+      e.preventDefault(); // Предотвращает стандартный переход по ссылке и появление '#' в URL
+
+      // Запускаем плавную прокрутку окна браузера в самый верх (координаты 0, 0)
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Плавный скролл
+      });
+    });
+  }
+
+  /**
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {

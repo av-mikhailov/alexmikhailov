@@ -9,7 +9,7 @@
   --color-primary-hover: #3d5ec4;
   --color-accent: #FFAE3D;
   --color-accent-hover: #ffbe64;
-  --color-btn-outline: #FFFFFF;
+  --color-btn-outline: #FFFFFF; // Белый цвет кнопки для темной темы по умолчанию
   --color-btn-outline-hover-bg: #FFFFFF;
   --color-btn-outline-hover-text: #242627;
 }
@@ -25,7 +25,7 @@
   --color-primary-hover: #3d5ec4;
   --color-accent: #fd9839;
   --color-accent-hover: #f59e0b;
-  --color-btn-outline: #314862;
+  --color-btn-outline: rgba(49, 72, 98, 0.5); 
   --color-btn-outline-hover-bg: rgba(36, 73, 180, 0.12);
   --color-btn-outline-hover-text: #314862;
 }

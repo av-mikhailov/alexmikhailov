@@ -26,7 +26,7 @@
   --color-primary-hover: #3d5ec4;
   --color-accent: #fd9839;
   --color-accent-hover: #f59e0b;
-  --color-btn-outline: #314862;
+  --color-btn-outline: rgba(49, 72, 98, 0.5);
   --color-btn-outline-hover-bg: rgba(36, 73, 180, 0.12);
   --color-btn-outline-hover-text: #314862;
 }
@@ -128,8 +128,8 @@ a {
 }
 
 .btn-outline-light {
-  border: 1px solid rgba(49, 72, 98, 0.5);
-  color: var(--color-btn-outline);
+  border: 1px solid var(--color-btn-outline);
+  color: var(--color-title);
   background-color: transparent;
 }
 .btn-outline-light:hover {
@@ -1300,7 +1300,7 @@ a {
 @media (min-width: 992px) {
   .portfolio-filters {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
   }
 }
 .portfolio-filters .btn-filter {
