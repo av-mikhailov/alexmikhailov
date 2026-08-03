@@ -29,6 +29,7 @@
   --color-btn-outline: rgba(49, 72, 98, 0.5); 
   --color-btn-outline-hover-bg: rgba(36, 73, 180, 0.12);
   --color-btn-outline-hover-text: #314862;
+  --color-btn-outline-background: #e8e8e9; 
   --hero-bg-image: url('../img/hero-bg-light.png');
 }
 
@@ -46,6 +47,7 @@ $color-accent-hover:           var(--color-accent-hover);
 $color-btn-outline:            var(--color-btn-outline);
 $color-btn-outline-hover-bg:   var(--color-btn-outline-hover-bg);
 $color-btn-outline-hover-text: var(--color-btn-outline-hover-text);
+$color-btn-outline-background: var(--color-btn-outline-background);
 $hero-bg-image:                var(--hero-bg-image);
 
 // Остальные переменные без изменений

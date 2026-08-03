@@ -9,7 +9,7 @@
   overflow: hidden;
 
   h1 { font-size: 48px; font-weight: 600; color: vars.$color-title; }
-  h2 { font-size: 24px; color: vars.$color-title; margin-bottom: 20px; }
+  h2 { font-size: 24px; color: vars.$color-title; }
   p { font-size: 16px; color: vars.$color-text-muted; max-width: 550px; }
 
   .container {
@@ -38,16 +38,21 @@
       left: 30px;
       width: 100%;
       height: 100%;
-      background: vars.$color-bg-alt; // или твой вариант
+      background: vars.$color-bg; // или твой вариант
       border-radius: vars.$radius-lg;
       z-index: 1;
     }
   }
 
-  @media (max-width: 991px) {
+ @media (max-width: 991px) {
     height: auto;
-    padding: 120px 0 60px 0; // Место под хедер
+    padding: 160px 0 120px 0; // ИСПРАВЛЕНО: Сделали просторный отступ (160px) для планшетов
     text-align: center;
+
+    // На смартфонах (до 767px) возвращаем компактные 120px, чтобы сберечь высоту экрана
+    @media (max-width: 767.98px) {
+      padding: 120px 0 120px 0; 
+    }
 
     .hero-content {
       display: flex;
@@ -98,6 +103,7 @@
     [data-theme="light"] & {
       border-color: rgba(49, 72, 98, 0.2); // Мягкая обводка пыльно-синего цвета
       color: vars.$color-title; // Иконка пыльно-синего цвета
+      background-color: vars.$color-btn-outline-background;
     }
 
     &:hover {
@@ -118,21 +124,20 @@
 
 // Холст интерактивной сетки
 #hero-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
+  display: none; // Полностью скрываем холст на смартфонах и планшетах (экономим батарею и CPU)
 
-  // Дизайнерская асимметричная диагональная маска (угол 135 градусов):
+  // Включаем и позиционируем холст ТОЛЬКО на десктопах (от 992px)
   @media (min-width: 992px) {
-    // 0% - 8%   : Точки полностью видны в левом верхнем углу (очень узкая полоса)
-    // 8% - 22%  : Точки плавно гаснут перед текстовым блоком
-    // 22% - 58% : Идеально чистый диагональный коридор под текстом и кнопками
-    // 58% - 75% : Точки плавно проявляются за фотографией и под ней
-    // 75% - 100%: Точки полностью видны в широкой зоне правого нижнего угла
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+    // Дизайнерская асимметричная диагональная маска (угол 135 градусов):
     -webkit-mask-image: linear-gradient(135deg, 
       rgba(0, 0, 0, 1) 0%, 
       rgba(0, 0, 0, 1) 10%, 
@@ -145,7 +150,7 @@
       rgba(0, 0, 0, 1) 0%, 
       rgba(0, 0, 0, 1) 10%, 
       transparent 30%, 
-      transparent 30%, 
+      transparent 50%, 
       rgba(0, 0, 0, 1) 75%, 
       rgba(0, 0, 0, 1) 100%
     );

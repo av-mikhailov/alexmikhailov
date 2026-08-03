@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as vars;
 
 .btn {
-  padding: 10px 24px;
+  padding: 10px 26px;
   border-radius: vars.$radius-xxl;
   font-weight: 600;
   transition: vars.$transition;
@@ -9,7 +9,7 @@
   display: inline-block;
 
   @media (max-width: 575.98px) {
-    padding: 8px 16px;
+    padding: 10px 22px;
   }
 }
 
@@ -28,10 +28,11 @@
 .btn-outline-light {
   border: 1px solid vars.$color-btn-outline; // Автоматически подставит нужный цвет и прозрачность!
   color: vars.$color-title; // Использует благородный пыльно-синий в светлой теме
+  padding: 10px 16px;
   
   // ИСПРАВЛЕНО: Вместо прозрачности даем кнопке плотный фоновый цвет темы.
   // Это полностью скроет пролетающие фоновые точки под кнопкой!
-  background-color: vars.$color-bg; 
+  background-color: vars.$color-btn-outline-background;
 
   &:hover {
     background-color: vars.$color-btn-outline-hover-bg; // Белый в темной, голубоватый в светлой

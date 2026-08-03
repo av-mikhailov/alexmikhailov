@@ -323,4 +323,22 @@
     animate();
   }
 
+  /**
+   * Инициализация эффекта печатающегося текста (Typed.js)
+   */
+  const typedElement = select('.typed');
+  if (typedElement) {
+    let typed_strings = typedElement.getAttribute('data-typed-items');
+    typed_strings = typed_strings.split(','); // Разделяем строки через запятую
+    
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 80,      // Скорость печати (чем меньше, тем быстрее)
+      backSpeed: 40,      // Скорость стирания
+      backDelay: 2000,    // Пауза перед началом стирания (2 секунды)
+      fadeOut: false      // Можно включить true для эффекта затухания вместо стирания
+    });
+  }
+
 })();
