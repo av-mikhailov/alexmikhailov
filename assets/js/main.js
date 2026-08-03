@@ -215,7 +215,7 @@
   if (canvas && heroSection) {
     const ctx = canvas.getContext('2d');
     let particles = [];
-    const gap = 40;
+    const gap = 32;
     const mouse = { x: null, y: null, radius: 90 };
 
     // Функция обновления размеров холста под экран
@@ -234,7 +234,7 @@
         this.baseY = y; 
         this.vx = 0;    
         this.vy = 0;    
-        this.size = 1;  // Чуть уменьшили размер точек для плотной сетки
+        this.size = 1.05;  //  this.size = 0.5 + (x / canvas.width) * 1.3; 
       }
 
       // Отрисовка точки
@@ -293,7 +293,7 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       const theme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const dotColor = theme === 'light' ? 'rgba(49, 72, 98, 0.25)' : 'rgba(174, 174, 174, 0.15)';
+      const dotColor = theme === 'light' ? 'rgba(42, 57, 73, 0.25)' : 'rgba(221, 221, 221, 0.15)';
 
       particles.forEach(p => {
         p.update();
