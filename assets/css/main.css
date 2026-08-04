@@ -1173,10 +1173,6 @@ a {
   .about .title-line {
     display: none;
   }
-  .about .section-header {
-    text-align: center;
-    justify-content: center !important;
-  }
 }
 .services {
   padding: 80px 0;
