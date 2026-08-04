@@ -16,6 +16,22 @@
     overflow: hidden;
   }
 
+  // Специфические стили кнопки в обложке проекта
+  .hero-btn-wrapper {
+    .btn-more {
+      // В светлой теме делаем кнопку глубоко-синей для идеальной читаемости!
+      [data-theme="light"] & {
+        border-color: vars.$color-primary;
+        color: vars.$color-primary;
+
+        &:hover {
+          background-color: vars.$color-primary;
+          color: #FFFFFF !important; // Белый контрастный текст при заливке синим
+        }
+      }
+    }
+  }
+
   // Общие стили левой колонки
   .hero-text-col {
     z-index: 2;

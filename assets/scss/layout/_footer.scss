@@ -100,13 +100,14 @@
 
     .privacy-link {
       font-size: 14px;
-      color: vars.$color-accent; // Оранжевый акцентный цвет ссылки
       transition: vars.$transition;
+      color: var(--color-text-muted);
+      text-decoration: underline dotted;
+      text-underline-offset: 4px;
 
       // ИСПРАВЛЕНО: Заменили lighten() на безопасную переменную vars.$color-accent-hover
       &:hover {
-        color: vars.$color-accent-hover;
-        text-decoration: underline;
+        color: vars.$color-accent; // Оранжевый акцентный цвет ссылки
       }
     }
   }
