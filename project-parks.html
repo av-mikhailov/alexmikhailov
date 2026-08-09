@@ -11,15 +11,15 @@
         })();
     </script>
 
-    <title>Александр Михайлов | Веб-дизайнер</title>
-    <meta name="description" content="Портфолио Александра Михайлова — веб-дизайнера и разработчика. Создание современных сайтов, оформление печатных изданий и работа с контентом. Подробности о выполненных проектах и контакты для связи.">
+    <title>Александр Михайлов | Книга «Парки, сады и скверы Пскова»</title>
+    <meta name="description" content="Кейс редизайна и многостраничной верстки книги 'Парки, сады и скверы Пскова' в Adobe InDesign. Разработка концепта обложки, модульной сетки и экспорт интерактивного PDF.">
 
-    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="AM Design" />
-    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
 
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/aos/aos.css">
@@ -47,7 +47,7 @@
         <!-- Правый блок: Меню + Переключатель + Гамбургер -->
         <div class="d-flex align-items-center">
             
-            <!-- Основное меню (Гамбургер возвращен внутрь!) -->
+            <!-- Основное меню -->
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
@@ -55,7 +55,7 @@
                     <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
                     <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
                     
-                    <!-- Переключатель тем (Только для мобильных экранов внутри меню) -->
+                    <!-- Переключатель тем -->
                     <li class="d-lg-none">
                         <div class="header-theme-switcher mt-3">
                             <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
@@ -68,7 +68,7 @@
                     </li>
                 </ul>
                 
-                <!-- Иконка мобильного меню (Внутри тега nav!) -->
+                <!-- Иконка мобильного меню -->
                 <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
             </nav>
 
@@ -89,32 +89,34 @@
 
 <main id="main">
 
-    <!-- Хлебные крошки (Размещаются над обложкой) -->
+    <!-- Хлебные крошки -->
     <nav aria-label="breadcrumb" class="custom-breadcrumbs py-3">
         <div class="container">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-                <li class="breadcrumb-item"><a href="index.html">Портфолио</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Сайт историко-краеведческой библиотеки им. И. И. Василёва</li>
+                <li class="breadcrumb-item"><a href="portfolio.html">Портфолио</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Книга «Парки Пскова»</li>
             </ol>
         </div>
     </nav>
 
-    <!-- Обложка проекта (Hero-секция страницы проекта) -->
+    <!-- Обложка проекта (uses .page-hero-card!) -->
     <section class="project-hero pb-5" data-aos="fade-up">
         <div class="container">
             <div class="page-hero-card">
                 <div class="row align-items-stretch g-0">
                     <div class="col-lg-7 d-flex flex-column justify-content-between p-4 p-md-5 hero-text-col">
-                        <span class="hero-badge">Разработка сайта</span>
-                        <h1 class="hero-title">Сайт Историко-краеведческой библиотеки им. И. И. Василёва</h1>
-                        <div class="hero-btn-wrapper pb-3 pb-md-0">
-                            <a href="https://vasilevka.ru/" target="_blank" class="btn-more" aria-label="Перейти на сайт">Открыть сайт <i class="bx bx-arrow-right"></i></a>
+                        <span class="hero-badge">Верстка печатных изданий</span>
+                        <h1 class="hero-title">Книга «Парки, сады и скверы Пскова»</h1>
+                        <div class="hero-btn-wrapper mt-4">
+                            <!-- Кнопка ведет на чтение интерактивной версии на Calameo -->
+                            <a href="https://www.calameo.com/read/003686352895a001d3fda?page=1" target="_blank" class="btn-more" aria-label="Читать книгу Парки Пскова онлайн">Читать книгу <i class="bx bx-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-5 position-relative hero-img-col">
                         <div class="hero-img-wrapper">
-                            <img src="assets/img/vasilevka.jpg" alt="Скриншот сайта библиотеки Василёва" class="hero-img">
+                            <!-- Скриншот обложки книги -->
+                            <img src="assets/img/parks/parks-cover-1.jpg" alt="Обложка книги Парки Пскова" class="hero-img">
                         </div>
                     </div>
                 </div>
@@ -122,12 +124,12 @@
         </div>
     </section>
 
+    <!-- Основной контент -->
     <section class="page-details-section pb-5">
         <div class="container">
-            <!-- Левая и правая колонки (используют те же классы разметки) -->
             <div class="row g-4 align-items-start">
                 
-                <!-- Левая колонка: Описание кейса -->
+                <!-- Левая колонка: Детали кейса -->
                 <div class="col-lg-8">
                     
                     <!-- Блок 1: О проекте -->
@@ -140,18 +142,17 @@
                         </div>
 
                         <div class="lead-text d-flex flex-column gap-3 mb-5">
-                            <p>Для Историко-краеведческой библиотеки был разработан сайт, который объединяет новости, афишу мероприятий и краеведческие публикации.</p>
-                            <p>Основной задачей было создать современный и удобный ресурс, позволяющий легко публиковать материалы и находить информацию о мероприятиях и проектах библиотеки.</p>
-                            <p>Проект реализован «с нуля». До этого у библиотеки не было единого цифрового представительства, удовлетворяющего современным требованиям.</p>
+                            <p>Главной целью проекта было полное обновление и переверстка краеведческого издания книги «Парки, сады и скверы Пскова». Нам требовалось актуализировать текстовую информацию и создать принципиально новый, современный визуальный формат.</p>
+                            <p>Обновленная книга должна была стать привлекательной для широкого круга читателей, сохранив свою научную ценность, но при этом приобрести легкую, удобочитаемую структуру, наполненную воздухом и крупными яркими иллюстрациями.</p>
                         </div>
                     </div>
 
-                    <!-- Блок 2: Что сделано (Использует ваш готовый таймлайн!) -->
+                    <!-- Блок 2: Что сделано (Таймлайн) -->
                     <div id="what-was-done" class="details-block">
                         <div class="section-header d-flex align-items-center mb-5">
                             <div>
                                 <h2 class="section-title">Что сделано</h2>
-                                <p class="section-subtitle">Основные достижения</p>
+                                <p class="section-subtitle">Основные итоги работы</p>
                             </div>
                         </div>
 
@@ -160,8 +161,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">1</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Разработка структуры сайта</h4>
-                                    <p class="step-desc">Продумана логичная структура разделов и навигации, позволяющая быстро находить новости, мероприятия и краеведческие материалы.</p>
+                                    <h4 class="step-title">Модернизация суперобложки</h4>
+                                    <p class="step-desc">Полностью переработан дизайн лицевой и обратной сторон обложки с сохранением исходной исторической концепции, но в более современной шрифтовой и цветовой композиции.</p>
                                 </div>
                             </div>
 
@@ -169,8 +170,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">2</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Современный дизайн</h4>
-                                    <p class="step-desc">Создан минималистичный и аккуратный интерфейс, обеспечивающий удобное восприятие информации.</p>
+                                    <h4 class="step-title">Разработка модульной сетки</h4>
+                                    <p class="step-desc">В Adobe InDesign спроектирована новая многоколоночная модульная сетка верстки, обеспечивающая гармоничный баланс «воздуха», текстовых блоков и иллюстраций.</p>
                                 </div>
                             </div>
 
@@ -178,8 +179,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">3</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Адаптивная верстка</h4>
-                                    <p class="step-desc">Сайт корректно отображается на компьютерах, планшетах и мобильных устройствах.</p>
+                                    <h4 class="step-title">Качественная типографика</h4>
+                                    <p class="step-desc">Подобраны новые высокочитаемые шрифтовые пары (антиква для основного текста и строгие гротески для заголовков), настроена базовая сетка линий (Baseline Grid) для выравнивания текста.</p>
                                 </div>
                             </div>
 
@@ -187,8 +188,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">4</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Удобная система управления контентом</h4>
-                                    <p class="step-desc">Реализована система управления на базе WordPress, позволяющая сотрудникам легко добавлять и редактировать материалы.</p>
+                                    <h4 class="step-title">Оформление спец-разделов</h4>
+                                    <p class="step-desc">Для крупнейших парков города разработаны уникальные декоративные врезки и ботанические таблицы, посвященные редким видам растений и природному богатству Пскова.</p>
                                 </div>
                             </div>
 
@@ -196,15 +197,15 @@
                             <div class="timeline-item">
                                 <div class="step-number">5</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">SEO-оптимизация</h4>
-                                    <p class="step-desc">Настроена базовая поисковая оптимизация для корректной индексации страниц и повышения видимости сайта в поисковых системах.</p>
+                                    <h4 class="step-title">Допечатная подготовка (Prepress)</h4>
+                                    <p class="step-desc">Проведена цветокоррекция фотографий, проверка разрешения изображений (300+ dpi), настройка вылетов под обрез и экспорт финального PDF/X-1a строго по требованиям типографии.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Подсекция: Особенности (Использует наши готовые карточки преимуществ!) -->
-                    <div id="features" class="details-block mt-5 pt-4 ">
+                    <!-- Блок 3: Особенности -->
+                    <div id="features" class="details-block mt-5 pt-4">
                         <div class="section-header d-flex align-items-center mb-5">
                             <div>
                                 <h2 class="section-title">Особенности</h2>
@@ -217,11 +218,11 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-calendar-check"></i>
+                                        <i class="bx bx-medal-alt"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Онлайн-запись на мероприятия</h4>
-                                        <p class="card-desc">Пользователи могут записываться на лекции и события библиотеки прямо на сайте через специальную форму.</p>
+                                        <h4 class="card-title">Премиальное качество</h4>
+                                        <p class="card-desc">Финальное издание отпечатано на плотной глянцевой бумаге высокого качества в твердом переплете, что делает книгу износостойкой.</p>
                                     </div>
                                 </div>
                             </div>
@@ -230,11 +231,11 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-play-circle"></i>
+                                        <i class="bx bx-compass"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Раздел «Медиа»</h4>
-                                        <p class="card-desc">На сайте реализован отдельный раздел с мультимедийными материалами: блог, краеведческий журнал и видеозаписи лекций.</p>
+                                        <h4 class="card-title">Удобная навигация</h4>
+                                        <p class="card-desc">Яркие цветовые акценты и маркеры-колонтитулы помогают читателю мгновенно ориентироваться между разделами книги.</p>
                                     </div>
                                 </div>
                             </div>
@@ -243,11 +244,11 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-news"></i>
+                                        <i class="bx bx-laptop"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Краеведческий журнал</h4>
-                                        <p class="card-desc">В журнале могут публиковаться не только сотрудники библиотеки, но и сторонние авторы. Предусмотрена форма обратной связи.</p>
+                                        <h4 class="card-title">Электронная версия</h4>
+                                        <p class="card-desc">Дополнительно подготовлена цифровая PDF-версия книги со встроенными интерактивными ссылками для чтения на планшетах.</p>
                                     </div>
                                 </div>
                             </div>
@@ -256,75 +257,74 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-accessibility"></i>
+                                        <i class="bx bx-cloud"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Цифровая доступность</h4>
-                                        <p class="card-desc">Сайт разработан с учетом требований адаптивности, оптимизирован для быстрой загрузки страниц и доступен разным аудиториям.</p>
+                                        <h4 class="card-title">Удобный доступ</h4>
+                                        <p class="card-desc">Для удобства читателей книга выложена на Яндекс.Диск в формате PDF, загружена на Calameo и интегрирована на сайт ЦБС.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Подсекция: Результат и Интерактивная галерея -->
+                    <!-- Блок 4: Результат и Интерактивная галерея -->
                     <div id="results" class="details-block mt-5 pt-4 mb-5">
                         <div class="section-header d-flex align-items-center mb-4">
                             <div>
                                 <h2 class="section-title">Результат</h2>
-                                <p class="section-subtitle">Дополнительная информация о проекте</p>
+                                <p class="section-subtitle">Несколько страниц обновленной книги</p>
                             </div>
                         </div>
 
                         <p class="lead-text mb-5">
-                            В результате был создан современный сайт библиотеки с удобной системой публикации материалов и адаптивным интерфейсом для разных устройств.
+                            В результате совместной работы автора, корректоров и дизайнера Псков получил великолепно иллюстрированное энциклопедическое издание. Ниже представлены несколько разворотов сверстанной книги.
                         </p>
 
-                        <!-- Слайдер Swiper -->
+                        <!-- Слайдер Swiper (ровно 6 слайдов!) -->
                         <div class="project-gallery-container">
                             <div class="swiper project-gallery-slider">
                                 <div class="swiper-wrapper">
                                     
                                     <!-- Слайд 1 -->
                                     <div class="swiper-slide">
-                                        <!-- Ссылка оборачивает картинку для работы GLightbox. data-gallery объединяет их в одну галерею -->
-                                        <a href="assets/img/vasilevka.ru.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru.jpg" alt="Главный экран сайта библиотеки" class="gallery-slide-img">
+                                        <a href="assets/img/parks/parks-cover-1.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/parks/parks-cover-1.jpg" alt="Обложка книги (лицевая сторона)" class="gallery-slide-img">
                                         </a>
                                     </div>
                                     
                                     <!-- Слайд 2 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_about_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_about_.jpg" alt="Раздел краеведческого журнала" class="gallery-slide-img">
+                                        <a href="assets/img/parks/parks-cover-2.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/parks/parks-cover-2.jpg" alt="Обложка книги (обратная сторона)" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 3 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_category_media_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_category_media_.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/parks/parks-content-1.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/parks/parks-content-1.jpg" alt="Разворот книги. Пример оформления №1" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 4 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_electronic-catalog.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_electronic-catalog.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/parks/parks-content-2.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/parks/parks-content-2.jpg" alt="Разворот книги. Пример оформления №2" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 5 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_elementarno-vatson_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_elementarno-vatson_.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/parks/parks-content-3.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/parks/parks-content-3.jpg" alt="Разворот книги. Пример оформления №3" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 6 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_services_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_services_.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/parks/parks-content-4.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/parks/parks-content-4.jpg" alt="Разворот книги. Пример оформления №4" class="gallery-slide-img">
                                         </a>
                                     </div>
 
@@ -335,37 +335,37 @@
                                 <div class="swiper-button-next"><i class="bx bx-chevron-right"></i></div>
                             </div>
 
-                            <!-- Миниатюры (Превьюшки снизу) -->
+                            <!-- Миниатюры (Превьюшки снизу - ровно 6 штук) -->
                             <div class="gallery-thumbnails mt-4">
-                                <div class="row g-3">
+                                <div class="row g-2">
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru.webp" alt="Превью 1" class="img-fluid thumb-img" data-slide-index="0">
+                                            <img src="assets/img/parks/preview/parks-cover-1.webp" alt="Превью 1" class="img-fluid thumb-img" data-slide-index="0">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_about_.webp" alt="Превью 2" class="img-fluid thumb-img" data-slide-index="1">
+                                            <img src="assets/img/parks/preview/parks-cover-2.webp" alt="Превью 2" class="img-fluid thumb-img" data-slide-index="1">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_category_media_.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/parks/preview/parks-content-1.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_electronic-catalog.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/parks/preview/parks-content-2.webp" alt="Превью 4" class="img-fluid thumb-img" data-slide-index="3">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_elementarno-vatson_.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/parks/preview/parks-content-3.webp" alt="Превью 5" class="img-fluid thumb-img" data-slide-index="4">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_services_.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/parks/preview/parks-content-4.webp" alt="Превью 6" class="img-fluid thumb-img" data-slide-index="5">
                                         </div>
                                     </div>
                                 </div>
@@ -377,7 +377,6 @@
 
                 <!-- Правая колонка: Карточка информации о проекте -->
                 <div class="col-lg-4 ps-xl-5 sticky-sidebar-col">
-                    <!-- Используем тот же класс .calc-sidebar-card, чтобы унаследовать скругления, тени, залипание и GPU-хаки -->
                     <div class="calc-sidebar-card">
                         <div class="project-info-list">
                             
@@ -387,21 +386,27 @@
                                 <p class="info-value">Муниципальное автономное учреждение культуры "Централизованная библиотечная система" города Пскова</p>
                             </div>
 
+                            <!-- Формат -->
+                            <div class="info-item mb-4">
+                                <h4 class="info-title">Формат издания:</h4>
+                                <p class="info-value">А4, твердый переплет, глянцевая бумага</p>
+                            </div>
+
                             <!-- Год -->
                             <div class="info-item mb-4">
                                 <h4 class="info-title">Год:</h4>
-                                <p class="info-value">2026</p>
+                                <p class="info-value">2023</p>
                             </div>
 
                             <!-- Технологии -->
                             <div class="info-item">
-                                <h4 class="info-title mb-3">Технологии:</h4>
+                                <h4 class="info-title mb-3">Инструменты:</h4>
                                 <div class="tech-tags">
-                                    <span class="tech-tag">Wordpress</span>
-                                    <span class="tech-tag">Bootstrap 5</span>
-                                    <span class="tech-tag">PHP</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">SCSS</span>
+                                    <span class="tech-tag">Adobe InDesign</span>
+                                    <span class="tech-tag">Photoshop</span>
+                                    <span class="tech-tag">Illustrator</span>
+                                    <span class="tech-tag">Prepress</span>
+                                    <span class="tech-tag">PDF/X-1a</span>
                                 </div>
                             </div>
 
@@ -413,19 +418,11 @@
         </div>
     </section>
 
-
 </main>
 
 <footer class="footer">
     <div class="container d-flex flex-column align-items-center">
         
-        <!-- Круглый логотип-монограмма -->
-        <!-- <div class="footer-logo mb-4">
-            <a href="index.html">
-                <img src="assets/img/logo-blue.svg" alt="Александр Михайлов" class="img-fluid">
-            </a>
-        </div> -->
-
         <!-- Навигация в подвале -->
         <nav class="footer-nav mb-4">
             <ul class="d-flex flex-wrap justify-content-center gap-4">

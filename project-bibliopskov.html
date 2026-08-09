@@ -11,15 +11,15 @@
         })();
     </script>
 
-    <title>Александр Михайлов | Веб-дизайнер</title>
-    <meta name="description" content="Портфолио Александра Михайлова — веб-дизайнера и разработчика. Создание современных сайтов, оформление печатных изданий и работа с контентом. Подробности о выполненных проектах и контакты для связи.">
+    <title>Александр Михайлов | Сайт ЦБС города Пскова</title>
+    <meta name="description" content="Кейс разработки официального портала Централизованной библиотечной системы города Пскова. Редизайн, сложная структура, WordPress-интеграция и миграция 500+ страниц контента.">
 
-    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="AM Design" />
-    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
 
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/aos/aos.css">
@@ -89,32 +89,33 @@
 
 <main id="main">
 
-    <!-- Хлебные крошки (Размещаются над обложкой) -->
+    <!-- Хлебные крошки -->
     <nav aria-label="breadcrumb" class="custom-breadcrumbs py-3">
         <div class="container">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-                <li class="breadcrumb-item"><a href="index.html">Портфолио</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Сайт историко-краеведческой библиотеки им. И. И. Василёва</li>
+                <li class="breadcrumb-item"><a href="portfolio.html">Портфолио</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Сайт ЦБС города Пскова</li>
             </ol>
         </div>
     </nav>
 
-    <!-- Обложка проекта (Hero-секция страницы проекта) -->
+    <!-- Обложка проекта (uses .page-hero-card!) -->
     <section class="project-hero pb-5" data-aos="fade-up">
         <div class="container">
             <div class="page-hero-card">
                 <div class="row align-items-stretch g-0">
                     <div class="col-lg-7 d-flex flex-column justify-content-between p-4 p-md-5 hero-text-col">
                         <span class="hero-badge">Разработка сайта</span>
-                        <h1 class="hero-title">Сайт Историко-краеведческой библиотеки им. И. И. Василёва</h1>
-                        <div class="hero-btn-wrapper pb-3 pb-md-0">
-                            <a href="https://vasilevka.ru/" target="_blank" class="btn-more" aria-label="Перейти на сайт">Открыть сайт <i class="bx bx-arrow-right"></i></a>
+                        <h1 class="hero-title">Сайт Централизованной библиотечной системы г. Пскова</h1>
+                        <div class="hero-btn-wrapper mt-4">
+                            <a href="https://bibliopskov.ru/" target="_blank" class="btn-more" aria-label="Открыть сайт ЦБС города Пскова">Открыть сайт <i class="bx bx-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-5 position-relative hero-img-col">
                         <div class="hero-img-wrapper">
-                            <img src="assets/img/vasilevka.jpg" alt="Скриншот сайта библиотеки Василёва" class="hero-img">
+                            <!-- Сюда положите прямоугольный скриншот обложки сайта bibliopskov.ru -->
+                            <img src="assets/img/bibliopskov/project-bibliopskov-hero.ru.jpg" alt="Скриншот сайта ЦБС города Пскова" class="hero-img">
                         </div>
                     </div>
                 </div>
@@ -122,12 +123,12 @@
         </div>
     </section>
 
+    <!-- Основной контент (Детали лайаута) -->
     <section class="page-details-section pb-5">
         <div class="container">
-            <!-- Левая и правая колонки (используют те же классы разметки) -->
             <div class="row g-4 align-items-start">
                 
-                <!-- Левая колонка: Описание кейса -->
+                <!-- Левая колонка: Контент кейса -->
                 <div class="col-lg-8">
                     
                     <!-- Блок 1: О проекте -->
@@ -140,18 +141,17 @@
                         </div>
 
                         <div class="lead-text d-flex flex-column gap-3 mb-5">
-                            <p>Для Историко-краеведческой библиотеки был разработан сайт, который объединяет новости, афишу мероприятий и краеведческие публикации.</p>
-                            <p>Основной задачей было создать современный и удобный ресурс, позволяющий легко публиковать материалы и находить информацию о мероприятиях и проектах библиотеки.</p>
-                            <p>Проект реализован «с нуля». До этого у библиотеки не было единого цифрового представительства, удовлетворяющего современным требованиям.</p>
+                            <p>Основной задачей проекта было создание современного, быстрого и функционального интернет-портала для Централизованной библиотечной системы (ЦБС) города Пскова, которая объединяет под своим крылом 11 городских библиотек.</p>
+                            <p>Новый ресурс должен был стать главным цифровым представительством учреждения: помогать читателям находить информацию о книжных новинках, привлекать внимание к многочисленным мероприятиям, конкурсам и выставкам, а также популяризировать чтение среди молодежи.</p>
                         </div>
                     </div>
 
-                    <!-- Блок 2: Что сделано (Использует ваш готовый таймлайн!) -->
+                    <!-- Блок 2: Что сделано (Таймлайн) -->
                     <div id="what-was-done" class="details-block">
                         <div class="section-header d-flex align-items-center mb-5">
                             <div>
                                 <h2 class="section-title">Что сделано</h2>
-                                <p class="section-subtitle">Основные достижения</p>
+                                <p class="section-subtitle">Основные улучшения</p>
                             </div>
                         </div>
 
@@ -160,8 +160,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">1</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Разработка структуры сайта</h4>
-                                    <p class="step-desc">Продумана логичная структура разделов и навигации, позволяющая быстро находить новости, мероприятия и краеведческие материалы.</p>
+                                    <h4 class="step-title">Современный дизайн и айдентика</h4>
+                                    <p class="step-desc">Разработан новый логотип организации, подобрана свежая цветовая гамма и современные легкочитаемые шрифты, соответствующие духу современной библиотеки.</p>
                                 </div>
                             </div>
 
@@ -169,8 +169,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">2</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Современный дизайн</h4>
-                                    <p class="step-desc">Создан минималистичный и аккуратный интерфейс, обеспечивающий удобное восприятие информации.</p>
+                                    <h4 class="step-title">Проектирование структуры</h4>
+                                    <p class="step-desc">Многостраничная структура сайта была полностью переработана «с нуля». Мы распутали сложную логику разделов и создали интуитивно понятное меню навигации.</p>
                                 </div>
                             </div>
 
@@ -179,7 +179,7 @@
                                 <div class="step-number">3</div>
                                 <div class="timeline-content">
                                     <h4 class="step-title">Адаптивная верстка</h4>
-                                    <p class="step-desc">Сайт корректно отображается на компьютерах, планшетах и мобильных устройствах.</p>
+                                    <p class="step-desc">В отличие от старого сайта, новый портал полностью оптимизирован для мобильных устройств, обеспечивая комфортный просмотр афиши и новостей на смартфонах и планшетах.</p>
                                 </div>
                             </div>
 
@@ -187,8 +187,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">4</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Удобная система управления контентом</h4>
-                                    <p class="step-desc">Реализована система управления на базе WordPress, позволяющая сотрудникам легко добавлять и редактировать материалы.</p>
+                                    <h4 class="step-title">Интеграция с CMS WordPress</h4>
+                                    <p class="step-desc">Полностью отказались от ручной правки статических HTML-страниц. Мы создали удобную систему управления, позволяющую сотрудникам самостоятельно и быстро публиковать анонсы.</p>
                                 </div>
                             </div>
 
@@ -197,18 +197,18 @@
                                 <div class="step-number">5</div>
                                 <div class="timeline-content">
                                     <h4 class="step-title">SEO-оптимизация</h4>
-                                    <p class="step-desc">Настроена базовая поисковая оптимизация для корректной индексации страниц и повышения видимости сайта в поисковых системах.</p>
+                                    <p class="step-desc">Провели технический аудит, оптимизировали мета-теги и структуру заголовков, чтобы сохранить и улучшить позиции сайта в поисковых системах Яндекс и Google.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Подсекция: Особенности (Использует наши готовые карточки преимуществ!) -->
-                    <div id="features" class="details-block mt-5 pt-4 ">
+                    <!-- Блок 3: Особенности (Использует наши готовые карточки преимуществ!) -->
+                    <div id="features" class="details-block mt-5 pt-4">
                         <div class="section-header d-flex align-items-center mb-5">
                             <div>
                                 <h2 class="section-title">Особенности</h2>
-                                <p class="section-subtitle">Дополнительная информация о проекте</p>
+                                <p class="section-subtitle">Уникальные вызовы и решения проекта</p>
                             </div>
                         </div>
 
@@ -217,11 +217,11 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-calendar-check"></i>
+                                        <i class="bx bx-copy"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Онлайн-запись на мероприятия</h4>
-                                        <p class="card-desc">Пользователи могут записываться на лекции и события библиотеки прямо на сайте через специальную форму.</p>
+                                        <h4 class="card-title">Перенос 500+ страниц</h4>
+                                        <p class="card-desc">Одним из главных вызовов стал бережный перенос огромного объема архивных краеведческих материалов со старого статического сайта.</p>
                                     </div>
                                 </div>
                             </div>
@@ -230,11 +230,11 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-play-circle"></i>
+                                        <i class="bx bx-book"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Раздел «Медиа»</h4>
-                                        <p class="card-desc">На сайте реализован отдельный раздел с мультимедийными материалами: блог, краеведческий журнал и видеозаписи лекций.</p>
+                                        <h4 class="card-title">Руководство для персонала</h4>
+                                        <p class="card-desc">Для эффективной работы сотрудников ЦБС было создано подробное иллюстрированное руководство по администрированию сайта.</p>
                                     </div>
                                 </div>
                             </div>
@@ -243,11 +243,11 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-news"></i>
+                                        <i class="bx bx-message-circle-question-mark"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Краеведческий журнал</h4>
-                                        <p class="card-desc">В журнале могут публиковаться не только сотрудники библиотеки, но и сторонние авторы. Предусмотрена форма обратной связи.</p>
+                                        <h4 class="card-title">Поддержка и развитие</h4>
+                                        <p class="card-desc">Проект продолжает жить: я осуществляю постоянное техническое администрирование, консультирую коллег и плавно дорабатываю новые фичи.</p>
                                     </div>
                                 </div>
                             </div>
@@ -256,18 +256,18 @@
                             <div class="col-md-6">
                                 <div class="advantage-card d-flex align-items-center gap-3">
                                     <div class="icon-box">
-                                        <i class="bx bx-accessibility"></i>
+                                        <i class="bx bx-universal-access"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Цифровая доступность</h4>
-                                        <p class="card-desc">Сайт разработан с учетом требований адаптивности, оптимизирован для быстрой загрузки страниц и доступен разным аудиториям.</p>
+                                        <h4 class="card-title">Доступность информации</h4>
+                                        <p class="card-desc">Интегрированы специальные модули поиска по авторам и виртуальных выставок, расширяющие пользовательский опыт читателей.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Подсекция: Результат и Интерактивная галерея -->
+                    <!-- Блок 4: Результат и Интерактивная галерея -->
                     <div id="results" class="details-block mt-5 pt-4 mb-5">
                         <div class="section-header d-flex align-items-center mb-4">
                             <div>
@@ -277,7 +277,7 @@
                         </div>
 
                         <p class="lead-text mb-5">
-                            В результате был создан современный сайт библиотеки с удобной системой публикации материалов и адаптивным интерфейсом для разных устройств.
+                            В результате город Псков получил современный, открытый и удобный библиотечный портал, на котором одинаково комфортно искать краеведческие статьи с компьютера или смотреть афишу ближайших выставок со смартфона.
                         </p>
 
                         <!-- Слайдер Swiper -->
@@ -287,44 +287,43 @@
                                     
                                     <!-- Слайд 1 -->
                                     <div class="swiper-slide">
-                                        <!-- Ссылка оборачивает картинку для работы GLightbox. data-gallery объединяет их в одну галерею -->
-                                        <a href="assets/img/vasilevka.ru.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru.jpg" alt="Главный экран сайта библиотеки" class="gallery-slide-img">
+                                        <a href="assets/img/bibliopskov/bibliopskov.ru.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/bibliopskov/bibliopskov.ru.jpg" alt="Главный экран сайта ЦБС" class="gallery-slide-img">
                                         </a>
                                     </div>
                                     
                                     <!-- Слайд 2 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_about_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_about_.jpg" alt="Раздел краеведческого журнала" class="gallery-slide-img">
+                                        <a href="assets/img/bibliopskov/bibliopskov.ru_category_about_projects_.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/bibliopskov/bibliopskov.ru_category_about_projects_.jpg" alt="Внутренний раздел афиши" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 3 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_category_media_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_category_media_.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/bibliopskov/bibliopskov.ru_category_events_news_.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/bibliopskov/bibliopskov.ru_category_events_news_.jpg" alt="Краеведческий архив" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 4 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_electronic-catalog.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_electronic-catalog.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/bibliopskov/bibliopskov.ru_category_pskov_history_.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/bibliopskov/bibliopskov.ru_category_pskov_history_.jpg" alt="Краеведческий архив" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 5 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_elementarno-vatson_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_elementarno-vatson_.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/bibliopskov/bibliopskov.ru_otkrytie-kollektivnoj-fotovystavki-pskovskih-fotografov-v-gorode-pskov_.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/bibliopskov/bibliopskov.ru_otkrytie-kollektivnoj-fotovystavki-pskovskih-fotografov-v-gorode-pskov_.jpg" alt="Краеведческий архив" class="gallery-slide-img">
                                         </a>
                                     </div>
 
                                     <!-- Слайд 6 -->
                                     <div class="swiper-slide">
-                                        <a href="assets/img/vasilevka.ru_services_.jpg" class="glightbox" data-gallery="project-photos">
-                                            <img src="assets/img/vasilevka.ru_services_.jpg" alt="Адаптивная мобильная версия" class="gallery-slide-img">
+                                        <a href="assets/img/bibliopskov/bibliopskov.ru_vasilevka_.jpg.jpg" class="glightbox" data-gallery="project-photos">
+                                            <img src="assets/img/bibliopskov/bibliopskov.ru_vasilevka_.jpg.jpg" alt="Краеведческий архив" class="gallery-slide-img">
                                         </a>
                                     </div>
 
@@ -340,32 +339,32 @@
                                 <div class="row g-3">
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru.webp" alt="Превью 1" class="img-fluid thumb-img" data-slide-index="0">
+                                            <img src="assets/img/bibliopskov/preview/bibliopskov.ru.webp" alt="Превью 1" class="img-fluid thumb-img" data-slide-index="0">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_about_.webp" alt="Превью 2" class="img-fluid thumb-img" data-slide-index="1">
+                                            <img src="assets/img/bibliopskov/preview/bibliopskov.ru_category_about_projects_.webp" alt="Превью 2" class="img-fluid thumb-img" data-slide-index="1">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_category_media_.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/bibliopskov/preview/bibliopskov.ru_category_events_news_.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_electronic-catalog.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/bibliopskov/preview/bibliopskov.ru_category_pskov_history_.webp" alt="Превью 4" class="img-fluid thumb-img" data-slide-index="4">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_elementarno-vatson_.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/bibliopskov/preview/bibliopskov.ru_otkrytie-kollektivnoj-fotovystavki-pskovskih-fotografov-v-gorode-pskov_.webp" alt="Превью 5" class="img-fluid thumb-img" data-slide-index="4">
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="thumb-box">
-                                            <img src="assets/img/preview/vasilevka.ru_services_.webp" alt="Превью 3" class="img-fluid thumb-img" data-slide-index="2">
+                                            <img src="assets/img/bibliopskov/preview/bibliopskov.ru_vasilevka_.webp" alt="Превью 6" class="img-fluid thumb-img" data-slide-index="5">
                                         </div>
                                     </div>
                                 </div>
@@ -377,7 +376,6 @@
 
                 <!-- Правая колонка: Карточка информации о проекте -->
                 <div class="col-lg-4 ps-xl-5 sticky-sidebar-col">
-                    <!-- Используем тот же класс .calc-sidebar-card, чтобы унаследовать скругления, тени, залипание и GPU-хаки -->
                     <div class="calc-sidebar-card">
                         <div class="project-info-list">
                             
@@ -390,7 +388,7 @@
                             <!-- Год -->
                             <div class="info-item mb-4">
                                 <h4 class="info-title">Год:</h4>
-                                <p class="info-value">2026</p>
+                                <p class="info-value">2024</p>
                             </div>
 
                             <!-- Технологии -->
@@ -413,19 +411,11 @@
         </div>
     </section>
 
-
 </main>
 
 <footer class="footer">
     <div class="container d-flex flex-column align-items-center">
         
-        <!-- Круглый логотип-монограмма -->
-        <!-- <div class="footer-logo mb-4">
-            <a href="index.html">
-                <img src="assets/img/logo-blue.svg" alt="Александр Михайлов" class="img-fluid">
-            </a>
-        </div> -->
-
         <!-- Навигация в подвале -->
         <nav class="footer-nav mb-4">
             <ul class="d-flex flex-wrap justify-content-center gap-4">
