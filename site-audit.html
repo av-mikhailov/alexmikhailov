@@ -94,6 +94,7 @@
         <div class="container">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item"><a href="index.html#services">Услуги</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Аудит старого сайта</li>
             </ol>
         </div>
@@ -394,26 +395,32 @@
                                 <p class="box-subtitle">Напишите мне, и мы разберем вашу задачу, подберем оптимальное решение и рассчитаем стоимость</p>
                             </div>
 
-                            <form action="#" class="contact-form">
+                            <form id="contact-form" class="contact-form">
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Ваше имя" required>
+                                        <!-- Добавлен атрибут name="name" -->
+                                        <input type="text" name="name" class="form-control" placeholder="Ваше имя*" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control" placeholder="Ваш email" required>
+                                        <!-- Добавлен атрибут name="email" -->
+                                        <input type="email" name="email" class="form-control" placeholder="Ваш email*" required>
                                     </div>
                                     <div class="col-12">
-                                        <textarea class="form-control" rows="5" placeholder="Текст сообщения" required></textarea>
+                                        <!-- Добавлен атрибут name="message" -->
+                                        <textarea name="message" class="form-control" rows="5" placeholder="Текст сообщения*" required></textarea>
                                     </div>
                                     
+                                    <!-- Кнопка и соглашение -->
                                     <div class="col-12 d-flex flex-column align-items-center mt-4">
-                                        <button type="submit" class="btn btn-primary mb-3">Отправить сообщение</button>
+                                        <button type="submit" class="btn-submit mb-3" id="form-submit-btn">Отправить сообщение</button>
                                         <p class="consent-text">
-                                            Отправляя заявку, вы даете <a href="#" class="consent-link">согласие на обработку данных</a>
+                                            Отправляя заявку, вы даете <a href="privacy.html" class="consent-link">согласие на обработку данных</a>
                                         </p>
+                                        <!-- Блок для вывода статуса отправки (успех/ошибка) -->
+                                        <div id="form-status" class="mt-3 text-center" style="display: none; font-size: 14px; font-weight: 500;"></div>
                                     </div>
                                 </div>
-                            </form>
+                            </form> 
                             
                         </div>
                     </div>
@@ -423,20 +430,26 @@
                 <!-- Правая колонка: Липкий сайдбар с калькулятором стоимости -->
                 <div class="col-lg-4 ps-xl-5 sticky-sidebar-col">
                     <div class="calc-sidebar-card">
-                        <h3 class="sidebar-title">Заказать аудит сайта</h3>
+                        <h3 class="sidebar-title">Рассчитать стоимость дизайна</h3>
 
-                        <form action="#" class="sidebar-form">
+                        <!-- Наша форма -->
+                        <form class="sidebar-form">
+                            <!-- Скрытое техническое поле, чтобы обмануть валидацию PHP-скрипта -->
+                            <input type="hidden" name="name" value="Заявка из Сайдбара (Быстрый расчет)">
+
                             <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Ваш email" required>
+                                <!-- Добавлен атрибут name="email" -->
+                                <input type="email" name="email" class="form-control" placeholder="Ваш email" required>
                             </div>
                             <div class="mb-4">
-                                <textarea class="form-control" rows="4" placeholder="Текст сообщения" required></textarea>
+                                <!-- Добавлен атрибут name="message" -->
+                                <textarea name="message" class="form-control" rows="4" placeholder="Текст сообщения" required></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-primary w-100 mb-3">Жду расчет</button>
                             
                             <p class="consent-text text-center">
-                                Отправляя заявку, вы даете <a href="#" class="consent-link">согласие на обработку данных</a>
+                                Отправляя заявку, вы даете <a href="privacy.html" class="consent-link">согласие на обработку данных</a>
                             </p>
                         </form>
                     </div>

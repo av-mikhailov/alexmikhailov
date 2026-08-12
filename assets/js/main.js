@@ -342,58 +342,65 @@
   }
 
 
-  /**
-   * Бесшовная AJAX-отправка формы обратной связи (через Fetch API)
+/**
+   * Универсальная бесшовная отправка ВСЕХ форм на сайте (Контакты и Сайдбар)
    */
-  const contactForm = document.querySelector('#contact-form');
-  const formStatus = document.querySelector('#form-status');
-  const submitBtn = document.querySelector('#form-submit-btn');
+  const ajaxForms = document.querySelectorAll('.contact-form, .sidebar-form');
 
-  if (contactForm && formStatus && submitBtn) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault(); // Блокируем перезагрузку страницы
+  if (ajaxForms.length > 0) {
+    ajaxForms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Блокируем перезагрузку страницы
 
-      // Меняем текст кнопки на состояние отправки
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = 'Отправка...';
-      submitBtn.disabled = true;
-
-      // Скрываем прошлый статус
-      formStatus.style.display = 'none';
-
-      // Собираем данные формы
-      const formData = new FormData(contactForm);
-
-      // Отправляем асинхронный запрос на сервер к файлу sendmail.php
-      fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        // Выводим сообщение ответа
-        formStatus.textContent = data.message;
-        formStatus.style.display = 'block';
-
-        if (data.status === 'success') {
-          // Если отправлено успешно — красим статус в зеленый/акцентный и очищаем форму
-          formStatus.style.color = 'var(--color-accent)'; 
-          contactForm.reset();
-        } else {
-          // Если ошибка — красим в красный
-          formStatus.style.color = '#ff4d4d'; 
+        const submitBtn = this.querySelector('button[type="submit"]');
+        
+        // Динамически ищем или создаем блок статуса внутри отправляемой формы
+        let formStatus = this.querySelector('.form-status');
+        if (!formStatus) {
+          formStatus = document.createElement('div');
+          formStatus.className = 'form-status mt-3 text-center';
+          formStatus.style.cssText = 'display: none; font-size: 14px; font-weight: 500;';
+          this.appendChild(formStatus); // Вставляем в самый конец формы
         }
-      })
-      .catch(error => {
-        // Обработка системной ошибки соединения
-        formStatus.textContent = 'Произошла системная ошибка соединения. Попробуйте еще раз.';
-        formStatus.style.color = '#ff4d4d';
-        formStatus.style.display = 'block';
-      })
-      .finally(() => {
-        // Возвращаем кнопку в исходное состояние
-        submitBtn.textContent = originalBtnText;
-        submitBtn.disabled = false;
+
+        // Меняем текст кнопки на состояние отправки
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Отправка...';
+        submitBtn.disabled = true;
+
+        // Скрываем прошлый статус
+        formStatus.style.display = 'none';
+
+        // Собираем данные конкретно этой формы
+        const formData = new FormData(this);
+
+        // Отправляем асинхронный запрос
+        fetch('sendmail.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          formStatus.textContent = data.message;
+          formStatus.style.display = 'block';
+
+          if (data.status === 'success') {
+            formStatus.style.color = 'var(--color-accent)'; 
+            this.reset(); // Очищаем только отправленную форму
+          } else {
+            formStatus.style.color = '#ff4d4d'; 
+          }
+        })
+        .catch(error => {
+          formStatus.textContent = 'Произошла ошибка соединения. Попробуйте еще раз.';
+          formStatus.style.color = '#ff4d4d';
+          formStatus.style.display = 'block';
+        })
+        .finally(() => {
+          // Возвращаем кнопку в исходное состояние
+          submitBtn.textContent = originalBtnText;
+          submitBtn.disabled = false;
+        });
       });
     });
   }
