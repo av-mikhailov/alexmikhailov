@@ -341,4 +341,61 @@
     });
   }
 
+
+  /**
+   * Бесшовная AJAX-отправка формы обратной связи (через Fetch API)
+   */
+  const contactForm = document.querySelector('#contact-form');
+  const formStatus = document.querySelector('#form-status');
+  const submitBtn = document.querySelector('#form-submit-btn');
+
+  if (contactForm && formStatus && submitBtn) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Блокируем перезагрузку страницы
+
+      // Меняем текст кнопки на состояние отправки
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Отправка...';
+      submitBtn.disabled = true;
+
+      // Скрываем прошлый статус
+      formStatus.style.display = 'none';
+
+      // Собираем данные формы
+      const formData = new FormData(contactForm);
+
+      // Отправляем асинхронный запрос на сервер к файлу sendmail.php
+      fetch('sendmail.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Выводим сообщение ответа
+        formStatus.textContent = data.message;
+        formStatus.style.display = 'block';
+
+        if (data.status === 'success') {
+          // Если отправлено успешно — красим статус в зеленый/акцентный и очищаем форму
+          formStatus.style.color = 'var(--color-accent)'; 
+          contactForm.reset();
+        } else {
+          // Если ошибка — красим в красный
+          formStatus.style.color = '#ff4d4d'; 
+        }
+      })
+      .catch(error => {
+        // Обработка системной ошибки соединения
+        formStatus.textContent = 'Произошла системная ошибка соединения. Попробуйте еще раз.';
+        formStatus.style.color = '#ff4d4d';
+        formStatus.style.display = 'block';
+      })
+      .finally(() => {
+        // Возвращаем кнопку в исходное состояние
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      });
+    });
+  }
+
 })();

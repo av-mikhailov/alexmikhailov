@@ -21,6 +21,19 @@ a {
   transition: vars.$transition;
 }
 
+p {
+  margin-bottom: 0rem;
+}
+
+p a {
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+
+p a:hover {
+  color: vars.$color-accent;
+}
+
 .custom-3d-player {
   width: 100%;
   height: 500px;
