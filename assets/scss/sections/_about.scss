@@ -82,19 +82,18 @@
   }
 }
 
-// Адаптив для карточек на мобилках
 @media (max-width: 768px) {
   .about {
     .skills-grid {
       justify-content: center;
     }
     .skill-card {
-      width: 100%; // На мобилках карточки на всю ширину
+      width: 100%; 
       height: auto;
       padding: 30px;
     }
     .title-line {
-        display: none; // Уберем линию на мобилках, если она мешает центрированию
+        display: none; 
     }
     // .section-header {
     //     text-align: center;

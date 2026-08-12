@@ -5,10 +5,10 @@
   width: 100%;
 
   .project-gallery-slider {
-    border-radius: vars.$radius-xl; // 24px/32px
+    border-radius: vars.$radius-md;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   }
 
   .swiper-slide {
@@ -30,7 +30,7 @@
     transition: transform 0.5s ease;
 
     &:hover {
-      transform: scale(1.02); // Легкий интерактивный зум при наведении
+      transform: scale(1.01); // Легкий интерактивный зум при наведении
     }
   }
 
@@ -66,7 +66,7 @@
   // --- МИНИАТЮРЫ (Thumbnails) ---
   .gallery-thumbnails {
     .thumb-box {
-      border-radius: 16px;
+      border-radius: 8px;
       overflow: hidden;
       aspect-ratio: 16 / 10;
       cursor: pointer;
@@ -85,7 +85,7 @@
       }
 
       @media (max-width: 768px) {
-        border-radius: 6px;
+        border-radius: 4px;
       }
     }
 
