@@ -13,7 +13,7 @@
 
   .swiper-slide {
     position: relative;
-    aspect-ratio: 16 / 9; // Сохраняем пропорции скриншотов на любых экранах
+    aspect-ratio: 16 / 9;
 
     a {
       display: block;
@@ -30,27 +30,24 @@
     transition: transform 0.5s ease;
 
     &:hover {
-      transform: scale(1.01); // Легкий интерактивный зум при наведении
+      transform: scale(1.01);
     }
   }
 
-  // --- КАСТОМИЗАЦИЯ СТРЕЛОК SWIPER ---
   .swiper-button-prev,
   .swiper-button-next {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: rgba(vars.$color-bg-alt, 0.8); // Полупрозрачный темный фон
+    background-color: rgba(vars.$color-bg-alt, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: vars.$color-text;
     transition: vars.$transition;
 
-    // Убираем дефолтную стрелку-шрифт Swiper
     &::after {
       display: none;
     }
 
-    // Стилизуем нашу иконку Boxicons внутри стрелки
     i {
       font-size: 24px;
       line-height: 1;
@@ -63,7 +60,6 @@
     }
   }
 
-  // --- МИНИАТЮРЫ (Thumbnails) ---
   .gallery-thumbnails {
     .thumb-box {
       border-radius: 8px;
@@ -74,7 +70,6 @@
       transition: vars.$transition;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
-      // Активная превьюшка подсвечивается оранжевой рамкой
       &.thumb-active {
         border-color: vars.$color-accent;
         transform: translateY(-2px);

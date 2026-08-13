@@ -26,26 +26,23 @@
 }
 
 .btn-outline-light {
-  border: 1px solid vars.$color-btn-outline; // Автоматически подставит нужный цвет и прозрачность!
-  color: vars.$color-title; // Использует благородный пыльно-синий в светлой теме
+  border: 1px solid vars.$color-btn-outline;
+  color: vars.$color-title;
   padding: 10px 16px;
   
-  // ИСПРАВЛЕНО: Вместо прозрачности даем кнопке плотный фоновый цвет темы.
-  // Это полностью скроет пролетающие фоновые точки под кнопкой!
   background-color: vars.$color-btn-outline-background;
 
   &:hover {
-    background-color: vars.$color-btn-outline-hover-bg; // Белый в темной, голубоватый в светлой
+    background-color: vars.$color-btn-outline-hover-bg;
     border-color: vars.$color-btn-outline;
-    color: vars.$color-btn-outline-hover-text; // Темный в темной, пыльно-синий в светлой
+    color: vars.$color-btn-outline-hover-text;
   }
 }
 
-// Новая глобальная кнопка-ссылка (перенесена из услуг)
 .btn-more {
   display: inline-block;
   padding: 6px 24px;
-  padding-right: 12px; // Чуть меньше справа, так как там иконка
+  padding-right: 12px;
   border: 1px solid vars.$color-accent;
   border-radius: vars.$radius-xxl;
   color: vars.$color-accent;
@@ -58,17 +55,16 @@
     vertical-align: middle;
     font-size: 20px;
     margin-left: 4px;
-    transition: transform 0.3s ease; // Плавная анимация стрелки
+    transition: transform 0.3s ease;
   }
 
-  // Стили при наведении на саму кнопку (на случай, если она используется вне карточек)
   &:hover {
     background-color: vars.$color-accent;
     color: vars.$color-bg;
     border-color: vars.$color-accent;
 
     i {
-      transform: translateX(4px); // Стрелка сдвигается вправо
+      transform: translateX(4px);
     }
   }
 }

@@ -10,12 +10,11 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: vars.$color-bg-alt; // Белая в светлой теме, темно-серая в темной
-  border: 1px solid rgba(128, 128, 128, 0.15); // Тонкая серая обводка
+  background-color: vars.$color-bg-alt;
+  border: 1px solid rgba(128, 128, 128, 0.15);
   color: vars.$color-text;
   transition: all 0.3s ease-in-out;
 
-  // Светлая тема: синяя стрелка и мягкий синий отсвет
   [data-theme="light"] & {
     color: vars.$color-title;
     background-color: vars.$color-hero-bg;
@@ -26,14 +25,12 @@
     line-height: 0;
   }
 
-  // Эффекты при наведении
   &:hover {
-    background-color: vars.$color-accent; // Оранжевая в темной теме
+    background-color: vars.$color-accent;
     border-color: vars.$color-accent;
     color: vars.$color-bg;
-    transform: translateY(-3px) !important; // Карточка слегка приподнимается
+    transform: translateY(-3px) !important;
 
-    // Наведение в светлой теме (синяя кнопка)
     [data-theme="light"] & {
       background-color: vars.$color-primary;
       border-color: vars.$color-primary;
@@ -41,7 +38,6 @@
     }
   }
 
-  // Класс активности (добавляется через JS при скролле)
   &.active {
     visibility: visible;
     opacity: 1;

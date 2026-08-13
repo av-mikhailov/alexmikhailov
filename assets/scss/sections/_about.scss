@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as vars;
 
 .about {
-  padding-top: 64px; // Тот самый отступ от Hero
+  padding-top: 64px;
   background-color: vars.$color-bg;
 
   .about-photo {

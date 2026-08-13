@@ -35,7 +35,6 @@
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
         
-        <!-- Логотип (Слева) -->
         <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
             <img src="assets/img/logo-blue-l.png" alt="Логотип Александра Михайлова" class="img-fluid me-3">
             <div class="logo-text">
@@ -44,20 +43,19 @@
             </div>
         </a>
 
-        <!-- Правый блок: Меню + Переключатель + Гамбургер -->
         <div class="d-flex align-items-center">
-            
-            <!-- Основное меню -->
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
                     <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
-                    <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#portfolio">Портфолио</a></li>
                     <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
                     
-                    <!-- Переключатель тем -->
-                    <li class="d-lg-none">
-                        <div class="header-theme-switcher mt-3">
+                    <!-- БЛОК ВНИЗУ МОБИЛЬНОГО МЕНЮ (Прижмется к низу автоматически) -->
+                    <li class="d-lg-none mobile-menu-footer mt-auto">
+                        
+                        <!-- Переключатель тем -->
+                        <div class="header-theme-switcher py-3">
                             <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
                             <label class="theme-toggle">
                                 <input type="checkbox" class="theme-checkbox" aria-label="Переключить тему оформления">
@@ -65,10 +63,31 @@
                             </label>
                             <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
                         </div>
+
+                        <!-- Тонкая линия-разделитель -->
+                        <div class="mobile-menu-divider"></div>
+
+                        <div class="mobile-menu-info p-4 text-start">
+                            <div class="info-block mb-4">
+                                <h5 class="info-label">Связаться со мной:</h5>
+                                <p class="info-text">
+                                    <a href="mailto:av.mikhailov93@gmail.com" class="menu-email ps-0">av.mikhailov93@gmail.com</a>
+                                </p>
+                            </div>
+                            
+                            <div class="info-block">
+                                <h5 class="info-label mb-3">Я в соцсетях:</h5>
+                                <div class="menu-socials d-flex gap-2">
+                                    <a href="https://vk.ru/mikhailov93" target="_blank" class="social-btn" aria-label="ВКонтакте"><i class="bxl bx-vk"></i></a>
+                                    <a href="https://t.me/av_mikhailov93" target="_blank" class="social-btn" aria-label="Телеграм"><i class="bxl bx-telegram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
                     </li>
                 </ul>
                 
-                <!-- Иконка мобильного меню -->
+                <!-- Иконка мобильного меню (Внутри тега nav!) -->
                 <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
             </nav>
 
@@ -81,9 +100,7 @@
                 </label>
                 <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
             </div>
-            
         </div>
-
     </div>
 </header>
 

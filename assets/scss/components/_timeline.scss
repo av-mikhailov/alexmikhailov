@@ -8,7 +8,6 @@
     padding-left: 84px;
     padding-bottom: 40px;
 
-    // Соединительная вертикальная линия
     &::before {
       content: "";
       position: absolute;
@@ -16,7 +15,6 @@
       top: 56px;
       bottom: 0;
       width: 1px;
-      // ИСПРАВЛЕНО: Линия подстраивается под цвет текста темы с легкой прозрачностью
       background-color: vars.$color-text; 
       opacity: 0.1; 
       z-index: 1;
@@ -28,7 +26,6 @@
     }
   }
 
-  // Круг с цифрой
   .step-number {
     position: absolute;
     left: 0;
@@ -37,7 +34,7 @@
     height: 56px;
     border-radius: 50%;
     background-color: vars.$color-bg-alt;
-    color: vars.$color-accent; // Оранжевый по умолчанию
+    color: vars.$color-accent;
     font-size: 18px;
     font-weight: 700;
     display: flex;
@@ -46,11 +43,9 @@
     z-index: 2;
     border: 1px solid rgba(128, 128, 128, 0.15); 
 
-    // ИСПРАВЛЕНО: В светлой теме кружок становится нежно-голубым, 
-    // цифра синей, а обводка получает нежно-синий оттенок
     [data-theme="light"] & {
       background-color: vars.$color-bg; 
-      color: vars.$color-primary; // Глубокий синий
+      color: vars.$color-primary;
       border-color: rgba(36, 73, 180, 0.15);
     }
   }
@@ -61,13 +56,13 @@
     .step-title {
       font-size: 20px;
       font-weight: 600;
-      color: vars.$color-title; // Исправлено!
+      color: vars.$color-title;
       margin-bottom: 4px;
     }
 
     .step-desc {
       font-size: 15px;
-      color: vars.$color-text-muted; // Исправлено!
+      color: vars.$color-text-muted;
       line-height: 1.5;
       margin-bottom: 0;
     }

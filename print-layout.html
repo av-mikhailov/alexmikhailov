@@ -35,7 +35,6 @@
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
         
-        <!-- Логотип (Слева) -->
         <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
             <img src="assets/img/logo-blue-l.png" alt="Логотип Александра Михайлова" class="img-fluid me-3">
             <div class="logo-text">
@@ -44,20 +43,19 @@
             </div>
         </a>
 
-        <!-- Правый блок: Меню + Переключатель + Гамбургер -->
         <div class="d-flex align-items-center">
-            
-            <!-- Основное меню (Гамбургер возвращен внутрь!) -->
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
                     <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
-                    <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#portfolio">Портфолио</a></li>
                     <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
                     
-                    <!-- Переключатель тем (Только для мобильных экранов внутри меню) -->
-                    <li class="d-lg-none">
-                        <div class="header-theme-switcher mt-3">
+                    <!-- БЛОК ВНИЗУ МОБИЛЬНОГО МЕНЮ (Прижмется к низу автоматически) -->
+                    <li class="d-lg-none mobile-menu-footer mt-auto">
+                        
+                        <!-- Переключатель тем -->
+                        <div class="header-theme-switcher py-3">
                             <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
                             <label class="theme-toggle">
                                 <input type="checkbox" class="theme-checkbox" aria-label="Переключить тему оформления">
@@ -65,6 +63,27 @@
                             </label>
                             <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
                         </div>
+
+                        <!-- Тонкая линия-разделитель -->
+                        <div class="mobile-menu-divider"></div>
+
+                        <div class="mobile-menu-info p-4 text-start">
+                            <div class="info-block mb-4">
+                                <h5 class="info-label">Связаться со мной:</h5>
+                                <p class="info-text">
+                                    <a href="mailto:av.mikhailov93@gmail.com" class="menu-email ps-0">av.mikhailov93@gmail.com</a>
+                                </p>
+                            </div>
+                            
+                            <div class="info-block">
+                                <h5 class="info-label mb-3">Я в соцсетях:</h5>
+                                <div class="menu-socials d-flex gap-2">
+                                    <a href="https://vk.ru/mikhailov93" target="_blank" class="social-btn" aria-label="ВКонтакте"><i class="bxl bx-vk"></i></a>
+                                    <a href="https://t.me/av_mikhailov93" target="_blank" class="social-btn" aria-label="Телеграм"><i class="bxl bx-telegram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
                     </li>
                 </ul>
                 
@@ -81,9 +100,7 @@
                 </label>
                 <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
             </div>
-            
         </div>
-
     </div>
 </header>
 
@@ -108,7 +125,7 @@
                     <div class="col-lg-7 d-flex flex-column justify-content-between p-4 p-md-5 hero-text-col">
                         <div>
                             <h1 class="hero-title">Верстка печатных изданий</h1>
-                            <p class="hero-desc">Разрабатываю уникальный дизайн обложек, создаю продуманную модульную сетку и выполняю качественную верстку книг, журналов, буклетов и сборников.</p>
+                            <p class="hero-desc">Разрабатываю дизайн и верстаю книги, журналы, буклеты и сборники — от обложки и структуры страниц до подготовки готового макета к печати.</p>
                         </div>
                         <div class="hero-page-nav mt-5">
                             <ul class="d-flex flex-wrap gap-4 list-unstyled mb-0">
@@ -149,7 +166,7 @@
                         </div>
 
                         <p class="lead-text mb-5">
-                            Качественная верстка делает чтение книги или журнала приятным и легким. Я уделяю внимание каждой детали — от межстрочных интервалов и полей до правильного переноса слов, баланса колонок и подготовки файлов по техническим требованиям типографий.
+                            Хорошая верстка помогает сделать издание понятным, цельным и удобным для чтения. Я работаю с типографикой, сеткой, изображениями и структурой страниц, а в конце подготавливаю готовый макет к печати с учетом требований типографии.
                         </p>
 
                         <!-- Сетка преимуществ (2х2) -->
@@ -161,8 +178,8 @@
                                         <i class="bx bx-grid"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Разработка сетки и стиля</h4>
-                                        <p class="card-desc">Проектирование модульной сетки, полей, подбор идеальных шрифтовых пар и настройка базовой сетки линий.</p>
+                                        <h4 class="card-title">Сетка и типографика</h4>
+                                        <p class="card-desc">Проектирование модульной сетки, настройка полей и работа с типографикой для цельного и удобного макета.</p>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +192,7 @@
                                     </div>
                                     <div class="card-text">
                                         <h4 class="card-title">Дизайн обложки</h4>
-                                        <p class="card-desc">Создание яркой, запоминающейся обложки, которая отражает суть издания и привлекает внимание читателя.</p>
+                                        <p class="card-desc">Создание обложки с учетом содержания, формата и визуального стиля издания.</p>
                                     </div>
                                 </div>
                             </div>
@@ -187,8 +204,8 @@
                                         <i class="bx bx-table"></i>
                                     </div>
                                     <div class="card-text">
-                                        <h4 class="card-title">Сложное форматирование</h4>
-                                        <p class="card-desc">Аккуратное оформление списков, таблиц, формул, сносок и краеведческого иллюстративного материала.</p>
+                                        <h4 class="card-title">Работа с содержанием</h4>
+                                        <p class="card-desc">Оформление таблиц, списков, сносок, иллюстраций и других элементов в соответствии со структурой издания.</p>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +218,7 @@
                                     </div>
                                     <div class="card-text">
                                         <h4 class="card-title">Передача исходников</h4>
-                                        <p class="card-desc">Вы получаете не только готовый PDF для печати, но и полный упакованный пакет InDesign (indd, шрифты, связи).</p>
+                                        <p class="card-desc">Передаю готовый PDF для печати и исходный файл проекта InDesign с необходимыми связанными материалами.</p>
                                     </div>
                                 </div>
                             </div>
@@ -224,8 +241,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">1</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Анализ контента и ТЗ</h4>
-                                    <p class="step-desc">Принимаю текстовые материалы и иллюстрации, изучаю технические требования типографии (вылеты под обрез, поля, профили).</p>
+                                    <h4 class="step-title">Анализ материалов и требований</h4>
+                                    <p class="step-desc">Изучаю текстовые материалы и иллюстрации, уточняю структуру издания, формат и технические требования к печати.</p>
                                 </div>
                             </div>
 
@@ -234,7 +251,7 @@
                                 <div class="step-number">2</div>
                                 <div class="timeline-content">
                                     <h4 class="step-title">Дизайн-концепция</h4>
-                                    <p class="step-desc">Создаю варианты обложки, утверждаем мастер-страницы (шаблоны), стилевое оформление и модульную сетку.</p>
+                                    <p class="step-desc">Разрабатываю визуальный стиль, обложку, модульную сетку и основные шаблоны страниц.</p>
                                 </div>
                             </div>
 
@@ -242,8 +259,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">3</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Верстка и сборка макета</h4>
-                                    <p class="step-desc">Верстаю издание в Adobe InDesign: настраиваю стили текста, расставляю иллюстрации, таблицы, сноски и нумерацию.</p>
+                                    <h4 class="step-title">Вёрстка издания</h4>
+                                    <p class="step-desc">Верстаю страницы в Adobe InDesign, настраиваю стили текста, размещаю иллюстрации, таблицы, сноски и другие элементы.</p>
                                 </div>
                             </div>
 
@@ -251,8 +268,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">4</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Корректура и правки</h4>
-                                    <p class="step-desc">Вносим финальные текстовые исправления, устраняем «висячие» строки (вдовы и сироты) и дорабатываем баланс полос.</p>
+                                    <h4 class="step-title">Проверка и правки</h4>
+                                    <p class="step-desc">Проверяю макет, вношу правки и дорабатываю оформление отдельных страниц перед финальным экспортом.</p>
                                 </div>
                             </div>
 
@@ -260,8 +277,8 @@
                             <div class="timeline-item">
                                 <div class="step-number">5</div>
                                 <div class="timeline-content">
-                                    <h4 class="step-title">Экспорт и упаковка</h4>
-                                    <p class="step-desc">Экспортирую печатный PDF/X по стандарту типографии и собираю полный архив исходных файлов (InDesign Package).</p>
+                                    <h4 class="step-title">Подготовка к печати</h4>
+                                    <p class="step-desc">Проверяю макет и экспортирую готовый PDF с учетом технических требований типографии. При необходимости передаю исходные материалы проекта.</p>
                                 </div>
                             </div>
 
@@ -274,7 +291,7 @@
                         <div class="section-header d-flex align-items-center mb-4">
                             <div>
                                 <h2 class="section-title">Стоимость и сроки</h2>
-                                <p class="section-subtitle">Ориентировочные тарифы на многостраничную верстку</p>
+                                <p class="section-subtitle">Стоимость зависит от объема и сложности проекта</p>
                             </div>
                         </div>
 
@@ -290,18 +307,18 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="project-type">Малые формы (буклеты, брошюры до 20 стр.)</td>
+                                            <td class="project-type">Буклеты и брошюры</td>
                                             <td class="project-time">от 7 дней</td>
                                             <td class="project-price">от 10 000 руб.</td>
                                         </tr>
                                         <tr>
-                                            <td class="project-type">Периодические издания (журналы, вестники)</td>
+                                            <td class="project-type">Журналы и периодические издания</td>
                                             <td class="project-time">от 14 дней</td>
                                             <td class="project-price">от 1000 руб. / полоса</td>
                                         </tr>
                                         <tr>
-                                            <td class="project-type">Книги и сборники (худ. и научная литература)</td>
-                                            <td class="project-time">3-4 недели</td>
+                                            <td class="project-type">Книги и сборники</td>
+                                            <td class="project-time">От 3 недель</td>
                                             <td class="project-price">от 500 руб. / полоса</td>
                                         </tr>
                                     </tbody>
@@ -333,7 +350,7 @@
                                 </h3>
                                 <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Вся многостраничная верстка выполняется в Adobe InDesign. Это индустриальный стандарт, гарантирующий точную работу со шрифтовыми стилями, таблицами, автоматической нумерацией и связями изображений.
+                                        Всю многостраничную верстку выполняю в Adobe InDesign. Программа позволяет удобно работать со стилями текста, изображениями, таблицами, нумерацией страниц и другими элементами сложных макетов.
                                     </div>
                                 </div>
                             </div>
@@ -348,7 +365,7 @@
                                 </h3>
                                 <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Полоса — это одна страница печатного издания. Если ваша книга содержит 100 страниц, то объем верстки составляет 100 полос. Итоговая стоимость рассчитывается умножением цены за одну полосу на их общее количество.
+                                        Полоса — это одна страница печатного издания. Например, если книга содержит 100 страниц, объем верстки составляет 100 полос. Стоимость за полосу используется как ориентир, а итоговая цена зависит также от сложности макета и объема работы.
                                     </div>
                                 </div>
                             </div>
@@ -363,7 +380,7 @@
                                 </h3>
                                 <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Да. Перед экспортом я запрашиваю технические требования выбранной типографии (размеры полей, вылеты под обрез, требования к разрешению и цветовому профилю) и экспортирую финальный PDF/X строго по этим параметрам.
+                                        Да. Перед финальным экспортом учитываю технические требования выбранной типографии: формат, вылеты под обрез, разрешение изображений, цветовой профиль и другие параметры.
                                     </div>
                                 </div>
                             </div>
@@ -378,7 +395,7 @@
                                 </h3>
                                 <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Да. После завершения проекта вы получаете полный пакет Adobe InDesign (Package): файл макета (.indd), все используемые шрифты и связаные изображения высокого разрешения.
+                                        Да. После завершения проекта могу передать исходный файл InDesign и необходимые материалы проекта. Состав передаваемых исходников согласовывается при заключении договора.
                                     </div>
                                 </div>
                             </div>
@@ -413,9 +430,12 @@
                                     <!-- Кнопка и соглашение -->
                                     <div class="col-12 d-flex flex-column align-items-center mt-4">
                                         <button type="submit" class="btn-submit mb-3" id="form-submit-btn">Отправить сообщение</button>
-                                        <p class="consent-text">
-                                            Отправляя заявку, вы даете <a href="privacy.html" class="consent-link">согласие на обработку данных</a>
-                                        </p>
+                                        <div class="form-check d-flex align-items-center gap-2">
+                                            <input class="form-check-input" name="consent" type="checkbox" id="consentCheckbox" required>
+                                            <label class="form-check-label consent-text text-start" for="consentCheckbox" style="cursor: pointer; margin-bottom: -4px;">
+                                                Соглашаюсь на обработку персональных данных в соответствии с <a href="privacy.html" class="consent-link">Политикой обработки персональных данных</a>
+                                            </label>
+                                        </div>
                                         <!-- Блок для вывода статуса отправки (успех/ошибка) -->
                                         <div id="form-status" class="mt-3 text-center" style="display: none; font-size: 14px; font-weight: 500;"></div>
                                     </div>
@@ -430,27 +450,50 @@
                 <!-- Правая колонка: Липкий сайдбар с калькулятором стоимости -->
                 <div class="col-lg-4 ps-xl-5 sticky-sidebar-col">
                     <div class="calc-sidebar-card">
-                        <h3 class="sidebar-title">Рассчитать стоимость дизайна</h3>
+                        <h3 class="sidebar-title">Рассчитать стоимость проекта</h3>
 
-                        <!-- Наша форма -->
                         <form class="sidebar-form">
-                            <!-- Скрытое техническое поле, чтобы обмануть валидацию PHP-скрипта -->
-                            <input type="hidden" name="name" value="Заявка из Сайдбара (Быстрый расчет)">
+                            <input type="hidden" name="name" value="Заявка с сайта">
 
                             <div class="mb-3">
-                                <!-- Добавлен атрибут name="email" -->
-                                <input type="email" name="email" class="form-control" placeholder="Ваш email" required>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Ваш email"
+                                    required
+                                >
                             </div>
+
                             <div class="mb-4">
-                                <!-- Добавлен атрибут name="message" -->
-                                <textarea name="message" class="form-control" rows="4" placeholder="Текст сообщения" required></textarea>
+                                <textarea
+                                    name="message"
+                                    class="form-control"
+                                    rows="4"
+                                    placeholder="Расскажите о проекте"
+                                    required
+                                ></textarea>
                             </div>
-                            
-                            <button type="submit" class="btn btn-primary w-100 mb-3">Жду расчет</button>
-                            
-                            <p class="consent-text text-center">
-                                Отправляя заявку, вы даете <a href="privacy.html" class="consent-link">согласие на обработку данных</a>
-                            </p>
+
+                            <button type="submit" class="btn btn-primary w-100 mb-3">
+                                Получить расчет
+                            </button>
+
+                            <div class="form-check d-flex gap-2">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="consent"
+                                    id="sidebarConsentCheckbox"
+                                    required
+                                >
+                                <label
+                                    class="form-check-label consent-text text-start"
+                                    for="sidebarConsentCheckbox"
+                                >
+                                    Соглашаюсь на обработку персональных данных в соответствии с <a href="privacy.html" class="consent-link">Политикой обработки персональных данных</a>
+                                </label>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -34,33 +34,71 @@
     <div class="container d-flex align-items-center justify-content-between">
         
         <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
-            <img src="assets/img/logo.svg" alt="Логотип Александра Михайлова" class="img-fluid me-3">
+            <img src="assets/img/logo-blue-l.png" alt="Логотип Александра Михайлова" class="img-fluid me-3">
             <div class="logo-text">
                 <span class="d-block name">Александр Михайлов</span>
                 <small class="d-block profession">Веб-разработчик</small>
             </div>
         </a>
 
-        <nav id="navbar" class="navbar">
-            <ul>
-                <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
-                <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
-                <li><a class="nav-link" href="portfolio.html">Портфолио</a></li>
-                <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
+        <div class="d-flex align-items-center">
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#services">Услуги</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#portfolio">Портфолио</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
+                    
+                    <!-- БЛОК ВНИЗУ МОБИЛЬНОГО МЕНЮ (Прижмется к низу автоматически) -->
+                    <li class="d-lg-none mobile-menu-footer mt-auto">
+                        
+                        <!-- Переключатель тем -->
+                        <div class="header-theme-switcher py-3">
+                            <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
+                            <label class="theme-toggle">
+                                <input type="checkbox" class="theme-checkbox" aria-label="Переключить тему оформления">
+                                <span class="theme-toggle-fill"></span>
+                            </label>
+                            <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
+                        </div>
+
+                        <!-- Тонкая линия-разделитель -->
+                        <div class="mobile-menu-divider"></div>
+
+                        <div class="mobile-menu-info p-4 text-start">
+                            <div class="info-block mb-4">
+                                <h5 class="info-label">Связаться со мной:</h5>
+                                <p class="info-text">
+                                    <a href="mailto:av.mikhailov93@gmail.com" class="menu-email ps-0">av.mikhailov93@gmail.com</a>
+                                </p>
+                            </div>
+                            
+                            <div class="info-block">
+                                <h5 class="info-label mb-3">Я в соцсетях:</h5>
+                                <div class="menu-socials d-flex gap-2">
+                                    <a href="https://vk.ru/mikhailov93" target="_blank" class="social-btn" aria-label="ВКонтакте"><i class="bxl bx-vk"></i></a>
+                                    <a href="https://t.me/av_mikhailov93" target="_blank" class="social-btn" aria-label="Телеграм"><i class="bxl bx-telegram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
                 
-                <li class="d-lg-none">
-                    <div class="header-theme-switcher mt-3">
-                        <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
-                        <label class="theme-toggle">
-                            <input type="checkbox" class="theme-checkbox" aria-label="Переключить тему оформления">
-                            <span class="theme-toggle-fill"></span>
-                        </label>
-                        <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
-                    </div>
-                </li>
-            </ul>
-            <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
-        </nav>
+                <!-- Иконка мобильного меню (Внутри тега nav!) -->
+                <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
+            </nav>
+
+            <!-- Переключатель тем (Только для десктопов, на смартфонах скрыт) -->
+            <div class="header-theme-switcher d-none d-lg-flex">
+                <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
+                <label class="theme-toggle">
+                    <input type="checkbox" class="theme-checkbox" aria-label="Переключить тему оформления">
+                    <span class="theme-toggle-fill"></span>
+                </label>
+                <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
+            </div>
+        </div>
     </div>
 </header>
 
@@ -313,6 +351,10 @@
 
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/typed/typed.min.js"></script>
+
 <script src="assets/js/main.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });

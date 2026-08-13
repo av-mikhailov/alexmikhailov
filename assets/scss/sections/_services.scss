@@ -15,16 +15,12 @@
   flex-direction: column;
   align-items: flex-start;
   color: vars.$color-text-muted;
-  border: 1px solid transparent; // Изначально рамки нет
+  border: 1px solid transparent;
 
   &:hover {
     transform: translateY(-5px);
-    
-    // Темная тема: деликатная серая рамка и темная тень
     border-color: rgba(128, 128, 128, 0.15); 
-    // box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25);
 
-    // Светлая тема: легкая СИНЯЯ рамка и мягкий СИНЙ отсвет (тень)
     [data-theme="light"] & {
       border-color: rgba(36, 73, 180, 0.15);
       box-shadow: 0px 15px 35px rgba(36, 73, 180, 0.08);
@@ -35,11 +31,20 @@
     // }
   }
 
-  // Блок иконки
+  h3 {
+    font-size: calc(1.275rem + .3vw);
+  }
+
+  @media (min-width: 1200px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+  } 
+
   .icon-box {
     width: 64px;
     height: 64px;
-    background-color: vars.$color-primary; // Дефолтный синий для темной темы
+    background-color: vars.$color-primary;
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -47,20 +52,18 @@
     margin-bottom: 24px;
     transition: all 0.3s ease;
 
-    // Вложенная иконка
     i {
-      color: #ffffff; // Дефолтный белый цвет для темной темы
-      font-size: 32px !important; // Жестко фиксируем размер в 32px
+      color: #ffffff;
+      font-size: 32px !important;
       line-height: 1;
       transition: vars.$transition;
     }
 
-    // СВЕТЛАЯ ТЕМА: нежно-голубой фон и синяя иконка внутри
     [data-theme="light"] & {
-      background: vars.$color-hero-bg; // Нежно-голубой полупрозрачный фон
+      background: vars.$color-hero-bg;
       
       i {
-        color: vars.$color-primary; // Синий цвет иконки
+        color: vars.$color-primary;
       }
     }
   }

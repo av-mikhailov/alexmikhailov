@@ -34,21 +34,18 @@ p a:hover {
   color: vars.$color-accent;
 }
 
-.custom-3d-player {
-  width: 100%;
-  height: 500px;
-  background: vars.$color-bg !important; /* Прозрачный фон */
-  border-radius: 32px;
-  border: 5px solid vars.$color-bg-alt;
+.form-check-input {
+    cursor: pointer;
+    background-color: var(--color-bg);
+    border-color: rgba(128, 128, 128, 0.4);
 }
 
-
-/* Полностью убираем полосу загрузки вверху */
-.custom-3d-player::part(default-progress-bar) {
-  display: none !important;
+.form-check-input:checked {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
-/* Убираем возможный вспыхивающий фон постера */
-.custom-3d-player::part(default-poster) {
-  background-color: transparent !important;
+.form-check-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 0.2rem rgba(var(--color-accent-rgb), 0.15);
 }

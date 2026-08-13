@@ -1,7 +1,7 @@
 :root {
   --color-bg: #242627;
   --color-bg-alt: #2B2D2E;
-  --color-hero-bg: #2B2D2E;           // Фон обложки в темной теме
+  --color-hero-bg: #2B2D2E;
   --color-text: #FFFFFF;
   --color-text-muted: #ABACAC;
   --color-title: #FFFFFF;
@@ -9,16 +9,16 @@
   --color-primary-hover: #3d5ec4;
   --color-accent: #FFAE3D;
   --color-accent-hover: #ffbe64;
-  --color-btn-outline: #FFFFFF; // Белый цвет кнопки для темной темы по умолчанию
+  --color-btn-outline: #FFFFFF;
   --color-btn-outline-hover-bg: #FFFFFF;
   --color-btn-outline-hover-text: #242627;
-  --hero-bg-image: url('../img/hero-bg-dark.png'); // Картинка для темной темы
+  --hero-bg-image: url('../img/hero-bg-dark.png');
 }
 
 [data-theme="light"] {
   --color-bg: #f4f4f5;
   --color-bg-alt: #ffffff;
-  --color-hero-bg: #e8edf2;           // Нежно-голубой фон обложки в светлой теме!
+  --color-hero-bg: #e8edf2;
   --color-text: #18181b;
   --color-text-muted: #71717a;
   --color-title: #314862;
@@ -33,10 +33,9 @@
   --hero-bg-image: url('../img/hero-bg-light.png');
 }
 
-// Привязываем Sass-переменные к CSS-переменным
 $color-bg:                     var(--color-bg);
 $color-bg-alt:                 var(--color-bg-alt);
-$color-hero-bg:                var(--color-hero-bg);                // Добавили!
+$color-hero-bg:                var(--color-hero-bg);
 $color-text:                   var(--color-text);
 $color-text-muted:             var(--color-text-muted);
 $color-title:                  var(--color-title);
@@ -50,7 +49,6 @@ $color-btn-outline-hover-text: var(--color-btn-outline-hover-text);
 $color-btn-outline-background: var(--color-btn-outline-background);
 $hero-bg-image:                var(--hero-bg-image);
 
-// Остальные переменные без изменений
 $radius-xxl:       48px;
 $radius-xl:        32px;
 $radius-lg:        24px;

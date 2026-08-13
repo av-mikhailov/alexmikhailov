@@ -41,7 +41,6 @@
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
         
-        <!-- Логотип (Слева) -->
         <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
             <img src="assets/img/logo-blue-l.png" alt="Логотип Александра Михайлова" class="img-fluid me-3">
             <div class="logo-text">
@@ -50,10 +49,7 @@
             </div>
         </a>
 
-        <!-- Правый блок: Меню + Переключатель + Гамбургер -->
         <div class="d-flex align-items-center">
-            
-            <!-- Основное меню (Гамбургер возвращен внутрь!) -->
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
@@ -61,9 +57,11 @@
                     <li><a class="nav-link scrollto" href="index.html#portfolio">Портфолио</a></li>
                     <li><a class="nav-link scrollto" href="index.html#contact">Контакты</a></li>
                     
-                    <!-- Переключатель тем (Только для мобильных экранов внутри меню) -->
-                    <li class="d-lg-none">
-                        <div class="header-theme-switcher mt-3">
+                    <!-- БЛОК ВНИЗУ МОБИЛЬНОГО МЕНЮ (Прижмется к низу автоматически) -->
+                    <li class="d-lg-none mobile-menu-footer mt-auto">
+                        
+                        <!-- Переключатель тем -->
+                        <div class="header-theme-switcher py-3">
                             <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
                             <label class="theme-toggle">
                                 <input type="checkbox" class="theme-checkbox" aria-label="Переключить тему оформления">
@@ -71,6 +69,27 @@
                             </label>
                             <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
                         </div>
+
+                        <!-- Тонкая линия-разделитель -->
+                        <div class="mobile-menu-divider"></div>
+
+                        <div class="mobile-menu-info p-4 text-start">
+                            <div class="info-block mb-4">
+                                <h5 class="info-label">Связаться со мной:</h5>
+                                <p class="info-text">
+                                    <a href="mailto:av.mikhailov93@gmail.com" class="menu-email ps-0">av.mikhailov93@gmail.com</a>
+                                </p>
+                            </div>
+                            
+                            <div class="info-block">
+                                <h5 class="info-label mb-3">Я в соцсетях:</h5>
+                                <div class="menu-socials d-flex gap-2">
+                                    <a href="https://vk.ru/mikhailov93" target="_blank" class="social-btn" aria-label="ВКонтакте"><i class="bxl bx-vk"></i></a>
+                                    <a href="https://t.me/av_mikhailov93" target="_blank" class="social-btn" aria-label="Телеграм"><i class="bxl bx-telegram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
                     </li>
                 </ul>
                 
@@ -87,9 +106,7 @@
                 </label>
                 <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
             </div>
-            
         </div>
-
     </div>
 </header>
 
@@ -154,7 +171,7 @@
                                     <i class="bx bx-palette"></i>
                                 </div>
                                 <h5>UX/UI дизайн</h5>
-                                <p>Проектирование структуры, интерфейсов и пользовательских сценариев</p>
+                                <p>Проектирование интерфейсов и пользовательских сценариев</p>
                             </div>
                             <div class="skill-card">
                                 <div class="skill-icon-box">
@@ -168,7 +185,7 @@
                                     <i class="bxl bx-wordpress"></i>
                                 </div>
                                 <h5>WordPress</h5>
-                                <p>Разработка собственных тем и интеграция контента через ACF</p>
+                                <p>Разработка тем и интеграция контента через ACF</p>
                             </div>
                         </div>
                     </div>
@@ -194,7 +211,7 @@
                         <div class="icon-box">
                             <i class="bx bx-layers"></i>
                         </div>
-                        <h4>Веб-дизайн</h4>
+                        <h3>Веб-дизайн</h3>
                         <p class="mb-4">Создание визуальной концепции сайта, проработка структуры и интерфейсов в Figma с учётом задач проекта и удобства пользователей.</p>
                         <a href="web-design.html" class="btn-more stretched-link mt-auto" aria-label="Подробнее об услуге проектирования и дизайна">Подробнее <i class="bx bx-arrow-right"></i></a>
                     </div>
@@ -206,7 +223,7 @@
                         <div class="icon-box">
                             <i class="bx bx-devices"></i>
                         </div>
-                        <h4>Разработка сайтов</h4>
+                        <h3>Разработка сайтов</h3>
                         <p class="mb-4">Разработка адаптивных сайтов на WordPress с собственной темой, удобной структурой контента и необходимой функциональностью.</p>
                         <a href="web-dev.html" class="btn-more stretched-link mt-auto" aria-label="Подробнее об услуге разработки сайтов">Подробнее <i class="bx bx-arrow-right"></i></a>
                     </div>
@@ -218,7 +235,7 @@
                         <div class="icon-box">
                             <i class="bx bx-chart-line"></i>
                         </div>
-                        <h4>Аудит и улучшение сайта</h4>
+                        <h3>Аудит и улучшение сайта</h3>
                         <p class="mb-4">Анализ структуры, интерфейса и технического состояния существующего сайта с рекомендациями по улучшению удобства, производительности и содержимого.</p>
                         <a href="site-audit.html" class="btn-more stretched-link mt-auto" aria-label="Подробнее о техническом аудите и SEO">Подробнее <i class="bx bx-arrow-right"></i></a>
                     </div>
@@ -230,7 +247,7 @@
                         <div class="icon-box">
                             <i class="bx bx-book"></i>
                         </div>
-                        <h4>Вёрстка печатных изданий</h4>
+                        <h3>Вёрстка печатных изданий</h3>
                         <p class="mb-4">Вёрстка книг, журналов, каталогов и других многостраничных изданий. Подготовка макетов с учётом требований типографии.</p>
                         <a href="print-layout.html" class="btn-more stretched-link mt-auto" aria-label="Подробнее о многостраничной верстке и препрессе">Подробнее <i class="bx bx-arrow-right"></i></a>
                     </div>
@@ -400,8 +417,6 @@
 
     <section id="contact" class="contact section-padding" data-aos="fade-up">
         <div class="container">
-            
-            <!-- Заголовок секции (использует общий класс, который мы настроили) -->
             <div class="section-header d-flex align-items-center mb-4">
                 <div>
                     <h2 class="section-title">Контакты</h2>
@@ -409,7 +424,6 @@
                 </div>
             </div>
 
-            <!-- Основная карточка формы -->
             <div class="contact-box">
                 <div class="contact-box-header text-center text-lg-start mb-4">
                     <h3 class="box-title">Есть проект или задача?</h3>
@@ -417,7 +431,6 @@
                 </div>
 
                 <div class="row g-4">
-                    <!-- Левая колонка: Карточки контактов -->
                     <div class="col-lg-4 d-flex flex-column gap-3 mb-4">
                         <div class="info-card">
                             <i class="bx bx-envelope"></i>
@@ -429,30 +442,24 @@
                         </div>
                     </div>
 
-                    <!-- Правая колонка: Форма -->
                     <div class="col-lg-8">
                         <form id="contact-form" class="contact-form">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <!-- Добавлен атрибут name="name" -->
                                     <input type="text" name="name" class="form-control" placeholder="Ваше имя*" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <!-- Добавлен атрибут name="email" -->
                                     <input type="email" name="email" class="form-control" placeholder="Ваш email*" required>
                                 </div>
                                 <div class="col-12">
-                                    <!-- Добавлен атрибут name="message" -->
                                     <textarea name="message" class="form-control" rows="5" placeholder="Текст сообщения*" required></textarea>
                                 </div>
                                 
-                                <!-- Кнопка и соглашение -->
                                 <div class="col-12 d-flex flex-column align-items-center mt-4">
                                     <button type="submit" class="btn-submit mb-3" id="form-submit-btn">Отправить сообщение</button>
                                     <p class="consent-text">
                                         Отправляя сообщение, вы соглашаетесь с <a href="privacy.html" class="consent-link">Политикой в отношении обработки персональных данных</a>
                                     </p>
-                                    <!-- Блок для вывода статуса отправки (успех/ошибка) -->
                                     <div id="form-status" class="mt-3 text-center" style="display: none; font-size: 14px; font-weight: 500;"></div>
                                 </div>
                             </div>
@@ -469,14 +476,12 @@
 <footer class="footer">
     <div class="container d-flex flex-column align-items-center">
         
-        <!-- Круглый логотип-монограмма -->
         <!-- <div class="footer-logo mb-4">
             <a href="index.html">
                 <img src="assets/img/logo-blue.svg" alt="Александр Михайлов" class="img-fluid">
             </a>
         </div> -->
 
-        <!-- Навигация в подвале -->
         <nav class="footer-nav mb-4">
             <ul class="d-flex flex-wrap justify-content-center gap-3 gap-lg-4">
                 <li><a class="nav-link scrollto" href="index.html#about">Обо мне</a></li>
@@ -486,7 +491,6 @@
             </ul>
         </nav>
 
-        <!-- Разделитель с социальными сетями -->
         <div class="footer-social-divider d-flex align-items-center justify-content-center gap-3 w-100 mb-4">
             <span class="divider-line"></span>
             <div class="social-links d-flex gap-1">
@@ -497,7 +501,6 @@
             <span class="divider-line"></span>
         </div>
 
-        <!-- Копирайт и политика конфиденциальности -->
         <div class="footer-bottom text-center">
             <p class="copyright mb-2">&copy; 2024-2026 Александр Михайлов</p>
             <a href="privacy.html" class="privacy-link">Политика в отношении обработки персональных данных</a>

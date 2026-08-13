@@ -1,5 +1,9 @@
 @use '../abstracts/variables' as vars;
 
+body.mobile-nav-active {
+  overflow: hidden; 
+}
+
 #header {
   transition: all 0.5s;
   z-index: 997;
@@ -7,17 +11,24 @@
   background: vars.$color-bg;
 
   &.header-scrolled {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+    [data-theme="light"] & {
+      box-shadow: 0 0 10px rgba(36, 73, 180, 0.05);
+    }
   }
 
   .logo-wrapper {
      img {
-      width: 48px;  // Задаем физический размер отображения на сайте
-      height: 48px; // Круг уменьшится и станет идеально четким!
-      
+      width: 48px;
+      height: 48px;
       shape-rendering: geometricPrecision;
       image-rendering: -webkit-optimize-contrast;
-      
+      transition: vars.$transition;
+
+      [data-theme="light"] & {
+        filter: invert(0.9) brightness(0.2); 
+      }
     }
     color: vars.$color-text;
     
@@ -25,7 +36,7 @@
       font-size: 18px;
       font-weight: 600;
       line-height: 1;
-      color: vars.$color-title
+      color: vars.$color-title;
     }
     
     .profession {
@@ -36,7 +47,6 @@
   }
 }
 
-/* Навигация */
 .navbar {
   padding: 0;
 
@@ -70,12 +80,21 @@
 }
 
 .mobile-nav-toggle {
-  display: none; // По умолчанию скрыта
-  color: vars.$color-text;
+  display: none;
+  color: #FFFFFF;
   font-size: 32px;
   cursor: pointer;
+  transition: color vars.$transition;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+
+  [data-theme="light"] & {
+    color: vars.$color-title; 
+  }
 }
 
+// --- АДАПТИВНОЕ МОБИЛЬНОЕ МЕНЮ (СУПЕР-ПЛАВНЫЙ ВЫЕЗД С КЛЮЧЕВЫМИ КАДРАМИ) ---
 @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
@@ -83,41 +102,68 @@
 
   .navbar {
     ul {
-      display: none; // Скрываем десктопное меню
+      display: none; 
     }
   }
 
-  /* Стиль выезжающего меню */
   .navbar-mobile {
     position: fixed;
-    overflow: hidden;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(vars.$color-bg, 0.95);
-    transition: 0.3s;
-    z-index: 999;
+    z-index: 998;
+    animation: backdropFadeIn 0.3s ease forwards;
+    background: rgba(0, 0, 0, 0.65) !important; 
+    backdrop-filter: blur(5px); 
 
     ul {
-      display: block;
+      display: flex !important;
+      flex-direction: column;
       position: absolute;
-      top: 55px;
-      right: 15px;
-      bottom: 15px;
-      left: 15px;
-      padding: 10px 0;
-      border-radius: 10px;
-      background-color: vars.$color-bg-alt;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 85%;
+      max-width: 320px;
+      height: 100%;
+      padding: 80px 0 0 0;
+      border-radius: 0; 
+      background-color: vars.$color-bg-alt !important;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
       overflow-y: auto;
-      transition: 0.3s;
+      z-index: 999;
+      animation: drawerSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    a {
-      padding: 15px 20px;
-      font-size: 18px;
-      color: vars.$color-text;
-      &:hover { color: vars.$color-accent; }
+    li {
+      width: 100%;
+    }
+
+    ul > li > a,
+    ul > li > a:focus {
+      display: block !important;
+      width: 100% !important;
+      padding: 16px 24px !important; 
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      text-align: left !important;
+      color: vars.$color-text !important;
+      background-color: transparent !important; 
+      border-bottom: 1px solid rgba(128, 128, 128, 0.1) !important;
+      border-radius: 0 !important;
+      transition: vars.$transition !important;
+
+      &:hover, &.active {
+        color: vars.$color-accent !important;
+        padding-left: 32px !important;
+
+        [data-theme="light"] & {
+          color: vars.$color-primary !important;
+        }
+      }
     }
 
     .mobile-nav-toggle {
@@ -125,17 +171,114 @@
       top: 15px;
       right: 15px;
       z-index: 9999;
+      color: #FFFFFF;
+      outline: none !important;
+      box-shadow: none !important;
+
+      [data-theme="light"] & {
+        color: vars.$color-title;
+      }
+    }
+  }
+
+  // --- БЛОК КОНТАКТОВ И ТЕМЫ (Прижат к самому низу) ---
+  .mobile-menu-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-menu-divider {
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.15);
+    margin: 0;
+  }
+
+  .mobile-menu-info {
+    padding: 24px;
+    text-align: left;
+
+    .info-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: vars.$color-title;
+      margin-bottom: 6px;
+    }
+
+    .info-text, .menu-email {
+      font-size: 14px;
+      color: vars.$color-text-muted;
+      margin-bottom: 0;
+      text-transform: none !important;
+    }
+
+    .menu-email {
+      transition: vars.$transition;
+      &:hover {
+        color: vars.$color-accent !important;
+        
+        [data-theme="light"] & {
+          color: vars.$color-primary !important;
+        }
+      }
+    }
+
+    .menu-socials {
+      .social-btn {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 50% !important;
+        border: 1px solid rgba(128, 128, 128, 0.2) !important;
+        color: vars.$color-text-muted !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 18px !important;
+        transition: vars.$transition !important;
+        background-color: vars.$color-bg !important;
+        flex-shrink: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        i {
+          line-height: 1 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        &:hover {
+          color: vars.$color-accent !important;
+          border-color: vars.$color-accent !important;
+          background-color: rgba(vars.$color-accent, 0.05) !important;
+
+          [data-theme="light"] & {
+            color: vars.$color-primary !important;
+            border-color: vars.$color-primary !important;
+            background-color: rgba(36, 73, 180, 0.08) !important;
+          }
+        }
+      }
     }
   }
 }
 
-// Контейнер переключателя (Солнце - Слайдер - Луна)
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes drawerSlideIn {
+  from { transform: translate3d(100%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+// --- СТИЛИ ПЕРЕКЛЮЧАТЕЛЯ ТЕМ ---
 .header-theme-switcher {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-left: 24px;
-  border-left: 1px solid rgba(255, 255, 255, 0.1); // Линия-разделитель на десктопе
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
   padding-left: 24px;
   transition: border-color vars.$transition;
 
@@ -143,11 +286,11 @@
     border-left-color: rgba(0, 0, 0, 0.1);
   }
 
-  // Оптимизация стилей под мобильное меню
   @media (max-width: 991px) {
     margin-left: 0;
-    padding-left: 20px; // Выравниваем отступ по левому краю мобильного меню
-    border-left: none; // Убираем разделитель на мобилках
+    padding-left: 24px; 
+    border-left: none;
+    justify-content: flex-start;
   }
 
   i {
@@ -168,13 +311,16 @@
     }
 
     @media (max-width: 991px) {
-      font-size: 20px; // Чуть крупнее иконки на смартфонах
-      color: rgba(255, 255, 255, 0.5); // Белый цвет внутри темного мобильного меню
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.5);
+      
+      [data-theme="light"] & {
+        color: vars.$color-text-muted;
+      }
     }
   }
 }
 
-// Сам переключатель-лейбл (Основа слайдера)
 .theme-toggle {
   --width: 38px;
   --height: 20px;
@@ -192,7 +338,6 @@
     height: 0;
   }
 
-  // Делаем область клика крупнее на мобильных для удобства тач-интерфейса
   @media (max-width: 991px) {
     --width: 44px;
     --height: 24px;
@@ -200,7 +345,6 @@
   }
 }
 
-// Задний фон переключателя (Трек)
 .theme-toggle-fill {
   position: absolute;
   top: 0;
@@ -213,7 +357,11 @@
   transition: vars.$transition;
 
   @media (max-width: 991px) {
-    border-color: rgba(255, 255, 255, 0.3); // Светлая рамка в мобильном меню
+    border-color: rgba(255, 255, 255, 0.3);
+    
+    [data-theme="light"] & {
+      border-color: rgba(0, 0, 0, 0.15);
+    }
   }
 
   &::before {
@@ -230,7 +378,11 @@
     @media (max-width: 991px) {
       bottom: 1.5px;
       left: 2.5px;
-      background-color: rgba(255, 255, 255, 0.6); // Светлый кружок в мобильном меню
+      background-color: rgba(255, 255, 255, 0.6);
+      
+      [data-theme="light"] & {
+        background-color: vars.$color-text-muted;
+      }
     }
   }
 
@@ -242,7 +394,6 @@
   }
 }
 
-// Состояние, когда чекбокс нажат (Выбрана светлая тема)
 input:checked + .theme-toggle-fill {
   border-color: vars.$color-primary;
   
@@ -251,7 +402,7 @@ input:checked + .theme-toggle-fill {
     transform: translateX(18px);
 
     @media (max-width: 991px) {
-      transform: translateX(20px); // Чуть больше смещение для укрупненной мобильной версии
+      transform: translateX(20px);
     }
   }
 }

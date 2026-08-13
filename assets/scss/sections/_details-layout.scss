@@ -1,19 +1,16 @@
 @use '../abstracts/variables' as vars;
 
-// Нейтральное имя класса для разметки любой детальной страницы
 .page-details-section {
-  background-color: vars.$color-bg; // Исправлено!
+  background-color: vars.$color-bg;
 
-  // Общий стиль лид-текста (используется и в услугах, и в проектах)
   .lead-text {
     font-size: 18px;
-    color: vars.$color-text-muted; // Исправлено!
+    color: vars.$color-text-muted;
     line-height: 1.7;
 
     @media (max-width: 768px) { font-size: 16px; }
   }
 
-  // Карточки преимуществ (уникальны для услуг, но лежат здесь, так как это часть сетки)
   .advantage-card {
     background-color: vars.$color-bg-alt;
     border-radius: 32px;
@@ -21,16 +18,14 @@
     height: 100%;
     transition: vars.$transition;
     background-clip: padding-box;
-    border: 1px solid transparent; // Базовая рамка
+    border: 1px solid transparent;
 
     &:hover {
       transform: translateY(-4px);
       
-      // Темная тема: темная тень и деликатный серый бордюр
       border-color: rgba(128, 128, 128, 0.15);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 
-      // Светлая тема: синий отсвет и нежно-синий бордюр
       [data-theme="light"] & {
         border-color: rgba(36, 73, 180, 0.15);
         box-shadow: 0 10px 25px rgba(36, 73, 180, 0.08);
@@ -40,7 +35,7 @@
     .icon-box {
       width: 60px;
       height: 60px;
-      background-color: vars.$color-bg; // Темно-серый по умолчанию
+      background-color: vars.$color-bg;
       border-radius: 16px;
       display: flex;
       align-items: center;
@@ -49,12 +44,11 @@
 
       i { 
         font-size: 24px; 
-        color: vars.$color-primary; // Наш основной синий
+        color: vars.$color-primary;
       }
 
-      // ИСПРАВЛЕНО: В светлой теме даем иконкам нежно-голубой фон подложки!
       [data-theme="light"] & {
-        background-color: vars.$color-hero-bg; // #EFF4FA
+        background-color: vars.$color-hero-bg;
       }
     }
 
@@ -62,19 +56,18 @@
       .card-title {
         font-size: 18px;
         font-weight: 600;
-        color: vars.$color-title; // Исправлено!
+        color: vars.$color-title;
         margin-bottom: 6px;
       }
       .card-desc {
         font-size: 14px;
-        color: vars.$color-text-muted; // Исправлено!
+        color: vars.$color-text-muted;
         line-height: 1.4;
         margin-bottom: 0;
       }
     }
   }
 
-  // Общие свойства липкой правой колонки
   @media (min-width: 992px) {
     .sticky-sidebar-col {
       position: sticky;

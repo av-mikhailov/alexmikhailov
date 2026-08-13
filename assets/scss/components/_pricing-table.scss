@@ -1,17 +1,14 @@
 @use '../abstracts/variables' as vars;
 
   .pricing-card-box {
-    background-color: vars.$color-bg-alt; // #2B2D2E
-    border-radius: vars.$radius-xl; // 24px
+    background-color: vars.$color-bg-alt;
+    border-radius: vars.$radius-xl;
     padding: 40px;
     background-clip: padding-box;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); // Дефолтная тень
-
-    // Решение бага 1: Жестко ограничиваем карточку по ширине
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     max-width: 100%;
     overflow: hidden; 
 
-    // Светлая тема: деликатная нежно-синяя тень
     [data-theme="light"] & {
       box-shadow: 0 15px 35px rgba(36, 73, 180, 0.05);
     }
@@ -21,9 +18,7 @@
     }
   }
 
-  // Стилизация таблицы Bootstrap под темную тему (с жестким сбросом переменных BS5)
   .custom-pricing-table {
-    // Сброс дефолтных переменных Bootstrap 5, которые принудительно красили таблицу в белый
     --bs-table-bg: transparent !important;
     --bs-table-color: #{vars.$color-text} !important;
     --bs-table-accent-bg: transparent !important;
@@ -37,14 +32,12 @@
     border-collapse: collapse;
     width: 100%;
 
-    // Гарантируем прозрачность для абсолютно всех внутренних тегов таблицы
     thead, tbody, tr, th, td {
       background-color: transparent !important;
       background: transparent !important;
       color: inherit;
     }
 
-    // Заголовки и ячейки
     th, td {
       border: none;
       padding: 20px 16px;
@@ -57,19 +50,15 @@
       }
     }
 
-    // ИСПРАВЛЕНО: Тонкие пунктирные разделители теперь серого цвета, 
-    // они идеально видны как в темной, так и в светлой темах!
     thead tr th,
     tbody tr td {
       border-bottom: 1px dashed rgba(128, 128, 128, 0.2) !important;
     }
 
-    // Убираем нижний разделитель у последней строки
     tbody tr:last-child td {
       border-bottom: none !important;
     }
 
-    // Стили заголовков (шапка таблицы)
     thead th {
       font-size: 18px;
       font-weight: 500;
@@ -81,7 +70,6 @@
       }
     }
 
-    // Стили строк данных
     tbody td {
       font-size: 16px;
 
@@ -95,7 +83,7 @@
       }
 
       &.project-time {
-        color: vars.$color-text-muted !important; // Серый цвет сроков
+        color: vars.$color-text-muted !important;
       }
 
       &.project-price {
@@ -105,13 +93,11 @@
     }
   }
 
-  // Настройка горизонтального скроллбара для мобильных (делаем его аккуратным и темным)
   .table-responsive {
     &::-webkit-scrollbar {
       height: 6px;
     }
     
-    // ИСПРАВЛЕНО: Скроллбары теперь нейтрально-серые, видимые во всех темах!
     &::-webkit-scrollbar-track {
       background: rgba(128, 128, 128, 0.05);
       border-radius: 10px;

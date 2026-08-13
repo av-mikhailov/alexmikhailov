@@ -5,47 +5,42 @@
   padding: 16px 0;
   background-color: transparent;
   
-  // ИСПРАВЛЕНО: Границы крошек теперь нарисованы нейтральным серым цветом,
-  // они идеально видны как на темном, так и на светлом фоне!
   border-top: 1px solid rgba(128, 128, 128, 0.15);
   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
   margin-bottom: 40px;
 
-  // Находим контейнер списка (ol.breadcrumb в Bootstrap)
   .breadcrumb {
     display: flex;
-    flex-wrap: nowrap;     // ВАЖНО: Запрещаем перенос пунктов на новую строку
-    overflow-x: auto;      // ВАЖНО: Разрешаем горизонтальную прокрутку пальцем
-    white-space: nowrap;   // ВАЖНО: Запрещаем перенос слов внутри пунктов
-    -webkit-overflow-scrolling: touch; // Плавный инерционный скролл на iOS (Safari)
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
 
-    // Скрываем некрасивую системную полосу прокрутки во всех браузерах
     &::-webkit-scrollbar {
       display: none; 
     }
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .breadcrumb-item {
     font-size: 14px;
-    color: vars.$color-text-muted; // ИСПРАВЛЕНО: Динамический цвет текста
-    flex-shrink: 0; // ВАЖНО: Запрещает пунктам сжиматься, сохраняя их ширину
+    color: vars.$color-text-muted;
+    flex-shrink: 0;
 
     a {
-      color: vars.$color-text-muted; // ИСПРАВЛЕНО: Динамический цвет ссылок
+      color: vars.$color-text-muted;
       transition: vars.$transition;
-      &:hover { color: vars.$color-accent; } // ИСПРАВЛЕНО: Ховер через переменную
+      &:hover { color: vars.$color-accent; }
     }
 
     &.active {
-      color: vars.$color-text-muted; // ИСПРАВЛЕНО!
+      color: vars.$color-text-muted;
       opacity: 0.7;
     }
 
-    // Наш разделитель-точка (динамический цвет)
     & + .breadcrumb-item::before {
-      color: vars.$color-text-muted; // ИСПРАВЛЕНО!
+      color: vars.$color-text-muted;
       content: "•";
       font-size: 12px;
       padding: 0 10px;

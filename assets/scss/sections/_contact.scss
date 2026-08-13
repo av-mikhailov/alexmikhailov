@@ -5,8 +5,8 @@
   background-color: vars.$color-bg;
 
   .contact-box {
-    background-color: vars.$color-bg-alt; // #2B2D2E
-    border-radius: vars.$radius-xl; // 24px
+    background-color: vars.$color-bg-alt;
+    border-radius: vars.$radius-xl;
     padding: 48px;
 
     @media (max-width: 768px) {
@@ -33,7 +33,6 @@
     line-height: 1.5;
   }
 
-  // Левая колонка: Карточки контактов
   .info-card {
     background-color: vars.$color-bg;
     border-radius: vars.$radius-md;
@@ -42,8 +41,6 @@
     align-items: center;
     gap: 16px;
     transition: vars.$transition;
-    
-    // Решение бага рендеринга 1: предотвращаем микро-сдвиги фона
     background-clip: padding-box; 
 
     i {
@@ -62,17 +59,15 @@
 
   }
 
-  // Правая колонка: Инпуты формы
   .contact-form {
     
     textarea.form-control {
-      resize: none; // Запрещаем пользователю растягивать поле вручную
+      resize: none;
       min-height: 150px;
     }
 
-    // Кнопка отправки формы
     .btn-submit {
-      background-color: vars.$color-primary; // #2449B4
+      background-color: vars.$color-primary;
       color: #fff;
       border: none;
       padding: 10px 32px;
@@ -82,7 +77,6 @@
       transition: vars.$transition;
       width: fit-content;
 
-      // ИСПРАВЛЕНО: Используем готовую переменную ховера $color-primary-hover
       &:hover {
         background-color: vars.$color-primary-hover; 
       }
@@ -92,7 +86,6 @@
       }
     }
 
-    // Сноска о конфиденциальности под кнопкой
     .consent-text {
       font-size: 13px;
       color: vars.$color-text-muted;
@@ -101,7 +94,7 @@
 
       .consent-link {
         color: vars.$color-text-muted;
-        text-decoration: underline dotted; // Пунктирное подчеркивание из Figma
+        text-decoration: underline dotted;
         text-underline-offset: 4px;
         transition: vars.$transition;
 

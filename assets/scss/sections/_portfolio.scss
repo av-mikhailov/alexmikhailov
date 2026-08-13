@@ -9,24 +9,18 @@
   padding: 24px;
   overflow: hidden;
   transition: all 0.4s ease-in-out !important;
-  border: 1px solid transparent; // Изначально рамка прозрачная
+  border: 1px solid transparent;
 
-  // Эффекты при наведении на ВСЮ карточку
   &:hover {
-    transform: translateY(-5px) !important;
-    
-    // Темная тема: деликатная серая рамка и темная тень
+    transform: translateY(-5px) !important; 
     border-color: rgba(128, 128, 128, 0.15); 
-    // box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25);
 
-    // Светлая тема: легкая СИНЯЯ рамка и мягкий СИНЙ отсвет (тень)
     [data-theme="light"] & {
       border-color: rgba(36, 73, 180, 0.15);
       box-shadow: 0px 15px 35px rgba(36, 73, 180, 0.08);
     }
   }
 
-  // Окно превью скриншота
   .photo-window {
     background-color: vars.$color-bg;
     border-radius: vars.$radius-md;
@@ -43,7 +37,6 @@
     }
   }
 
-  // Текстовая зона карточки
   .card-body-content {
     height: 100%;
     padding-left: 32px;
@@ -61,20 +54,19 @@
     .project-title {
       font-size: 32px;
       font-weight: 500;
-      color: vars.$color-title; // Ссылается на наш пыльно-синий в светлой теме
+      color: vars.$color-title;
       margin-bottom: 16px;
 
       @media (max-width: 575.98px) {
         font-size: 20px;
       }
 
-      // Ссылка внутри заголовка
       a {
-        color: inherit !important; // Наследует цвет заголовка
+        color: inherit !important;
         transition: vars.$transition;
         
         &:hover {
-          color: vars.$color-accent !important; // Оранжевый ховер
+          color: vars.$color-accent !important;
         }
       }
     }
@@ -88,7 +80,6 @@
   }
 }
 
-// Адаптив карточки на планшетах/смартфонах
 @media (max-width: 991px) {
   .portfolio-card {
     .card-body-content {
@@ -106,40 +97,37 @@
 // 2. СТИЛИ СТРАНИЦЫ ПОРТФОЛИО (Навигация фильтров и анимация)
 // ==========================================================================
 
-// Навигационная панель фильтров
 .portfolio-filters {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto; // Горизонтальный скролл на мобильных
+  overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
 
   &::-webkit-scrollbar {
-    display: none; // Скрываем скроллбар
+    display: none;
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
 
   @media (min-width: 992px) {
-    flex-wrap: wrap; // На десктопе разрешаем перенос
+    flex-wrap: wrap;
     justify-content: left;
   }
 
-  // Кнопки-фильтры
   .btn-filter {
     padding: 6px 24px;
     font-size: 14px;
     font-weight: 500;
     color: vars.$color-text-muted;
     background-color: transparent;
-    border: 1px solid rgba(128, 128, 128, 0.2); // Тонкая серая обводка
+    border: 1px solid rgba(128, 128, 128, 0.2);
     border-radius: vars.$radius-xxl;
     transition: vars.$transition;
     cursor: pointer;
     flex-shrink: 0;
 
-    // Белый цвет текста при активации (не сольется на светлой теме)
     &:hover, &.active {
       color: #FFFFFF !important; 
       background-color: vars.$color-primary;
@@ -150,18 +138,15 @@
 
 // --- АНИМАЦИЯ ФИЛЬТРАЦИИ КАРТОЧЕК ---
 .portfolio-card {
-  // Класс скрытия проекта (гасим прозрачность и слегка уменьшаем масштаб)
   &.fade-out {
     opacity: 0;
     transform: scale(0.95);
   }
 
-  // Полное удаление из потока после затухания
   &.d-none-filter {
     display: none !important;
   }
 
-  // Плавное появление подходящих проектов
   &.fade-in {
     animation: portfolioFadeIn 0.4s ease forwards;
   }

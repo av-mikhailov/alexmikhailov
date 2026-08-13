@@ -14,7 +14,7 @@
 
   .container {
     position: relative;
-    z-index: 2; // Контент и кнопки лежат НАД холстом и отлично кликаются
+    z-index: 2;
   }
 
   .hero-img-wrapper {
@@ -38,7 +38,7 @@
       left: 30px;
       width: 100%;
       height: 100%;
-      background: vars.$color-bg; // или твой вариант
+      background: vars.$color-bg;
       border-radius: vars.$radius-lg;
       z-index: 1;
     }
@@ -46,10 +46,9 @@
 
  @media (max-width: 991px) {
     height: auto;
-    padding: 160px 0 120px 0; // ИСПРАВЛЕНО: Сделали просторный отступ (160px) для планшетов
+    padding: 160px 0 120px 0;
     text-align: center;
 
-    // На смартфонах (до 767px) возвращаем компактные 120px, чтобы сберечь высоту экрана
     @media (max-width: 767.98px) {
       padding: 120px 0 120px 0; 
     }
@@ -65,8 +64,8 @@
     }
 
     .hero-img-wrapper {
-      margin: 0 auto; // Центрируем фото
-      width: 280px; // Чуть уменьшим для мобилок 
+      margin: 0 auto;
+      width: 280px;
       height: 280px;
 
       .main-photo, .hero-img-bg {
@@ -86,23 +85,18 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2); // Дефолтная рамка для темной темы
-    
-    // ИСПРАВЛЕНО: Даем кнопкам плотный фоновый цвет темы.
-    // Это полностью скроет пролетающие фоновые точки под иконками соцсетей!
+    border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: vars.$color-bg; 
-    
-    color: vars.$color-title; // Динамический цвет иконки
+    color: vars.$color-title;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
     transition: all 0.3s ease;
 
-    // Специфический стиль для светлой темы
     [data-theme="light"] & {
-      border-color: rgba(49, 72, 98, 0.2); // Мягкая обводка пыльно-синего цвета
-      color: vars.$color-title; // Иконка пыльно-синего цвета
+      border-color: rgba(49, 72, 98, 0.2);
+      color: vars.$color-title;
       background-color: vars.$color-btn-outline-background;
     }
 
@@ -112,21 +106,18 @@
       background-color: rgba(vars.$color-accent, 0.05);
       transform: translateY(-2px);
 
-      // Специфический ховер для светлой темы (аккуратный синий/оранжевый ховер)
       [data-theme="light"] & {
         border-color: vars.$color-accent;
         color: vars.$color-accent;
-        background-color: rgba(vars.$color-accent, 0.05); // Легкий оранжевый отсвет на ховере
+        background-color: rgba(vars.$color-accent, 0.05);
       }
     }
   }
 }
 
-// Холст интерактивной сетки
 #hero-canvas {
-  display: none; // Полностью скрываем холст на смартфонах и планшетах (экономим батарею и CPU)
+  display: none;
 
-  // Включаем и позиционируем холст ТОЛЬКО на десктопах (от 992px)
   @media (min-width: 992px) {
     display: block; 
     position: absolute;
@@ -137,7 +128,6 @@
     z-index: 1;
     pointer-events: none;
 
-    // Дизайнерская асимметричная диагональная маска (угол 135 градусов):
     -webkit-mask-image: linear-gradient(135deg, 
       rgba(0, 0, 0, 1) 0%, 
       rgba(0, 0, 0, 1) 10%, 
