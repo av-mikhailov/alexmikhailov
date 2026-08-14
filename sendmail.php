@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // НАСТРОЙКА АДРЕСАТА: ваша почта
+    // НАСТРОЙКА АДРЕСАТА
     $to = 'av.mikhailov93@gmail.com'; 
     $subject = 'Новое сообщение с сайта alexmikhailov.com';
 
@@ -51,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=utf-8\r\n";
     
-    // ВАЖНО ДЛЯ BEGET: Отправитель должен быть на вашем домене, иначе спам-фильтры заблокируют письмо!
     $headers .= "From: info@alexmikhailov.com\r\n"; 
     $headers .= "Reply-To: {$email}\r\n";
 
