@@ -12,20 +12,21 @@
     </script>
 
     <title>Александр Михайлов | Веб-разработчик и дизайнер</title>
-    <meta name="description" content="Портфолио Александра Михайлова — веб-разработчика и дизайнера. Создание сайтов на WordPress, дизайн интерфейсов и вёрстка печатных изданий.">
+    <meta name="description" content="Портфолио Александра Михайлова — веб-разработчика и дизайнера. Разработка сайтов на WordPress, UX/UI-дизайн и вёрстка печатных изданий.">
 
-    <!-- <meta property="og:title" content="Александр Михайлов | Веб-разработчик и дизайнер">
+    <meta property="og:title" content="Александр Михайлов | Веб-разработчик и дизайнер">
     <meta property="og:description" content="Портфолио Александра Михайлова — сайты на WordPress, дизайн интерфейсов и вёрстка печатных изданий.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content=""> -->
+    <meta property="og:url" content="https://alexmikhailov.com/">
+    <meta property="og:site_name" content="Александр Михайлов">
+    <meta property="og:locale" content="ru_RU">
 
-    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="alexmikhailov.com" />
-    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Alex Mikhailov" />
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
     
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/aos/aos.css">
@@ -42,7 +43,7 @@
     <div class="container d-flex align-items-center justify-content-between">
         
         <a href="index.html" class="logo-wrapper d-flex align-items-center text-decoration-none">
-            <img src="assets/img/logo-blue-l.png" alt="Логотип Александра Михайлова" class="img-fluid me-3">
+            <img src="assets/img/logo-blue.png" alt="Логотип Александра Михайлова" class="img-fluid me-3">
             <div class="logo-text">
                 <span class="d-block name">Александр Михайлов</span>
                 <small class="d-block profession">Веб-разработчик</small>
@@ -93,7 +94,7 @@
                     </li>
                 </ul>
                 
-                <!-- Иконка мобильного меню (Внутри тега nav!) -->
+                <!-- Иконка мобильного меню -->
                 <i class="bx bx-menu mobile-nav-toggle" aria-label="Открыть меню"></i>
             </nav>
 
@@ -133,7 +134,7 @@
                 <div class="col-lg-5 order-1 order-lg-2 mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="hero-img-wrapper">
                         <div class="hero-img-bg"></div>
-                        <img src="assets/img/photo6.png" alt="Александр Михайлов" class="img-fluid main-photo">
+                        <img src="assets/img/my-photo.png" alt="Александр Михайлов" class="img-fluid main-photo">
                     </div>
                 </div>
             </div>
@@ -152,7 +153,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 text-center mb-5 mb-lg-0">
                     <div class="about-img-wrapper pe-0 pe-xl-5">
-                        <img src="assets/img/my-photo3.png" alt="Александр Михайлов" class="img-fluid rounded-circle about-photo" loading="lazy">
+                        <img src="assets/img/my-photo-alt.png" alt="Александр Михайлов" class="img-fluid rounded-circle about-photo" loading="lazy">
                     </div>
                 </div>
 
@@ -457,9 +458,12 @@
                                 
                                 <div class="col-12 d-flex flex-column align-items-center mt-4">
                                     <button type="submit" class="btn-submit mb-3" id="form-submit-btn">Отправить сообщение</button>
-                                    <p class="consent-text">
-                                        Отправляя сообщение, вы соглашаетесь с <a href="privacy.html" class="consent-link">Политикой в отношении обработки персональных данных</a>
-                                    </p>
+                                    <div class="form-check d-flex gap-2">
+                                        <input class="form-check-input" name="consent" type="checkbox" id="consentCheckbox" required>
+                                        <label class="form-check-label consent-text text-start" for="consentCheckbox" style="cursor: pointer;">
+                                            Соглашаюсь на обработку персональных данных в соответствии с <a href="privacy.html" class="consent-link">Политикой обработки персональных данных</a>
+                                        </label>
+                                    </div>
                                     <div id="form-status" class="mt-3 text-center" style="display: none; font-size: 14px; font-weight: 500;"></div>
                                 </div>
                             </div>

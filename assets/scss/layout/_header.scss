@@ -25,11 +25,8 @@ body.mobile-nav-active {
       shape-rendering: geometricPrecision;
       image-rendering: -webkit-optimize-contrast;
       transition: vars.$transition;
-
-      [data-theme="light"] & {
-        filter: invert(0.9) brightness(0.2); 
-      }
     }
+    
     color: vars.$color-text;
     
     .name {
@@ -94,7 +91,6 @@ body.mobile-nav-active {
   }
 }
 
-// --- АДАПТИВНОЕ МОБИЛЬНОЕ МЕНЮ (СУПЕР-ПЛАВНЫЙ ВЫЕЗД С КЛЮЧЕВЫМИ КАДРАМИ) ---
 @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
@@ -181,7 +177,6 @@ body.mobile-nav-active {
     }
   }
 
-  // --- БЛОК КОНТАКТОВ И ТЕМЫ (Прижат к самому низу) ---
   .mobile-menu-footer {
     margin-top: auto;
     display: flex;
@@ -272,7 +267,6 @@ body.mobile-nav-active {
   to { transform: translate3d(0, 0, 0); }
 }
 
-// --- СТИЛИ ПЕРЕКЛЮЧАТЕЛЯ ТЕМ ---
 .header-theme-switcher {
   display: flex;
   align-items: center;
